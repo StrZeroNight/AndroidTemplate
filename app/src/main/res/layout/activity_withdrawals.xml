@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/main_background">
+
+    <com.zeronight.templet.common.widget.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:btitle="提现"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white"
+        >
+
+        <TextView
+            android:id="@+id/tv_x"
+            android:layout_marginLeft="@dimen/dp1080_70"
+            android:text="可提现余额"
+            android:layout_marginTop="@dimen/dp1080_70"
+            android:textSize="@dimen/dp1080_35"
+            android:textColor="@color/color_gray_99"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/dp1080_20"
+            />
+
+        <TextView
+            android:id="@+id/tv_balance"
+            android:layout_below="@+id/tv_x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.00元"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/dp1080_53"
+            android:layout_marginTop="@dimen/dp1080_32"
+            android:layout_marginLeft="@dimen/dp1080_120"
+            android:layout_marginBottom="@dimen/dp1080_70"
+            />
+
+        <TextView
+            android:id="@+id/tv_detial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_gray_33"
+            android:textSize="@dimen/dp1080_35"
+            android:layout_alignParentRight="true"
+            android:text="收入明细"
+            android:clickable="true"
+            android:background="@drawable/select_view"
+            android:layout_marginTop="@dimen/dp1080_70"
+            android:layout_marginRight="@dimen/dp1080_73"
+            />
+
+    </RelativeLayout>
+
+    <com.zeronight.templet.common.widget.ArrorText
+        android:id="@+id/at_add_bank"
+        android:layout_marginTop="@dimen/dp1080_30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:atitle="请选择银行卡"
+        app:aishow_icon="false"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl_bankcard"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp1080_30"
+        android:background="@drawable/select_view">
+
+        <ImageView
+            android:id="@+id/iv_bank_icon"
+            android:layout_width="@dimen/dp1080_90"
+            android:layout_height="@dimen/dp1080_90"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp1080_46"
+            android:layout_marginLeft="@dimen/dp1080_56"
+            android:scaleType="fitXY"
+            />
+
+        <TextView
+            android:id="@+id/tv_bank_name"
+            android:layout_toRightOf="@+id/iv_bank_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="银行卡名称"
+            android:textSize="@dimen/dp1080_40"
+            android:textColor="@color/color_black_22"
+            android:layout_marginTop="@dimen/dp1080_43"
+            />
+
+        <TextView
+            android:id="@+id/tv_bank_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="尾号"
+            android:layout_below="@+id/tv_bank_name"
+            android:layout_toRightOf="@+id/iv_bank_icon"
+            android:textSize="@dimen/dp1080_40"
+            android:layout_marginTop="@dimen/dp1080_21"
+            android:textColor="@color/color_gray_93"
+            android:layout_marginBottom="@dimen/dp1080_33"
+            />
+
+        <ImageView
+            android:layout_width="@dimen/dp1080_39"
+            android:layout_height="@dimen/dp1080_39"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp1080_83"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="提交申请后，请等待审核，我们将在3个工作日内为您处理"
+        android:paddingLeft="@dimen/dp1080_63"
+        android:paddingTop="@dimen/dp1080_40"
+        android:paddingBottom="@dimen/dp1080_40"
+        android:background="@color/color_white"
+        android:layout_marginTop="@dimen/dp1080_3"
+        android:textSize="@dimen/dp1080_34"
+        android:textColor="@color/color_gray_93"
+        android:drawablePadding="@dimen/dp1080_30"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp1080_3"
+        android:background="@color/color_white"
+        >
+
+        <TextView
+            android:id="@+id/tv_x2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提现金额"
+            android:layout_marginLeft="@dimen/dp1080_62"
+            android:textSize="@dimen/dp1080_40"
+            android:textColor="@color/color_black_22"
+            android:layout_centerVertical="true"
+            />
+
+        <EditText
+            android:id="@+id/et_balance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_x2"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp1080_62"
+            android:hint="请输入提现金额"
+            android:paddingTop="@dimen/dp1080_48"
+            android:paddingBottom="@dimen/dp1080_48"
+            android:inputType="numberDecimal"
+            android:textColorHint="@color/color_gray_93"
+            android:textSize="@dimen/dp1080_40"
+            android:background="@null"
+            android:textColor="@color/color_black_22"
+            android:layout_toLeftOf="@+id/iv_delete"
+            android:paddingRight="@dimen/dp1080_40"
+            />
+
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="@dimen/dp1080_52"
+            android:layout_height="@dimen/dp1080_52"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp1080_69"
+            />
+
+    </RelativeLayout>
+
+    <com.zeronight.templet.common.widget.SuperTextView
+        android:id="@+id/stv_confirm"
+        android:layout_width="@dimen/dp1080_940"
+        android:layout_height="@dimen/dp1080_100"
+        android:text="保存"
+        android:layout_marginTop="@dimen/dp1080_71"
+        android:gravity="center"
+        />
+
+
+</LinearLayout>

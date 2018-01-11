@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:id="@+id/ll_retry">
+
+    <ImageView
+        android:layout_width="@dimen/dp1080_609"
+        android:layout_height="@dimen/dp1080_567"
+        android:src="@drawable/fail"
+        android:layout_marginTop="@dimen/dp1080_386"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="加载错误\n点击重新加载"
+        android:layout_marginTop="@dimen/dp1080_70"
+        android:textSize="@dimen/dp1080_35"
+        android:gravity="center"
+        android:textColor="@color/color_black_33"
+        />
+
+</LinearLayout>

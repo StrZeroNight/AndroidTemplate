@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/main_background">
+
+    <com.zeronight.templet.common.widget.TitleBar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:btitle="银行卡列表"/>
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <com.zeronight.templet.common.widget.ArrorText
+            android:id="@+id/at_addbank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:aishow_icon="false"
+            app:aishow_content="false"
+            app:atitle="添加银行卡"
+            android:clickable="true"
+            android:layout_marginTop="@dimen/dp1080_25"
+            android:layout_marginBottom="@dimen/dp1080_30"
+            />
+
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:id="@+id/xrv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</LinearLayout>

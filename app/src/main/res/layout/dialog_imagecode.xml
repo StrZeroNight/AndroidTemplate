@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="输入验证码"
+        android:gravity="center"
+        android:textColor="@color/color_black_66"
+        android:textSize="@dimen/dp1080_41"
+        android:layout_marginTop="@dimen/dp1080_40"
+        android:layout_marginBottom="@dimen/dp1080_40"
+        />
+
+    <ImageView
+        android:layout_width="@dimen/dp1080_4"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp1080_40"
+        android:layout_marginRight="@dimen/dp1080_40"
+        android:background="@color/color_gray_b5"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="验证码："
+            android:textSize="@dimen/dp1080_37"
+            android:textColor="@color/color_black_66"
+            />
+
+        <EditText
+            android:id="@+id/et_image_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dp1080_37"
+            android:inputType="text"
+            android:textColorHint="@color/color_gray_b1"
+            android:textColor="@color/color_black_66"
+            android:hint="请输入右侧验证码"
+            />
+
+        <ImageView
+            android:id="@+id/iv_image_code"
+            android:layout_width="@dimen/dp1080_177"
+            android:layout_height="@dimen/dp1080_73"
+            android:layout_marginLeft="@dimen/dp1080_20"
+            android:scaleType="fitXY"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dp1080_52"
+        android:paddingBottom="@dimen/dp1080_52"
+        android:gravity="center"
+        android:text="确定"
+        android:background="@drawable/select_view"
+        android:textSize="@dimen/dp1080_32"
+        android:textColor="@color/colorPrimary"
+        />
+
+</LinearLayout>

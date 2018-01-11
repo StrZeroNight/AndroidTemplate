@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="color_white">#ffffff</color>
+    <color name="color_black_t70">#70000000</color>
+    <color name="color_black_t30">#40000000</color>
+    <color name="color_black_t00">#00000000</color>
+    <color name="color_black_33">#333333</color>
+    <color name="color_black_22">#222222</color>
+    <color name="color_black_66">#666666</color>
+    <color name="color_gray_99">#999999</color>
+    <color name="color_gray_cc">#cccccc</color>
+    <color name="color_gray_b5">#b5b5b5</color>
+    <color name="color_gray_84">#848484</color>
+    <color name="color_gray_93">#939393</color>
+    <color name="color_gray_b1">#b1b1b1</color>
+    <color name="color_gray_f3">#f3f3f3</color>
+    <color name="color_gray_ed">#ededed</color>
+
+    <color name="color_black">#333333</color>
+    <color name="color_black_cc33">#cc333333</color>
+    <color name="color_black_e633">#e6333333</color>
+    <color name="color_black_33_tran70">#af000000</color>
+    <color name="color_white_00">#00ffffff</color>
+    <color name="color_white_trans50">#50ffffff</color>
+    <color name="color_white_trans20">#50ffffff</color>
+    <color name="color_white_trans80">#80ffffff</color>
+    <!--灰色-->
+    <color name="color_gray">#8c8c8c</color>
+    <!--浅灰色-->
+    <color name="color_gray_light">#dadada</color>
+    <color name="color_gray_c2">#c2c2c2</color>
+    <color name="color_gray_ee">#99eeeeee</color>
+    <color name="color_gray_f5">#f5f5f5</color>
+    <color name="color_gray_e2">#e2e2e2</color>
+    <color name="color_gray_33">#80333333</color>
+    <color name="color_gray_a0">#a0a0a0</color>
+    <!--背景灰色-->
+    <color name="color_gray_background">#f6f6f6</color>
+    <!--横条灰色-->
+    <color name="color_gray_hengtiao">#e2e2e2</color>
+    <!--橙色-->
+    <color name="color_deep_orange">#ed683d</color>
+    <!--红色-->
+    <color name="color_red_background">#e5223f</color>
+
+    <color name="color_class_first_text">#ff9600</color>
+    <color name="color_blue_0095ea">#0095ea</color>
+    <color name="color_blue_3d85fc">#3d85fc</color>
+
+    <color name="color_login">#50ffffff</color>
+    <color name="color_login_press">#20ffffff</color>
+
+</resources>

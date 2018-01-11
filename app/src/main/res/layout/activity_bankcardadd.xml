@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/main_background">
+
+    <com.zeronight.templet.common.widget.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:btitle="添加银行卡"/>
+
+    <com.zeronight.templet.common.widget.DelEditText
+        android:id="@+id/det_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="持卡人"
+        app:dhint="请输入持卡人姓名"
+        />
+
+    <com.zeronight.templet.common.widget.DelEditText
+        android:id="@+id/det_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="手机号"
+        app:dhint="请输入银行预留手机号"
+        app:textType="phone"
+        />
+
+    <com.zeronight.templet.common.widget.DelEditText
+        android:id="@+id/det_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="卡号"
+        app:dhint="请输入卡号"
+        app:textType="phone"
+        />
+
+    <com.zeronight.templet.common.widget.ArrorText
+        android:id="@+id/at_choosebank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:atitle="所属银行"
+        app:aishow_icon="false"
+        app:acontent="请选择银行"
+        />
+
+
+    <com.zeronight.templet.common.widget.SuperTextView
+        android:id="@+id/stv_save"
+        android:layout_width="@dimen/dp1080_940"
+        android:layout_height="@dimen/dp1080_100"
+        android:text="保存"
+        android:layout_marginTop="@dimen/dp1080_71"
+        android:gravity="center"
+        />
+
+
+</LinearLayout>

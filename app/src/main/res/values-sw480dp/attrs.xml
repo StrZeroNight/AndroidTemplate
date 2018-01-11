@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ArrorText">
+        <attr name="atitle" format="string" />
+        <attr name="acontent" format="string" />
+        <attr name="aicon" format="reference" />
+        <attr name="acontent_color" format="color" />
+        <attr name="aishow_icon" format="boolean" />
+        <attr name="aishow_arror" format="boolean" />
+        <attr name="aishow_content" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="TitleBar">
+        <attr name="btitle" format="string" />
+        <attr name="bright_text" format="string" />
+        <attr name="bright_image" format="reference" />
+        <attr name="bishow_back" format="boolean" />
+        <attr name="bisshow_bg" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="LoginImageItem">
+        <attr name="loginimage_title" format="string" />
+        <attr name="loginimage_content" format="string" />
+        <attr name="loginimage_isshowadd" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ChooseButton">
+        <attr name="choosebutton_name" format="string" />
+        <attr name="choosebutton_choose" format="reference" />
+        <attr name="choosebutton_none" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="LoginEditTest">
+        <attr name="let_hint" format="string" />
+        <attr name="let_icon" format="color|reference"/>
+        <attr name="let_hintcolor" format="color" />
+        <attr name="let_background" format="color|reference" />
+        <attr name="let_contenttype" >
+            <enum name="number" value="1"></enum>
+            <enum name="password" value="2"></enum>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SuperTextView">
+
+        <!--text color-->
+        <attr name="normalTextColor" format="color|reference" />
+        <attr name="pressedTextColor" format="color|reference" />
+        <attr name="unableTextColor" format="color|reference" />
+
+        <!--stroke width and color, dash width, dash gap-->
+        <attr name="strokeDashWidth" format="dimension|reference" />
+        <attr name="strokeDashGap" format="dimension|reference" />
+        <attr name="normalStrokeWidth" format="dimension|reference" />
+        <attr name="pressedStrokeWidth" format="dimension|reference" />
+        <attr name="unableStrokeWidth" format="dimension|reference" />
+        <attr name="normalStrokeColor" format="color|reference" />
+        <attr name="pressedStrokeColor" format="color|reference" />
+        <attr name="unableStrokeColor" format="color|reference" />
+
+        <!--background color-->
+        <attr name="normalBackgroundColor" format="color|reference" />
+        <attr name="pressedBackgroundColor" format="color|reference" />
+        <attr name="unableBackgroundColor" format="color|reference" />
+
+        <!--background radius-->
+        <attr name="radius" format="dimension|reference" />
+        <attr name="round" format="boolean|reference" />
+
+        <!--animation duration-->
+        <attr name="animationDuration" format="integer|reference" />
+
+    </declare-styleable>
+
+    <declare-styleable name="DelEditText">
+        <attr name="title" format="string" />
+        <attr name="dhint" format="string" />
+        <attr name="delimage" format="reference" />
+        <attr name="titleTextSize" format="dimension" />
+        <attr name="titleTextColor" format="color" />
+        <attr name="hintTextColor" format="color" />
+        <attr name="hintTextSize" format="dimension" />
+        <attr name="leftPadding" format="dimension" />
+        <attr name="textType">
+            <enum name="password" value="1" />
+            <enum name="string" value="2" />
+            <enum name="phone" value="3" />
+        </attr>
+    </declare-styleable>
+
+
+</resources>

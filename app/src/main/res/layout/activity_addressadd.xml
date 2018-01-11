@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--这里等统一的出来以后直接调整det和art-->
+    <com.zeronight.templet.common.widget.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:btitle="新增收货地址"/>
+
+    <com.zeronight.templet.common.widget.DelEditText
+        android:id="@+id/det_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="收  货  人" />
+
+    <com.zeronight.templet.common.widget.DelEditText
+        android:id="@+id/det_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:textType="phone"
+        app:title="手机号码" />
+
+    <com.zeronight.templet.common.widget.ArrorText
+        android:id="@+id/at_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:atitle="所在城市"
+        app:aishow_arror="true"
+        app:aishow_icon="false"
+        app:aishow_content="true"
+        android:clickable="true"
+        app:acontent="请选择所在地区"
+        />
+
+    <com.zeronight.templet.common.widget.DelEditText
+        android:id="@+id/det_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="详细地址" />
+
+    <com.zeronight.templet.common.widget.SwitchText
+        android:id="@+id/st_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:aishow_icon="false"
+        app:atitle="是否默认地址"
+        />
+
+    <com.zeronight.templet.common.widget.SuperTextView
+        android:id="@+id/stv_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/dp1080_20"
+        android:gravity="center"
+        android:padding="@dimen/dp1080_30"
+        android:text="保存地址"
+        android:textColor="@color/color_white"
+        app:normalBackgroundColor="@color/color_black_33"
+        app:pressedBackgroundColor="@color/color_black_33_tran70"
+        />
+
+</LinearLayout>

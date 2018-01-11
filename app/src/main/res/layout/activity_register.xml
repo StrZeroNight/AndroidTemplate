@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/ll_root"
+    android:background="@drawable/login_backgound"
+    >
+
+    <ImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="1000dp"
+        android:layout_height="1000dp"
+        android:background="@drawable/login_backgound"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        >
+
+        <com.zeronight.templet.common.widget.TitleBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:btitle="注册"
+            app:bisshow_bg="false"/>
+
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"
+            android:layout_marginTop="@dimen/dp1080_30"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_toolbar_login"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp1080_50"
+            android:paddingLeft="@dimen/dp1080_150"
+            android:paddingRight="@dimen/dp1080_150"
+            android:orientation="vertical"
+            >
+
+            <com.zeronight.templet.common.widget.LoginEditText
+                android:id="@+id/let_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:let_hint="请输入手机号"
+                app:let_icon="@drawable/login_user"
+                app:let_contenttype="number"
+                />
+
+            <include layout="@layout/view_vercode" />
+
+            <com.zeronight.templet.common.widget.LoginEditText
+                android:id="@+id/let_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:let_hint="请输入密码"
+                app:let_icon="@drawable/login_password"
+                app:let_contenttype="password"
+                />
+
+            <com.zeronight.templet.common.widget.LoginEditText
+                android:id="@+id/let_npassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:let_hint="请再次输入密码"
+                app:let_icon="@drawable/login_password"
+                app:let_contenttype="password"
+                />
+
+            <com.zeronight.templet.common.widget.LoginEditText
+                android:id="@+id/let_npassword2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:let_hint="请输入邀请码（选填）"
+                app:let_icon="@drawable/login_invite"
+                />
+
+        </LinearLayout>
+
+        <!--暂时不写方法-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="无法获取验证码？请致电"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/dp1080_35"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp1080_20"
+                android:paddingBottom="@dimen/dp1080_20"
+                />
+
+            <TextView
+                android:id="@+id/tv_zhidian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0000-0000"
+                android:textColor="@color/color_deep_orange"
+                android:textSize="@dimen/dp1080_35"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp1080_20"
+                android:paddingBottom="@dimen/dp1080_20"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_agreement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp1080_40"
+            >
+
+            <TextView
+                android:id="@+id/tv_tongyi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp1080_70"
+                android:text="已阅读并同意"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/dp1080_35"
+                android:gravity="center"
+                android:drawableLeft="@drawable/login_select"
+                android:drawablePadding="@dimen/dp1080_20"
+                android:paddingTop="@dimen/dp1080_20"
+                android:paddingBottom="@dimen/dp1080_20"
+                />
+
+            <TextView
+                android:id="@+id/tv_xieyi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="《用户协议》"
+                android:textColor="@color/color_deep_orange"
+                android:textSize="@dimen/dp1080_35"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp1080_20"
+                android:paddingBottom="@dimen/dp1080_20"
+                />
+
+        </LinearLayout>
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_register"
+            android:text="注册"
+            app:normalBackgroundColor="@color/color_login"
+            app:pressedBackgroundColor="@color/color_login_press"
+            app:radius="@dimen/dp1080_5"
+            style="@style/login_btn" />
+
+        <TextView
+            android:id="@+id/tv_sanfeng_login_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="推荐方式"
+            android:layout_marginTop="@dimen/dp1080_70"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/dp1080_35"
+            android:drawableLeft="@drawable/login_line"
+            android:drawableRight="@drawable/login_line"
+            android:drawablePadding="@dimen/dp1080_30"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_sanfeng_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/iv_qq"
+                android:src="@drawable/login_qq"
+                style="@style/login_sanfang_icon" />
+
+            <ImageView
+                android:id="@+id/iv_wx"
+                style="@style/login_sanfang_icon"
+                android:src="@drawable/login_wx"
+                />
+
+            <ImageView
+                android:id="@+id/iv_wb"
+                style="@style/login_sanfang_icon"
+                android:src="@drawable/login_wb"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp1080_15"
+    android:background="@color/color_white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp1080_20"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp1080_10">
+
+            <TextView
+                android:id="@+id/tv_tag_address"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/dp1080_30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="@dimen/dp1080_10"
+                android:paddingRight="@dimen/dp1080_10"
+                android:visibility="gone"
+                android:paddingTop="@dimen/dp1080_5"
+                android:paddingBottom="@dimen/dp1080_5"
+                android:layout_marginLeft="@dimen/dp1080_30"
+                android:layout_marginRight="@dimen/dp1080_20"
+                tools:text="电话" />
+
+            <TextView
+                android:id="@+id/tv_name_address"
+                android:textColor="@color/color_black_33"
+                android:textSize="@dimen/dp1080_40"
+                android:layout_marginLeft="@dimen/dp1080_30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="姓名" />
+
+            <TextView
+                android:id="@+id/tv_phone_address"
+                android:textColor="@color/color_black_33"
+                android:textSize="@dimen/dp1080_45"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/dp1080_30"
+                tools:text="电话" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_address_address"
+            android:textColor="@color/color_gray"
+            android:textSize="@dimen/dp1080_40"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:minLines="2"
+            android:paddingBottom="@dimen/dp1080_20"
+            android:paddingLeft="@dimen/dp1080_40"
+            android:paddingRight="@dimen/dp1080_30"
+            android:paddingTop="@dimen/dp1080_10"
+            tools:text="地址地址打着打着等着等着等着等着等着等着在等着等着等着的等着等着等着当年" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp1080_10">
+
+        <LinearLayout
+            android:id="@+id/ll_defaultaddress_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp1080_30"
+            android:gravity="center"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp1080_10">
+
+            <TextView
+                android:id="@+id/tv_default_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="是否默认地址"
+                android:gravity="center"
+                android:drawablePadding="@dimen/dp1080_20"
+                 />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_delete_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp1080_10"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_marginRight="@dimen/dp1080_20"
+            android:padding="@dimen/dp1080_20"
+            android:drawablePadding="@dimen/dp1080_20"
+            android:text="删除" />
+
+        <TextView
+            android:id="@+id/tv_edit_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_marginLeft="@dimen/dp1080_10"
+            android:layout_marginRight="@dimen/dp1080_20"
+            android:layout_toLeftOf="@+id/tv_delete_address"
+            android:drawablePadding="@dimen/dp1080_20"
+            android:padding="@dimen/dp1080_20"
+            android:text="编辑" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

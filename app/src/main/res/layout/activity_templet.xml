@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="main"
+        />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="login"
+        />
+
+    <Button
+        android:id="@+id/btn_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="address"
+        />
+
+    <Button
+        android:id="@+id/btn_userinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="userinfo"
+        />
+
+    <Button
+        android:id="@+id/btn_bankcard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bankcard"
+        />
+
+    <Button
+        android:id="@+id/btn_permission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="permission_and_download"
+        />
+
+</LinearLayout>

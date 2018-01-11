@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">templet</string>
+
+    <string name="phone_can_not_null">手机号不能为空</string>
+    <string name="phone_can_not_normal">手机号不是标准手机号</string>
+    <string name="vercode_can_not_normal">短信验证码不能为空</string>
+    <string name="password_can_not_null">密码不能为空</string>
+    <string name="password2_can_not_null">确认密码不能为空</string>
+    <string name="password_can_not_be_less_than_6_bits">密码不能小于6位或大于16位</string>
+    <string name="password2_can_not_be_less_than_6_bits">确认密码不能小于6位或大于16位</string>
+    <string name="password_not_equl">密码不一致</string>
+
+</resources>

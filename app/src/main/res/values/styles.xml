@@ -1,0 +1,162 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--NoActionBar-->
+    <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="dialog_progress" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@null</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="titlebar_title">
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">@dimen/dp1080_50</item>
+    </style>
+
+    <style name="titlebar_back">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/dp1080_30</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <!--bottombar样式-->
+    <style name="main_bottombar_ll">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--bottombar 图片样式-->
+    <style name="main_fragment_bottombar_iv">
+        <item name="android:layout_width">@dimen/dp1080_70</item>
+        <item name="android:layout_height">@dimen/dp1080_70</item>
+        <item name="android:layout_margin">@dimen/dp1080_5</item>
+    </style>
+
+    <!--bottombar 文字样式-->
+    <style name="main_fragment_bottombar_tv">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/dp1080_35</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/color_black_66</item>
+    </style>
+
+    <style name="paychoose_icon">
+        <item name="android:layout_width">@dimen/dp1080_100</item>
+        <item name="android:layout_height">@dimen/dp1080_100</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@color/color_black_66</item>
+        <item name="android:layout_margin">@dimen/dp1080_40</item>
+    </style>
+
+    <style name="paychoose_tv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textSize">@dimen/dp1080_40</item>
+        <item name="android:textColor">@color/color_black_66</item>
+    </style>
+
+    <style name="paychoose_iv_choose">
+        <item name="android:layout_width">@dimen/dp1080_45</item>
+        <item name="android:layout_height">@dimen/dp1080_45</item>
+        <item name="android:background">@color/color_black_66</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">@dimen/dp1080_50</item>
+    </style>
+
+    <style name="paychoose_rl">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/select_view</item>
+        <item name="android:layout_marginBottom">@dimen/dp1080_4</item>
+    </style>
+
+    <!--模板相关-->
+
+    <!--登录三方icon-->
+    <style name="login_sanfang_icon">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">@dimen/dp1080_60</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="login_et_string">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">@dimen/dp1080_40</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColorHint">@color/color_gray_ee</item>
+    </style>
+
+    <style name="login_white_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp1080_1</item>
+        <item name="android:paddingLeft">@dimen/dp1080_30</item>
+        <item name="android:paddingRight">@dimen/dp1080_30</item>
+    </style>
+
+    <style name="login_btn">
+        <item name="android:layout_width">@dimen/dp1080_700</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/dp1080_30</item>
+        <item name="android:paddingBottom">@dimen/dp1080_30</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/dp1080_50</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:layout_marginTop">@dimen/dp1080_50</item>
+    </style>
+
+    <style name="main_background">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@color/color_gray_cc</item>
+    </style>
+
+    <style name="bank_btn">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/dp1080_42</item>
+        <item name="android:textColor">@color/color_black_66</item>
+        <item name="android:layout_below">@+id/iv_x</item>
+        <item name="android:layout_marginRight">@dimen/dp1080_22</item>
+        <item name="android:layout_marginBottom">@dimen/dp1080_32</item>
+        <item name="android:paddingLeft">@dimen/dp1080_40</item>
+        <item name="android:paddingRight">@dimen/dp1080_40</item>
+        <item name="android:paddingTop">@dimen/dp1080_16</item>
+        <item name="android:paddingBottom">@dimen/dp1080_16</item>
+    </style>
+
+</resources>

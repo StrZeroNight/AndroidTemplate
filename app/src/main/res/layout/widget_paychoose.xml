@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_gray_f3"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_wx"
+        style="@style/paychoose_rl"
+        >
+
+        <ImageView
+            android:id="@+id/iv_icon_wx"
+            style="@style/paychoose_icon" />
+
+        <TextView
+            android:text="微信支付"
+            style="@style/paychoose_tv"
+            android:layout_toRightOf="@+id/iv_icon_wx"
+            />
+
+        <ImageView
+            android:id="@+id/iv_choose_wx"
+            style="@style/paychoose_iv_choose" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_zfb"
+        style="@style/paychoose_rl"
+        >
+
+        <ImageView
+            android:id="@+id/iv_icon_zfb"
+            style="@style/paychoose_icon" />
+
+        <TextView
+            android:text="支付宝支付"
+            android:layout_toRightOf="@+id/iv_icon_zfb"
+            style="@style/paychoose_tv" />
+
+        <ImageView
+            android:id="@+id/iv_choose_zfb"
+            style="@style/paychoose_iv_choose" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_ye"
+        style="@style/paychoose_rl"
+        >
+
+        <ImageView
+            android:id="@+id/iv_icon_ye"
+            style="@style/paychoose_icon" />
+
+        <TextView
+            android:text="余额支付"
+            android:layout_toRightOf="@+id/iv_icon_ye"
+            style="@style/paychoose_tv" />
+
+        <ImageView
+            android:id="@+id/iv_choose_ye"
+            style="@style/paychoose_iv_choose" />
+
+    </RelativeLayout>
+
+</LinearLayout>
