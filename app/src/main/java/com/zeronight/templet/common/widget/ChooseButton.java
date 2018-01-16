@@ -42,6 +42,8 @@ public class ChooseButton extends LinearLayout {
         none = a.getResourceId(R.styleable.ChooseButton_choosebutton_none , defStyleAttr);
         iv_icon.setImageResource(none);
 
+        a.recycle();
+
     }
 
     public void setChoose(){

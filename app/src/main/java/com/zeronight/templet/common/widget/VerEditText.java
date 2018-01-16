@@ -14,7 +14,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.zeronight.templet.R;
-import com.zeronight.templet.common.utils.ToastUtils;
 import com.zeronight.templet.common.utils.XStringUtils;
 
 
@@ -67,6 +66,8 @@ public class VerEditText extends RelativeLayout {
         } else {
             et_content.setInputType(InputType.TYPE_CLASS_TEXT);
         }
+
+        a.recycle();
 
     }
 

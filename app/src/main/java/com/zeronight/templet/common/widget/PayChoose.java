@@ -71,6 +71,8 @@ public class PayChoose extends LinearLayout{
             }
         });
 
+        a.recycle();
+
     }
 
     private void changeChooseButton(ImageView ivChoose , ImageView...ivNones){

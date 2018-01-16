@@ -12,6 +12,7 @@ import com.zeronight.templet.common.base.BaseActivity;
 import com.zeronight.templet.common.utils.ToastUtils;
 import com.zeronight.templet.module.address.list.AddressListActivity;
 import com.zeronight.templet.module.bankcard.WithdrawalsActivity;
+import com.zeronight.templet.module.equipment.EquipmentActivity;
 import com.zeronight.templet.module.login.LoginActivity;
 import com.zeronight.templet.module.main.MainActivity;
 import com.zeronight.templet.module.mine.UserInfoActivity;
@@ -32,6 +33,7 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
     private Button btn_userinfo;
     private Button btn_bankcard;
     private Button btn_permission;
+    private Button btn_equipment;
 
     public static void start(Context context, String id) {
         Intent it = new Intent(context, TempletActivity.class);
@@ -80,6 +82,8 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
         btn_bankcard.setOnClickListener(this);
         btn_permission = (Button) findViewById(R.id.btn_permission);
         btn_permission.setOnClickListener(this);
+        btn_equipment = (Button) findViewById(R.id.btn_equipment);
+        btn_equipment.setOnClickListener(this);
     }
 
     @Override
@@ -102,6 +106,9 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
                 break;
             case R.id.btn_permission:
                 PermissionActivity.start(this);
+                break;
+            case R.id.btn_equipment:
+                EquipmentActivity.start(this);
                 break;
         }
     }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <paths>
+        <root-path path="" name="camera_photos" />
+        <external-path path="" name="update" /> <!-- 代表的根目录: Environment.getExternalStorageDirectory() -->
+    </paths>
+</resources>

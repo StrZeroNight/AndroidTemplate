@@ -65,8 +65,8 @@ public class UserInfoActivity extends BaseActivity implements View.OnClickListen
     }
 
     private void initView() {
-        iv_head_image = (ImageView) findViewById(R.id.iv_head_image);
-        rl_head_image = (RelativeLayout) findViewById(R.id.rl_head_image);
+//        iv_head_image = (ImageView) findViewById(R.id.iv_head_image);
+//        rl_head_image = (RelativeLayout) findViewById(R.id.rl_head_image);
         rl_head_image.setOnClickListener(this);
         at_nike = (ArrorText) findViewById(R.id.at_nike);
         at_nike.setOnClickListener(this);
@@ -83,8 +83,8 @@ public class UserInfoActivity extends BaseActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.rl_head_image:
-                break;
+//            case R.id.rl_head_image:
+//                break;
             case R.id.at_nike:
                 break;
             case R.id.at_gender:

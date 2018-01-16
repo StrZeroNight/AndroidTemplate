@@ -62,6 +62,8 @@ public class LoginEditText extends RelativeLayout {
             et_content.setInputType(InputType.TYPE_CLASS_TEXT);
         }
 
+        a.recycle();
+
     }
 
     public String getContent(){

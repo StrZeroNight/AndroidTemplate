@@ -11,7 +11,8 @@
         android:id="@+id/titlebar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:btitle="新增收货地址"/>
+        app:btitle="新增收货地址"
+        />
 
     <com.zeronight.templet.common.widget.DelEditText
         android:id="@+id/det_user"

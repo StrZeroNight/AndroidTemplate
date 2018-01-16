@@ -9,49 +9,6 @@
         android:layout_height="wrap_content"
         app:btitle="个人资料"/>
 
-    <RelativeLayout
-        android:id="@+id/rl_head_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/select_view"
-        android:orientation="horizontal"
-        android:clickable="true"
-        android:paddingBottom="@dimen/dp1080_40"
-        android:paddingTop="@dimen/dp1080_40">
-
-
-        <TextView
-            android:textSize="@dimen/dp1080_41"
-            android:textColor="@color/color_black_66"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/iv_icon"
-            android:layout_marginLeft="@dimen/dp1080_71"
-            android:text="头像" />
-
-        <ImageView
-            android:id="@+id/iv_head_image"
-            android:layout_width="@dimen/dp1080_100"
-            android:layout_height="@dimen/dp1080_100"
-            android:layout_toLeftOf="@+id/iv_x"
-            android:layout_marginRight="@dimen/dp1080_50"
-            android:scaleType="fitXY"
-            android:background="@color/color_gray"
-            />
-
-        <ImageView
-            android:id="@+id/iv_x"
-            android:layout_width="@dimen/dp1080_39"
-            android:layout_height="@dimen/dp1080_39"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/dp1080_66"
-            android:background="@color/color_gray"
-            />
-
-    </RelativeLayout>
-
     <com.zeronight.templet.common.widget.ArrorText
         android:id="@+id/at_nike"
         android:layout_width="match_parent"

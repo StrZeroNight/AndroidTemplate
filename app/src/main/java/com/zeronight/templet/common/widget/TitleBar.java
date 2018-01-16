@@ -96,6 +96,8 @@ public class TitleBar extends RelativeLayout {
             }
         });
 
+        a.recycle();
+
     }
 
     public void setTitle(String title){
