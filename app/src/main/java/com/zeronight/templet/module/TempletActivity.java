@@ -13,10 +13,12 @@ import com.zeronight.templet.common.utils.ToastUtils;
 import com.zeronight.templet.module.address.list.AddressListActivity;
 import com.zeronight.templet.module.bankcard.WithdrawalsActivity;
 import com.zeronight.templet.module.equipment.EquipmentActivity;
+import com.zeronight.templet.module.filereader.FileReadActivity;
 import com.zeronight.templet.module.login.LoginActivity;
 import com.zeronight.templet.module.main.MainActivity;
 import com.zeronight.templet.module.mine.UserInfoActivity;
 import com.zeronight.templet.module.permission.PermissionActivity;
+import com.zeronight.templet.module.window.WindowActivity;
 
 /**
  * Created by Administrator on 2018/1/3.
@@ -34,6 +36,8 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
     private Button btn_bankcard;
     private Button btn_permission;
     private Button btn_equipment;
+    private Button btn_fileread;
+    private Button btn_window;
 
     public static void start(Context context, String id) {
         Intent it = new Intent(context, TempletActivity.class);
@@ -84,6 +88,10 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
         btn_permission.setOnClickListener(this);
         btn_equipment = (Button) findViewById(R.id.btn_equipment);
         btn_equipment.setOnClickListener(this);
+        btn_fileread = (Button) findViewById(R.id.btn_fileread);
+        btn_fileread.setOnClickListener(this);
+        btn_window = (Button) findViewById(R.id.btn_window);
+        btn_window.setOnClickListener(this);
     }
 
     @Override
@@ -110,6 +118,13 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
             case R.id.btn_equipment:
                 EquipmentActivity.start(this);
                 break;
+            case R.id.btn_fileread:
+                FileReadActivity.start(this);
+                break;
+            case R.id.btn_window:
+                WindowActivity.start(this);
+                break;
+
         }
     }
 

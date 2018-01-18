@@ -54,4 +54,18 @@
         android:text="equipment"
         />
 
+    <Button
+        android:id="@+id/btn_fileread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="file_load"
+        />
+
+    <Button
+        android:id="@+id/btn_window"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="window"
+        />
+
 </LinearLayout>
