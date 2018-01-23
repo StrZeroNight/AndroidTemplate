@@ -28,6 +28,7 @@ public class SuperTextView extends AppCompatTextView {
     private int mNormalTextColor = 0;
     private int mPressedTextColor = 0;
     private int mUnableTextColor = 0;
+    private int mSelectTextColor = 0;
     ColorStateList mTextColorStateList;
 
     //animation duration
@@ -43,18 +44,22 @@ public class SuperTextView extends AppCompatTextView {
     private int mNormalStrokeWidth = 0;
     private int mPressedStrokeWidth = 0;
     private int mUnableStrokeWidth = 0;
+    private int mSelectStrokeWidth = 0;
     private int mNormalStrokeColor = 0;
     private int mPressedStrokeColor = 0;
     private int mUnableStrokeColor = 0;
+    private int mSelectStrokeColor = 0;
 
     // background color
     private int mNormalBackgroundColor = 0;
     private int mPressedBackgroundColor = 0;
     private int mUnableBackgroundColor = 0;
+    private int mSelectBackgroundColor = 0;
 
     private GradientDrawable mNormalBackground;
     private GradientDrawable mPressedBackground;
     private GradientDrawable mUnableBackground;
+    private GradientDrawable mSelectBackground;
 
     public SuperTextView(Context context) {
         this(context, null);
@@ -74,7 +79,7 @@ public class SuperTextView extends AppCompatTextView {
         this.setClickable(true);
         this.setFocusable(true);
 
-        states = new int[4][];
+        states = new int[5][];
         Drawable drawable = getBackground();
 
         if (drawable != null && drawable instanceof StateListDrawable) {
@@ -86,12 +91,14 @@ public class SuperTextView extends AppCompatTextView {
         mNormalBackground = new GradientDrawable();
         mPressedBackground = new GradientDrawable();
         mUnableBackground = new GradientDrawable();
+        mSelectBackground = new GradientDrawable();
 
-        //pressed, focused, normal, unable   表示控件状态的数组
+        //pressed, focused, normal, unable , select   表示控件状态的数组
         states[0] = new int[]{android.R.attr.state_enabled, android.R.attr.state_pressed};
         states[1] = new int[]{android.R.attr.state_enabled, android.R.attr.state_focused};
         states[3] = new int[]{-android.R.attr.state_enabled};
         states[2] = new int[]{android.R.attr.state_enabled};
+        states[4] = new int[]{android.R.attr.state_enabled , android.R.attr.state_selected};
 
         TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.SuperTextView);
 
@@ -101,9 +108,11 @@ public class SuperTextView extends AppCompatTextView {
         int mDefaultNormalTextColor = mTextColorStateList.getColorForState(states[2], getCurrentTextColor());
         int mDefaultPressedTextColor = mTextColorStateList.getColorForState(states[0], getCurrentTextColor());
         int mDefaultUnableTextColor = mTextColorStateList.getColorForState(states[3], getCurrentTextColor());
+        int mDefaultSelectTextColor = mTextColorStateList.getColorForState(states[4], getCurrentTextColor());
         mNormalTextColor = a.getColor(R.styleable.SuperTextView_normalTextColor, mDefaultNormalTextColor);
         mPressedTextColor = a.getColor(R.styleable.SuperTextView_pressedTextColor, mDefaultPressedTextColor);
         mUnableTextColor = a.getColor(R.styleable.SuperTextView_unableTextColor, mDefaultUnableTextColor);
+        mSelectTextColor = a.getColor(R.styleable.SuperTextView_selectTextColor, mDefaultSelectTextColor);
         setTextColor();
 
         //set animation duration
@@ -115,9 +124,11 @@ public class SuperTextView extends AppCompatTextView {
         mNormalBackgroundColor = a.getColor(R.styleable.SuperTextView_normalBackgroundColor, 0);
         mPressedBackgroundColor = a.getColor(R.styleable.SuperTextView_pressedBackgroundColor, 0);
         mUnableBackgroundColor = a.getColor(R.styleable.SuperTextView_unableBackgroundColor, 0);
+        mSelectBackgroundColor = a.getColor(R.styleable.SuperTextView_selectBackgroundColor, 0);
         mNormalBackground.setColor(mNormalBackgroundColor);
         mPressedBackground.setColor(mPressedBackgroundColor);
         mUnableBackground.setColor(mUnableBackgroundColor);
+        mSelectBackground.setColor(mSelectBackgroundColor);
 
         //set radius
         mRadius = a.getDimensionPixelSize(R.styleable.SuperTextView_radius, 0);
@@ -125,6 +136,7 @@ public class SuperTextView extends AppCompatTextView {
         mNormalBackground.setCornerRadius(mRadius);
         mPressedBackground.setCornerRadius(mRadius);
         mUnableBackground.setCornerRadius(mRadius);
+        mSelectBackground.setCornerRadius(mRadius);
 
         //set stroke
         mStrokeDashWidth = a.getDimensionPixelSize(R.styleable.SuperTextView_strokeDashWidth, 0);
@@ -132,9 +144,11 @@ public class SuperTextView extends AppCompatTextView {
         mNormalStrokeWidth = a.getDimensionPixelSize(R.styleable.SuperTextView_normalStrokeWidth, 0);
         mPressedStrokeWidth = a.getDimensionPixelSize(R.styleable.SuperTextView_pressedStrokeWidth, 0);
         mUnableStrokeWidth = a.getDimensionPixelSize(R.styleable.SuperTextView_unableStrokeWidth, 0);
+        mSelectStrokeWidth = a.getDimensionPixelSize(R.styleable.SuperTextView_selectStrokeWidth, 0);
         mNormalStrokeColor = a.getColor(R.styleable.SuperTextView_normalStrokeColor, 0);
         mPressedStrokeColor = a.getColor(R.styleable.SuperTextView_pressedStrokeColor, 0);
         mUnableStrokeColor = a.getColor(R.styleable.SuperTextView_unableStrokeColor, 0);
+        mSelectStrokeColor = a.getColor(R.styleable.SuperTextView_selectStrokeColor, 0);
         setStroke();
 
         //set background
@@ -142,6 +156,7 @@ public class SuperTextView extends AppCompatTextView {
         mStateBackground.addState(states[1], mPressedBackground);
         mStateBackground.addState(states[3], mUnableBackground);
         mStateBackground.addState(states[2], mNormalBackground);
+        mStateBackground.addState(states[4], mSelectBackground);
         setBackgroundDrawable(mStateBackground);
         a.recycle();
 
@@ -170,10 +185,16 @@ public class SuperTextView extends AppCompatTextView {
         setStroke(mUnableBackground, mUnableStrokeColor, mUnableStrokeWidth);
     }
 
-    public void setStateStrokeColor(@ColorInt int normal, @ColorInt int pressed, @ColorInt int unable) {
+    public void setSelectStrokeColor(@ColorInt int selectStrokeColor) {
+        this.mSelectStrokeColor = selectStrokeColor;
+        setStroke(mSelectBackground, mSelectStrokeColor, mSelectStrokeWidth);
+    }
+
+    public void setStateStrokeColor(@ColorInt int normal, @ColorInt int pressed, @ColorInt int unable , @ColorInt int select) {
         mNormalStrokeColor = normal;
         mPressedStrokeColor = pressed;
         mUnableStrokeColor = unable;
+        mSelectStrokeColor = select;
         setStroke();
     }
 
@@ -194,10 +215,16 @@ public class SuperTextView extends AppCompatTextView {
         setStroke(mUnableBackground, mUnableStrokeColor, mUnableStrokeWidth);
     }
 
-    public void setStateStrokeWidth(int normal, int pressed, int unable) {
+    public void setSelectStrokeWidth(int selectStrokeWidth) {
+        this.mSelectStrokeWidth = selectStrokeWidth;
+        setStroke(mSelectBackground, mSelectStrokeColor, mSelectStrokeWidth);
+    }
+
+    public void setStateStrokeWidth(int normal, int pressed, int unable , int select) {
         mNormalStrokeWidth = normal;
         mPressedStrokeWidth = pressed;
         mUnableStrokeWidth = unable;
+        mSelectStrokeWidth = select;
         setStroke();
     }
 
@@ -266,6 +293,11 @@ public class SuperTextView extends AppCompatTextView {
         mUnableBackground.setColor(mUnableBackgroundColor);
     }
 
+    public void setSelectBackgroundColor(@ColorInt int selectBackgroundColor) {
+        this.mUnableBackgroundColor = selectBackgroundColor;
+        mSelectBackground.setColor(mSelectBackgroundColor);
+    }
+
     /*******************alpha animation duration********************/
     public void setAnimationDuration(@IntRange(from = 0) int duration) {
         this.mDuration = duration;
@@ -275,15 +307,16 @@ public class SuperTextView extends AppCompatTextView {
     /***************  text color   ***********************/
 
     private void setTextColor() {
-        int[] colors = new int[]{mPressedTextColor, mPressedTextColor, mNormalTextColor, mUnableTextColor};
+        int[] colors = new int[]{mPressedTextColor, mPressedTextColor, mNormalTextColor, mUnableTextColor , mSelectTextColor};
         mTextColorStateList = new ColorStateList(states, colors);
         setTextColor(mTextColorStateList);
     }
 
-    public void setStateTextColor(@ColorInt int normal, @ColorInt int pressed, @ColorInt int unable) {
+    public void setStateTextColor(@ColorInt int normal, @ColorInt int pressed, @ColorInt int unable , @ColorInt int select) {
         this.mNormalTextColor = normal;
         this.mPressedTextColor = pressed;
         this.mUnableTextColor = unable;
+        this.mSelectTextColor = select;
         setTextColor();
     }
 
@@ -303,5 +336,9 @@ public class SuperTextView extends AppCompatTextView {
         setTextColor();
     }
 
+    public void setSelectTextColor(@ColorInt int selectTextColor) {
+        this.mSelectTextColor = selectTextColor;
+        setTextColor();
+    }
 
 }

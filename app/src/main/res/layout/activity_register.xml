@@ -80,7 +80,7 @@
                 />
 
             <com.zeronight.templet.common.widget.LoginEditText
-                android:id="@+id/let_npassword2"
+                android:id="@+id/let_invitecode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:let_hint="请输入邀请码（选填）"

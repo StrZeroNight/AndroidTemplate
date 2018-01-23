@@ -93,6 +93,4 @@ public class PermissionActivity extends BaseActivity implements View.OnClickList
         permissionUtils.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
-
-
 }

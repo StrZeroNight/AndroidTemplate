@@ -20,8 +20,7 @@
         android:layout_toLeftOf="@+id/tv_getvercode"
         android:layout_toRightOf="@+id/iv_icon"
         android:hint="请输入验证码"
-        android:maxLength="10"
-        android:maxLines="1" />
+        android:singleLine="true" />
 
     <TextView
         android:id="@+id/tv_getvercode"

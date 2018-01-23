@@ -86,7 +86,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         let_phone = (LoginEditText) findViewById(R.id.let_phone);
         let_password = (LoginEditText) findViewById(R.id.let_password);
         let_password2 = (LoginEditText) findViewById(R.id.let_npassword);
-        let_incvitecode = (LoginEditText) findViewById(R.id.let_npassword2);
+        let_incvitecode = (LoginEditText) findViewById(R.id.let_invitecode);
         tv_zhidian = (TextView) findViewById(R.id.tv_zhidian);
         tv_zhidian.setOnClickListener(this);
         tv_tongyi = (TextView) findViewById(R.id.tv_tongyi);

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:clickable="true"
+    >
+
+    <TextView
+        android:id="@+id/tv_attrs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="属性"
+        android:textSize="@dimen/dp1080_40"
+        android:textIsSelectable="true"
+        android:textColor="@color/color_black"
+        android:layout_marginLeft="@dimen/dp1080_10"
+        android:layout_marginRight="@dimen/dp1080_10"
+        android:paddingTop="@dimen/dp1080_15"
+        android:paddingBottom="@dimen/dp1080_15"
+        android:paddingLeft="@dimen/dp1080_20"
+        android:paddingRight="@dimen/dp1080_20"
+        android:layout_marginTop="@dimen/dp1080_20"
+        android:background="@drawable/select_attrs"
+        />
+
+</LinearLayout>

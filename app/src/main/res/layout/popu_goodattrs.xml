@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp1080_255"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1080_220"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_white"
+            />
+
+        <ImageView
+            android:id="@+id/iv_pic"
+            android:layout_width="@dimen/dp1080_250"
+            android:layout_height="@dimen/dp1080_250"
+            android:layout_marginLeft="@dimen/dp1080_40"
+            android:background="@color/color_gray_cc"
+            android:elevation="@dimen/dp1080_3"
+            android:padding="@dimen/dp1080_15"
+            android:src="@mipmap/ic_launcher"
+            />
+
+        <ImageView
+            android:id="@+id/iv_cancel"
+            android:layout_width="@dimen/dp1080_100"
+            android:layout_height="@dimen/dp1080_100"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/dp1080_40"
+            android:background="@color/color_black"
+            android:layout_marginTop="@dimen/dp1080_35"
+            />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_attrs"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp1080_800"
+        android:paddingTop="@dimen/dp1080_40"
+        android:background="@color/color_white"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp1080_120">
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp1080_120"
+            android:layout_weight="1"
+            android:text="加入购物车"
+            android:gravity="center"
+            app:normalBackgroundColor="@color/color_red"
+            app:pressedBackgroundColor="@color/color_red_80"
+            android:textColor="@color/color_white"
+            android:clickable="true"
+            />
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp1080_120"
+            android:layout_weight="1"
+            android:text="加入购物车"
+            android:gravity="center"
+            app:normalBackgroundColor="@color/color_red"
+            app:pressedBackgroundColor="@color/color_red_80"
+            android:textColor="@color/color_white"
+            android:clickable="true"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

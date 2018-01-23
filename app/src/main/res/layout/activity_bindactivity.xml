@@ -26,52 +26,17 @@
         <com.zeronight.templet.common.widget.TitleBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:btitle="忘记密码"
+            app:btitle="绑定手机号"
             app:bisshow_bg="false"/>
 
-        <!--<RelativeLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--&gt;-->
 
-            <!--<TextView-->
-                <!--android:id="@+id/tv_cancel"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="取消"-->
-                <!--android:foreground="?android:attr/selectableItemBackground"-->
-                <!--android:padding="@dimen/dp1080_30"-->
-                <!--android:layout_alignParentLeft="true"-->
-                <!--android:textColor="@color/color_white"-->
-                <!--android:textSize="@dimen/dp1080_35"-->
-                <!--android:layout_centerVertical="true"-->
-                <!--/>-->
-
-            <!--<TextView-->
-                <!--android:id="@+id/tv_title"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="忘记密码"-->
-                <!--android:padding="@dimen/dp1080_30"-->
-                <!--android:layout_centerInParent="true"-->
-                <!--android:textColor="@color/color_white"-->
-                <!--android:textSize="@dimen/dp1080_50"-->
-                <!--/>-->
-
-            <!--<TextView-->
-                <!--android:id="@+id/tv_login"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="登陆"-->
-                <!--android:foreground="?android:attr/selectableItemBackground"-->
-                <!--android:textColor="@color/color_white"-->
-                <!--android:textSize="@dimen/dp1080_35"-->
-                <!--android:layout_centerVertical="true"-->
-                <!--android:layout_alignParentRight="true"-->
-                <!--android:padding="@dimen/dp1080_30"-->
-                <!--/>-->
-
-        <!--</RelativeLayout>-->
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"
+            android:layout_marginTop="@dimen/dp1080_30"
+            />
 
         <LinearLayout
             android:id="@+id/ll_edit"
@@ -100,7 +65,7 @@
                 android:id="@+id/let_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:let_hint="请输入原密码"
+                app:let_hint="请输入密码"
                 app:let_icon="@drawable/login_password"
                 app:let_contenttype="password"
                 />
@@ -109,16 +74,7 @@
                 android:id="@+id/let_npassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:let_hint="请输入新密码"
-                app:let_icon="@drawable/login_password"
-                app:let_contenttype="password"
-                />
-
-            <com.zeronight.templet.common.widget.LoginEditText
-                android:id="@+id/let_invitecode"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:let_hint="请再次输入新密码"
+                app:let_hint="请再次输入密码"
                 app:let_icon="@drawable/login_password"
                 app:let_contenttype="password"
                 />
@@ -159,12 +115,13 @@
         </LinearLayout>
 
         <com.zeronight.templet.common.widget.SuperTextView
-            android:id="@+id/stv_register"
-            android:text="找回密码"
+            android:id="@+id/stv_bind"
+            android:text="绑定"
             app:normalBackgroundColor="@color/color_login"
             app:pressedBackgroundColor="@color/color_login_press"
             app:radius="@dimen/dp1080_5"
-            style="@style/login_btn" />
+            style="@style/login_btn"
+            />
 
     </LinearLayout>
 

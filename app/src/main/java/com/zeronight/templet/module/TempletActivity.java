@@ -14,6 +14,7 @@ import com.zeronight.templet.module.address.list.AddressListActivity;
 import com.zeronight.templet.module.bankcard.WithdrawalsActivity;
 import com.zeronight.templet.module.equipment.EquipmentActivity;
 import com.zeronight.templet.module.filereader.FileReadActivity;
+import com.zeronight.templet.module.goods.GoodDetailActivity;
 import com.zeronight.templet.module.login.LoginActivity;
 import com.zeronight.templet.module.main.MainActivity;
 import com.zeronight.templet.module.mine.UserInfoActivity;
@@ -38,6 +39,7 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
     private Button btn_equipment;
     private Button btn_fileread;
     private Button btn_window;
+    private Button btn_goods;
 
     public static void start(Context context, String id) {
         Intent it = new Intent(context, TempletActivity.class);
@@ -92,11 +94,16 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
         btn_fileread.setOnClickListener(this);
         btn_window = (Button) findViewById(R.id.btn_window);
         btn_window.setOnClickListener(this);
+        btn_goods = (Button) findViewById(R.id.btn_goods);
+        btn_goods.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.btn_goods:
+                GoodDetailActivity.start(this);
+                break;
             case R.id.btn_main:
                 MainActivity.start(this);
                 break;

@@ -45,7 +45,8 @@
     <!--橙色-->
     <color name="color_deep_orange">#ed683d</color>
     <!--红色-->
-    <color name="color_red_background">#e5223f</color>
+    <color name="color_red">#e5223f</color>
+    <color name="color_red_80">#80e5223f</color>
 
     <color name="color_class_first_text">#ff9600</color>
     <color name="color_blue_0095ea">#0095ea</color>

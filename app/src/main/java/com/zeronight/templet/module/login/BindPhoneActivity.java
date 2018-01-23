@@ -7,8 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.zeronight.templet.R;
@@ -22,42 +20,37 @@ import com.zeronight.templet.common.widget.LoginEditText;
 import com.zeronight.templet.common.widget.SuperTextView;
 
 /**
- * Created by Administrator on 2018/1/3.
+ * Created by Administrator on 2018/1/19.
  */
 
-public class ForgetPassActivity extends BaseActivity implements View.OnClickListener {
-
+public class BindPhoneActivity extends BaseActivity implements View.OnClickListener {
 
     private final static int REQUEST_CODE = 1001;
     private final static int RESULT_CODE = 1002;
     private final static String ID = "ID";
-    private ImageView iv_move;
     private LoginEditText let_phone;
     private ImageView iv_icon;
     private EditText et_content;
     private TextView tv_getvercode;
     private LoginEditText let_password;
     private LoginEditText let_npassword;
-    private LoginEditText let_npassword2;
-    private LinearLayout ll_edit;
     private TextView tv_zhidian;
-    private SuperTextView stv_register;
-    private RelativeLayout ll_root;
+    private SuperTextView stv_bind;
 
     public static void start(Context context, String id) {
-        Intent it = new Intent(context, ForgetPassActivity.class);
+        Intent it = new Intent(context, BindPhoneActivity.class);
         it.putExtra(ID, id);
         context.startActivity(it);
     }
 
     public static void start(Context context) {
-        Intent it = new Intent(context, ForgetPassActivity.class);
+        Intent it = new Intent(context, BindPhoneActivity.class);
         context.startActivity(it);
     }
 
 
     public static void startActivityForResult(Context context) {
-        Intent it = new Intent(context, ForgetPassActivity.class);
+        Intent it = new Intent(context, BindPhoneActivity.class);
         AppCompatActivity activity = (AppCompatActivity) context;
         activity.startActivityForResult(it, REQUEST_CODE);
     }
@@ -74,13 +67,11 @@ public class ForgetPassActivity extends BaseActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forgetpass);
+        setContentView(R.layout.activity_bindactivity);
         initView();
-
     }
 
     private void initView() {
-        iv_move = (ImageView) findViewById(R.id.iv_bg);
         let_phone = (LoginEditText) findViewById(R.id.let_phone);
         iv_icon = (ImageView) findViewById(R.id.iv_icon);
         et_content = (EditText) findViewById(R.id.et_content);
@@ -88,13 +79,9 @@ public class ForgetPassActivity extends BaseActivity implements View.OnClickList
         tv_getvercode.setOnClickListener(this);
         let_password = (LoginEditText) findViewById(R.id.let_password);
         let_npassword = (LoginEditText) findViewById(R.id.let_npassword);
-        let_npassword2 = (LoginEditText) findViewById(R.id.let_invitecode);
-        ll_edit = (LinearLayout) findViewById(R.id.ll_edit);
         tv_zhidian = (TextView) findViewById(R.id.tv_zhidian);
-        tv_zhidian.setOnClickListener(this);
-        stv_register = (SuperTextView) findViewById(R.id.stv_register);
-        stv_register.setOnClickListener(this);
-        ll_root = (RelativeLayout) findViewById(R.id.ll_root);
+        stv_bind = (SuperTextView) findViewById(R.id.stv_bind);
+        stv_bind.setOnClickListener(this);
     }
 
     @Override
@@ -105,20 +92,18 @@ public class ForgetPassActivity extends BaseActivity implements View.OnClickList
                 VerCodeUtils verCodeUtils = new VerCodeUtils(this);
                 verCodeUtils.showImageCode(phone , tv_getvercode);
                 break;
-            case R.id.tv_zhidian:
-                break;
-            case R.id.stv_register:
-                checkForgetPasswordInfo();
+            case R.id.stv_bind:
+                checkBindInfo();
                 break;
         }
     }
 
-    private void checkForgetPasswordInfo() {
+    private void checkBindInfo() {
+
         String phone = let_phone.getContent();
         String vercode = et_content.getText().toString();
         String password = let_password.getContent();
-        String npassword = let_npassword.getContent();
-        String npassword2 = let_npassword2.getContent();
+        String password2 = let_npassword.getContent();
 
         if (XStringUtils.isEmpty(phone)) {
             ToastUtils.showMessage(getString(R.string.phone_can_not_null));
@@ -133,37 +118,30 @@ public class ForgetPassActivity extends BaseActivity implements View.OnClickList
             return;
         }
         if (XStringUtils.isEmpty(password)) {
-            ToastUtils.showMessage("旧密码不能为空");
+            ToastUtils.showMessage(getString(R.string.password_can_not_null));
             return;
         }
         if (password.length() < 6 || password.length() > 16) {
-            ToastUtils.showMessage("旧密码不能小于6位或大于16位");
+            ToastUtils.showMessage(getString(R.string.password_can_not_be_less_than_6_bits));
             return;
         }
-        if (XStringUtils.isEmpty(npassword)) {
-            ToastUtils.showMessage("新密码不能为空");
+        if (XStringUtils.isEmpty(password2)) {
+            ToastUtils.showMessage(getString(R.string.password2_can_not_null));
             return;
         }
-        if (npassword.length() < 6 || npassword.length() > 16) {
-            ToastUtils.showMessage("新密码不能小于6位或大于16位");
+        if (password2.length() < 6 || password2.length() > 16) {
+            ToastUtils.showMessage(getString(R.string.password2_can_not_be_less_than_6_bits));
             return;
         }
-        if (XStringUtils.isEmpty(npassword2)) {
-            ToastUtils.showMessage("确认新密码不能为空");
-            return;
-        }
-        if (npassword2.length() < 6 || npassword2.length() > 16) {
-            ToastUtils.showMessage("确认新密码不能小于6位或大于16位");
-            return;
-        }
-        if (!npassword2.equals(npassword)) {
+        if (!password2.equals(password)) {
             ToastUtils.showMessage(getString(R.string.password_not_equl));
             return;
         }
-        forgetPassword();
+        bindPhone();
     }
 
-    private void forgetPassword() {
+
+    private void bindPhone() {
         showprogressDialogCanNotCancel();
         XRetrofitUtils retrofitUtils = new XRetrofitUtils.Builder()
                 .setUrl(CommonUrl.login)
@@ -193,6 +171,5 @@ public class ForgetPassActivity extends BaseActivity implements View.OnClickList
             }
         });
     }
-
 
 }
