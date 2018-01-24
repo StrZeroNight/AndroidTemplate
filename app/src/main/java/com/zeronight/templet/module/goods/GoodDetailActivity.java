@@ -15,15 +15,16 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.zeronight.templet.R;
 import com.zeronight.templet.common.base.BaseActivity;
+import com.zeronight.templet.common.data.TestData;
 import com.zeronight.templet.common.utils.ToastUtils;
 import com.zeronight.templet.common.widget.SuperTextView;
 import com.zeronight.templet.common.widget.TitleBar;
 
-import java.util.ArrayList;
-import java.util.List;
+import static com.zeronight.templet.module.goods.AttrsAdapter.attrsMap;
 
 /**
  * Created by Administrator on 2018/1/22.
@@ -62,13 +63,14 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
             String id = intent.getStringExtra(ID);
             ToastUtils.showMessage("获取id" + id);
         }
-
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gooddetial);
+        //clear attrs
+        attrsMap.clear();
         initView();
     }
 
@@ -90,31 +92,26 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
 
     public void showGoodAttrsAndNum(View showParentView) {
 
-        List<GoodAttrsBean> list = new ArrayList<>();
-        List<String> childlist = new ArrayList<>();
-        childlist.add("粉红色");
-        childlist.add("红色");
-        childlist.add("蓝色");
-        childlist.add("粉红色");
-        childlist.add("浅紫色");
-        childlist.add("粉红色");
-        childlist.add("红色");
-        childlist.add("蓝色蓝色蓝色");
-        list.add(new GoodAttrsBean("颜色" , childlist));
-        list.add(new GoodAttrsBean("颜色" , childlist));
-        list.add(new GoodAttrsBean("颜色" , childlist));
-        list.add(new GoodAttrsBean("颜色" , childlist));
-        list.add(new GoodAttrsBean("颜色" , childlist));
-        list.add(new GoodAttrsBean("颜色" , childlist));
-        list.add(new GoodAttrsBean("颜色" , childlist));
-        list.add(new GoodAttrsBean("颜色" , childlist));
-
         LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View popuView = layoutInflater.inflate(R.layout.popu_goodattrs, null);
         RecyclerView rv_attrs = (RecyclerView)popuView.findViewById(R.id.rv_attrs);
         rv_attrs.setLayoutManager(new LinearLayoutManager(this));
-        rv_attrs.setAdapter(new XGoodAttrsAdapter(this , list));
+        rv_attrs.setAdapter(new AttrsAdapter(this , TestData.getAttrs()));
         ImageView iv_cancel = (ImageView)popuView.findViewById(R.id.iv_cancel);
+        TextView stv_buynow = (TextView)popuView.findViewById(R.id.stv_buynow);
+        TextView stv_addtocart = (TextView)popuView.findViewById(R.id.stv_addtocart);
+        stv_buynow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getAttrsFromMap();
+            }
+        });
+        stv_addtocart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getAttrsFromMap();
+            }
+        });
         //设置弹出窗口参数
         final PopupWindow popupWindow = new PopupWindow(popuView , WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
         popupWindow.setFocusable(true);
@@ -143,6 +140,18 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
         popupWindow.showAtLocation(showParentView, Gravity.BOTTOM, 0, 0);
     }
 
-
+    private void getAttrsFromMap(){
+        StringBuilder attrsString = new StringBuilder();
+        if (TestData.getAttrs().size() == attrsMap.size()) {
+            for (AttrsBean key : attrsMap.keySet()) {
+                String title = key.getTitle();
+                String content = attrsMap.get(key).getContent();
+                attrsString.append(title + ":" + content + "  ");
+            }
+            ToastUtils.showMessage(attrsString.toString());
+        }else{
+            ToastUtils.showMessage("有未选择属性");
+        }
+    }
 
 }

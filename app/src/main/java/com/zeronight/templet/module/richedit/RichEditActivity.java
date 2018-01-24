@@ -2,11 +2,13 @@ package com.zeronight.templet.module.richedit;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.orhanobut.logger.Logger;
 import com.zeronight.templet.R;
 import com.zeronight.templet.common.base.BaseActivity;
 import com.zeronight.templet.common.utils.ToastUtils;
@@ -55,13 +57,17 @@ public class RichEditActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_richedit);
         final RichEditor editor = (RichEditor)findViewById(R.id.editor);
-        editor.setEditorWidth(200);
+        editor.setPadding(20, 20, 20, 20);
         editor.setPlaceholder("Insert text here...");
-        Button btn_insert = (Button)findViewById(R.id.btn_insert);
-        btn_insert.setOnClickListener(new View.OnClickListener() {
+        editor.setEditorFontSize(16);
+        editor.setEditorFontColor(Color.BLACK);
+        Button btn_confirm = (Button)findViewById(R.id.btn_confirm);
+        btn_confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editor.insertImage("http://pic.58pic.com/58pic/13/67/25/21w58PICE7g_1024.jpg","twitter");
+                String html = editor.getHtml();
+                String htmlz = "<p><span style='font-size: 16px;'>" + html + "</span></p><p><br/></p>";
+                Logger.i("editor html:" + html);
             }
         });
     }

@@ -19,6 +19,7 @@ import com.zeronight.templet.module.login.LoginActivity;
 import com.zeronight.templet.module.main.MainActivity;
 import com.zeronight.templet.module.mine.UserInfoActivity;
 import com.zeronight.templet.module.permission.PermissionActivity;
+import com.zeronight.templet.module.richedit.RichEditActivity;
 import com.zeronight.templet.module.window.WindowActivity;
 
 /**
@@ -40,6 +41,7 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
     private Button btn_fileread;
     private Button btn_window;
     private Button btn_goods;
+    private Button btn_rich;
 
     public static void start(Context context, String id) {
         Intent it = new Intent(context, TempletActivity.class);
@@ -96,11 +98,16 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
         btn_window.setOnClickListener(this);
         btn_goods = (Button) findViewById(R.id.btn_goods);
         btn_goods.setOnClickListener(this);
+        btn_rich = (Button) findViewById(R.id.btn_rich);
+        btn_rich.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.btn_rich:
+                RichEditActivity.start(this);
+                break;
             case R.id.btn_goods:
                 GoodDetailActivity.start(this);
                 break;

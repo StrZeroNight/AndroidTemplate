@@ -4,7 +4,6 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:clickable="true"
     >
 
     <TextView
@@ -13,8 +12,7 @@
         android:layout_height="wrap_content"
         android:text="属性"
         android:textSize="@dimen/dp1080_40"
-        android:textIsSelectable="true"
-        android:textColor="@color/color_black"
+        android:textColor="@drawable/select_attrs"
         android:layout_marginLeft="@dimen/dp1080_10"
         android:layout_marginRight="@dimen/dp1080_10"
         android:paddingTop="@dimen/dp1080_15"

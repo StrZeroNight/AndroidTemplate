@@ -12,13 +12,16 @@
         android:layout_height="wrap_content"
         android:textColor="@color/color_black_33"
         android:text="属性"
-        android:padding="@dimen/dp1080_40"
-        android:textSize="@dimen/dp1080_40"
+        android:textSize="@dimen/dp1080_45"
+        android:paddingLeft="@dimen/dp1080_35"
+        android:paddingRight="@dimen/dp1080_20"
+        android:paddingTop="@dimen/dp1080_20"
         />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_attrs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp1080_20"/>
 
 </LinearLayout>

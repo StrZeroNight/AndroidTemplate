@@ -48,15 +48,41 @@
         android:paddingTop="@dimen/dp1080_40"
         android:background="@color/color_white"/>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="购买数量"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_black_33"
+            android:paddingLeft="@dimen/dp1080_40"
+            android:paddingTop="@dimen/dp1080_60"
+            android:paddingBottom="@dimen/dp1080_60"
+            />
+
+        <com.zeronight.templet.common.widget.NumButtom
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp1080_40"/>
+
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp1080_120">
 
         <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_buynow"
             android:layout_width="0dp"
             android:layout_height="@dimen/dp1080_120"
             android:layout_weight="1"
-            android:text="加入购物车"
+            android:text="立即购买"
             android:gravity="center"
             app:normalBackgroundColor="@color/color_red"
             app:pressedBackgroundColor="@color/color_red_80"
@@ -65,6 +91,7 @@
             />
 
         <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_addtocart"
             android:layout_width="0dp"
             android:layout_height="@dimen/dp1080_120"
             android:layout_weight="1"
