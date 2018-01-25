@@ -30,14 +30,14 @@ import retrofit2.Retrofit;
  * 配置BASE_URL
  * 配置TOKEN
  * 配置params.put(TOKEN , "");
- *
+ * <p>
  * 优化问题：
  * 上传图片和上传json或者文件分开处理
  * 日志报出的位置是代码所在位置而不是封装类
  * 日志不需要报出线程
  * 进一步封装不同网络状态的显示情况loadandretry
  * 如何封装处理分页内容
- *
+ * <p>
  * Created by Administrator on 2016/11/4.
  */
 public class XRetrofitUtils {
@@ -51,7 +51,7 @@ public class XRetrofitUtils {
         this.builder = builder;
     }
 
-    private Retrofit createRetrofit(){
+    private Retrofit createRetrofit() {
         Retrofit retrofit = new Retrofit.Builder()
                 .client(addLogSetting())
                 .baseUrl(BASE_URL)
@@ -73,11 +73,11 @@ public class XRetrofitUtils {
         }
         Retrofit retrofit = createRetrofit();
         HttpMethod HttpMethod = retrofit.create(HttpMethod.class);
-        Call<ResponseBody> call = HttpMethod.getMethod(builder.url , builder.params);
+        Call<ResponseBody> call = HttpMethod.getMethod(builder.url, builder.params);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                handleResult(response , onResultListener);
+                handleResult(response, onResultListener);
             }
 
             @Override
@@ -101,7 +101,7 @@ public class XRetrofitUtils {
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                handleResult(response , onResultListener);
+                handleResult(response, onResultListener);
             }
 
             @Override
@@ -171,7 +171,7 @@ public class XRetrofitUtils {
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                handleResult(response , onResultListener);
+                handleResult(response, onResultListener);
             }
 
             @Override
@@ -184,19 +184,24 @@ public class XRetrofitUtils {
     }
 
 
-    private void handleResult(Response<ResponseBody> response , @NonNull final OnResultListener onResultListener){
+    private void handleResult(Response<ResponseBody> response, @NonNull final OnResultListener onResultListener) {
         //判断返回结果
         if (response.code() == 200) {
             try {
                 String string = response.body().string();
-                if (string != null) {
-                    ResultBean resultBean = JSON.parseObject(string, ResultBean.class);
-                    int returnCode = resultBean.getReturnCode();
-                    String message = resultBean.getMessage();
-                    String resultData = resultBean.getResultData();
-                    // TODO: 2017/9/20 返回值处理
-                } else {
-                    onResultListener.onNoData();
+                if (string.startsWith("{") || string.startsWith("(")) {
+                    if (string != null) {
+                        ResultBean resultBean = JSON.parseObject(string, ResultBean.class);
+                        int returnCode = resultBean.getReturnCode();
+                        String message = resultBean.getMessage();
+                        String resultData = resultBean.getResultData();
+                        // TODO: 2017/9/20 返回值处理
+
+                    } else {
+                        onResultListener.onNoData();
+                    }
+                }else{
+                    Logger.i("服务器返回的不是json格式");
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -231,7 +236,7 @@ public class XRetrofitUtils {
         private Object object = null;
 
         public Builder() {
-            params.put(TOKEN , "");//所有必传参数都可以写在这里
+            params.put(TOKEN, "");//所有必传参数都可以写在这里
         }
 
         public Builder setUrl(String url) {

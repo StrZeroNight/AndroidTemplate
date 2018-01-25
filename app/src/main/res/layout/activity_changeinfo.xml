@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.zeronight.templet.common.widget.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <com.zeronight.templet.common.widget.DelEditText
+        android:id="@+id/det_change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:isShowTitle="false"
+        android:paddingLeft="@dimen/dp1080_40"
+        android:background="@color/color_white"
+        />
+
+</LinearLayout>

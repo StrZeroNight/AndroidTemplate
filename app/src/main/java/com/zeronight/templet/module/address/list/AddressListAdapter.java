@@ -38,7 +38,7 @@ public class AddressListAdapter extends BaseAdapter<AddressDetialBean> {
     private int intentType;
     private final static String ADDRESS_TAG_COMPANY = "1";
     private final static String ADDRESS_TAG_HOME = "2";
-    private final static String ADDRESS_INFO = "ADDRESS_INFO";
+    public final static String ADDRESS_INFO = "ADDRESS_INFO";
 
     public AddressListAdapter(Context mContext, List<AddressDetialBean> mList, int intentType) {
         super(mContext, mList);
@@ -118,7 +118,7 @@ public class AddressListAdapter extends BaseAdapter<AddressDetialBean> {
                 if (intentType == AddressListActivity.FROM_CART) {
                     Bundle bundle = new Bundle();
                     // TODO: 2018/1/3 等bean出现后再增加
-//                    bundle.putParcelable(ADDRESS_INFO , mList.get(position));
+                    bundle.putParcelable(ADDRESS_INFO , mList.get(position));
                     EventBus.getDefault().post(new EventBusBundle(ADDRESS_INFO, bundle));
                     AppCompatActivity activity = (AppCompatActivity) mContext;
                     activity.finish();

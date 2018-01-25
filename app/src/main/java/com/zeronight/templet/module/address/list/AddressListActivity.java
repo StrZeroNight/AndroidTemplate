@@ -81,6 +81,7 @@ public class AddressListActivity extends BaseActivity implements View.OnClickLis
         setContentView(R.layout.activity_addresslist);
         EventBus.getDefault().register(this);
         initView();
+        initIntent();
         initData();
     }
 

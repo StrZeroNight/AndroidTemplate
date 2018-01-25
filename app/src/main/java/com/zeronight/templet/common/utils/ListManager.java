@@ -34,6 +34,7 @@ public class ListManager<T> {
     private boolean isPullRefresh = true;
     private boolean isLoadMore = false;
     private OnItemClickListener onItemClickListener;
+    private OnReceiveHttpDataListener receiveHttpData;
 
     public ListManager(AppCompatActivity context) {
         this.context = context;
@@ -70,11 +71,11 @@ public class ListManager<T> {
 
     public void run(){
         initClass();
-        getList(xrv);
+        getListFirst(xrv);
     }
 
     public void refresh(){
-        getList(xrv);
+        getListRefresh(xrv);
     }
 
     private void initClass() {
@@ -104,13 +105,13 @@ public class ListManager<T> {
             public void onRefresh() {
                 xrv.setPullRefreshEnabled(false);
                 page = 1;
-                getList(xrv);
+                getListRefresh(xrv);
             }
 
             @Override
             public void onLoadMore() {
                 page++;
-                getList(xrv);
+                getListLoad(xrv);
             }
         });
         mLoadingAndRetryManager = LoadingAndRetryManager.generate(xrv, new OnLoadingAndRetryListener() {
@@ -122,17 +123,32 @@ public class ListManager<T> {
                     public void onClick(View v) {
                         mLoadingAndRetryManager.showLoading();
                         page = 1;
-                        getList(xrv);
+                        getListFirst(xrv);
                     }
                 });
             }
         });
     }
 
-    private void getList(final XRecyclerView xrv) {
+    private void getListRefresh(final XRecyclerView xrv) {
+        xrv.refresh();
+        getList(xrv);
+    }
+
+    private void getListFirst(final XRecyclerView xrv) {
         mLoadingAndRetryManager.showLoading();
+        getList(xrv);
+    }
+
+    private void getListLoad(final XRecyclerView xrv) {
+        getList(xrv);
+    }
+
+    private void getList(final XRecyclerView xrv) {
         XRetrofitUtils retrofitUtils = new XRetrofitUtils.Builder()
                 .setUrl(url)
+                .setParams("token" , "")
+                .setParams("page" , page + "")
                 .build();
         retrofitUtils.AsynPost(new XRetrofitUtils.OnResultListener() {
 
@@ -140,10 +156,7 @@ public class ListManager<T> {
             public void onServerError() {
                 if (mLoadingAndRetryManager != null && xrv != null) {
                     xrv.setPullRefreshEnabled(true);
-
                     mLoadingAndRetryManager.showContent();
-
-
                     xrv.refreshComplete();
 //                    xrv.setVisibility(View.GONE);
                 }
@@ -164,12 +177,25 @@ public class ListManager<T> {
                 xrv.refreshComplete();
                 xrv.setVisibility(View.VISIBLE);
                 //显示列表
-                JSONArray jsonArray = JSON.parseArray(data);
-                List<T> list = (List<T>)jsonArray;
+                JSONArray jsonArray = null;
+                //根据是否是纯list来决定如何处理参数
+                if (receiveHttpData != null) {
+                    jsonArray = receiveHttpData.ReceiveHttpData(data);
+                } else {
+                    jsonArray = JSON.parseArray(data);
+                }
+                List<T> list = (List<T>) jsonArray;
                 if (page == 1) {
-                    allList.clear();
-                    allList.addAll(list);
-                    mAdapter.notifyDataSetChanged();
+                    //判断如果第一页列表为空,则显示暂无数据
+                    if (list.size() > 0) {
+                        allList.clear();
+                        allList.addAll(list);
+                        mAdapter.notifyDataSetChanged();
+                    } else {
+                        mLoadingAndRetryManager.showEmpty();
+                        xrv.setVisibility(View.GONE);
+                        xrv.refreshComplete();
+                    }
                 } else {
                     allList.addAll(list);
                     mAdapter.notifyDataSetChanged();
@@ -191,6 +217,7 @@ public class ListManager<T> {
         });
     }
 
+
     public interface OnItemClickListener{
         void OnItemClick(int position);
     }
@@ -198,6 +225,28 @@ public class ListManager<T> {
     public ListManager setOnItemClickListener(OnItemClickListener onItemClickListener){
         this.onItemClickListener = onItemClickListener;
         return this;
+    }
+
+    public interface OnReceiveHttpDataListener{
+        JSONArray ReceiveHttpData(String data);
+    }
+
+    public ListManager setOnReceiveHttpData(OnReceiveHttpDataListener receiveHttpData){
+        this.receiveHttpData = receiveHttpData;
+        return this;
+    }
+
+    //处理非完全列表的data时使用
+    public static JSONArray getJSONArrayFromList(List<?> list){
+        JSONArray jsonArray = new JSONArray();
+        if (list==null ||list.isEmpty()) {
+            return jsonArray;//nerver return null
+        }
+
+        for (Object object : list) {
+            jsonArray.add(object);
+        }
+        return jsonArray;
     }
 
 }

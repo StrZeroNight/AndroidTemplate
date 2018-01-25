@@ -102,6 +102,13 @@ public class DelEditText extends RelativeLayout {
             }else if (index == R.styleable.DelEditText_dhint){
                 String hint = a.getString(index);
                 et_content.setHint(hint);
+            }else if (index == R.styleable.DelEditText_isShowTitle){
+                boolean isShowTitle = a.getBoolean(index, true);
+                if (isShowTitle) {
+                    tv_title.setVisibility(VISIBLE);
+                }else{
+                    tv_title.setVisibility(GONE);
+                }
             }
 
         }
@@ -155,6 +162,10 @@ public class DelEditText extends RelativeLayout {
     public void setEdittext(String str){
         et_content.setText(str);
         et_content.setSelection(str.length());
+    }
+
+    public void moveCursorToEnd(String content){
+        et_content.setSelection(content.length());
     }
 
 }

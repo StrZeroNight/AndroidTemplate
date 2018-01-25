@@ -23,6 +23,7 @@ import com.zeronight.templet.common.data.TestData;
 import com.zeronight.templet.common.utils.ToastUtils;
 import com.zeronight.templet.common.widget.SuperTextView;
 import com.zeronight.templet.common.widget.TitleBar;
+import com.zeronight.templet.module.payorder.ConfirmOrderActivity;
 
 import static com.zeronight.templet.module.goods.AttrsAdapter.attrsMap;
 
@@ -141,17 +142,18 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
     }
 
     private void getAttrsFromMap(){
-        StringBuilder attrsString = new StringBuilder();
-        if (TestData.getAttrs().size() == attrsMap.size()) {
-            for (AttrsBean key : attrsMap.keySet()) {
-                String title = key.getTitle();
-                String content = attrsMap.get(key).getContent();
-                attrsString.append(title + ":" + content + "  ");
-            }
-            ToastUtils.showMessage(attrsString.toString());
-        }else{
-            ToastUtils.showMessage("有未选择属性");
-        }
+        ConfirmOrderActivity.start(this);
+//        StringBuilder attrsString = new StringBuilder();
+//        if (TestData.getAttrs().size() == attrsMap.size()) {
+//            for (AttrsBean key : attrsMap.keySet()) {
+//                String title = key.getTitle();
+//                String content = attrsMap.get(key).getContent();
+//                attrsString.append(title + ":" + content + "  ");
+//            }
+//            ToastUtils.showMessage(attrsString.toString());
+//        }else{
+//            ToastUtils.showMessage("有未选择属性");
+//        }
     }
 
 }

@@ -1,10 +1,13 @@
 package com.zeronight.templet.module.address.edit;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by Administrator on 2018/1/4.
  */
 
-public class AddressDetialBean {
+public class AddressDetialBean implements Parcelable {
 
     private String addressId;
     private String user;
@@ -60,4 +63,56 @@ public class AddressDetialBean {
     public void setIsdefault(int isdefault) {
         this.isdefault = isdefault;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.addressId);
+        dest.writeString(this.user);
+        dest.writeString(this.phone);
+        dest.writeString(this.city);
+        dest.writeString(this.addressDetial);
+        dest.writeInt(this.isdefault);
+    }
+
+    public AddressDetialBean() {
+    }
+
+    protected AddressDetialBean(Parcel in) {
+        this.addressId = in.readString();
+        this.user = in.readString();
+        this.phone = in.readString();
+        this.city = in.readString();
+        this.addressDetial = in.readString();
+        this.isdefault = in.readInt();
+    }
+
+    public static final Parcelable.Creator<AddressDetialBean> CREATOR = new Parcelable.Creator<AddressDetialBean>() {
+        @Override
+        public AddressDetialBean createFromParcel(Parcel source) {
+            return new AddressDetialBean(source);
+        }
+
+        @Override
+        public AddressDetialBean[] newArray(int size) {
+            return new AddressDetialBean[size];
+        }
+    };
+
+    @Override
+    public String toString() {
+        return "AddressDetialBean{" +
+                "addressId='" + addressId + '\'' +
+                ", user='" + user + '\'' +
+                ", phone='" + phone + '\'' +
+                ", city='" + city + '\'' +
+                ", addressDetial='" + addressDetial + '\'' +
+                ", isdefault=" + isdefault +
+                '}';
+    }
+
 }
