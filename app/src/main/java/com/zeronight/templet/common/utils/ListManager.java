@@ -156,7 +156,7 @@ public class ListManager<T> {
             public void onServerError() {
                 if (mLoadingAndRetryManager != null && xrv != null) {
                     xrv.setPullRefreshEnabled(true);
-                    mLoadingAndRetryManager.showContent();
+                    mLoadingAndRetryManager.showRetry();
                     xrv.refreshComplete();
 //                    xrv.setVisibility(View.GONE);
                 }

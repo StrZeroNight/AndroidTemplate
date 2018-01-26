@@ -26,61 +26,59 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/select_view"
-                android:clickable="true"
-                >
+                android:clickable="true">
 
                 <ImageView
                     android:id="@+id/iv_x"
                     android:layout_width="@dimen/dp1080_50"
                     android:layout_height="@dimen/dp1080_50"
+                    android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/dp1080_30"
                     android:layout_marginTop="@dimen/dp1080_40"
+                    android:background="@color/color_gray"
                     android:paddingBottom="@dimen/dp1080_2"
                     android:paddingLeft="@dimen/dp1080_5"
                     android:paddingRight="@dimen/dp1080_5"
-                    android:paddingTop="@dimen/dp1080_2"
-                    android:layout_centerVertical="true"
-                    android:background="@color/color_gray"
-                     />
+                    android:paddingTop="@dimen/dp1080_2" />
 
                 <TextView
                     android:id="@+id/tv_address_lianxiren"
-                    android:textSize="@dimen/dp1080_40"
-                    android:textColor="@color/color_black_33"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/iv_x"
+                    android:paddingBottom="@dimen/dp1080_10"
                     android:paddingLeft="@dimen/dp1080_30"
                     android:paddingRight="@dimen/dp1080_30"
                     android:paddingTop="@dimen/dp1080_40"
-                    android:paddingBottom="@dimen/dp1080_10"
-                    android:text="联系人" />
+                    android:text="联系人"
+                    android:textColor="@color/color_black_33"
+                    android:textSize="@dimen/dp1080_40" />
 
                 <TextView
                     android:id="@+id/tv_address_phone"
-                    android:textSize="@dimen/dp1080_40"
-                    android:textColor="@color/color_black_33"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@+id/iv_arror_x"
                     android:layout_toRightOf="@+id/tv_address_lianxiren"
                     android:padding="@dimen/dp1080_40"
-                    android:text="电话" />
+                    android:text="电话"
+                    android:textColor="@color/color_black_33"
+                    android:textSize="@dimen/dp1080_40" />
 
                 <TextView
                     android:id="@+id/tv_address_content"
-                    android:textSize="@dimen/dp1080_35"
-                    android:textColor="@color/color_gray"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tv_address_lianxiren"
                     android:layout_marginBottom="@dimen/dp1080_40"
+                    android:layout_marginTop="@dimen/dp1080_20"
                     android:layout_toLeftOf="@+id/iv_arror_x"
                     android:layout_toRightOf="@+id/iv_x"
                     android:paddingLeft="@dimen/dp1080_30"
                     android:paddingRight="@dimen/dp1080_30"
-                    android:layout_marginTop="@dimen/dp1080_20"
-                    android:text="详细地址" />
+                    android:text="详细地址"
+                    android:textColor="@color/color_gray"
+                    android:textSize="@dimen/dp1080_35" />
 
                 <ImageView
                     android:id="@+id/iv_arror_x"
@@ -97,38 +95,35 @@
                 android:id="@+id/rl_address_none"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:clickable="true"
                 android:background="@drawable/select_view"
-                android:paddingTop="@dimen/dp1080_40"
+                android:clickable="true"
                 android:paddingBottom="@dimen/dp1080_40"
-                >
+                android:paddingTop="@dimen/dp1080_40">
 
                 <ImageView
                     android:id="@+id/iv_x2"
                     android:layout_width="@dimen/dp1080_50"
                     android:layout_height="@dimen/dp1080_50"
+                    android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/dp1080_30"
                     android:layout_marginTop="@dimen/dp1080_40"
+                    android:background="@color/color_gray"
                     android:paddingBottom="@dimen/dp1080_2"
                     android:paddingLeft="@dimen/dp1080_5"
                     android:paddingRight="@dimen/dp1080_5"
-                    android:paddingTop="@dimen/dp1080_2"
-                    android:layout_centerVertical="true"
-                    android:background="@color/color_gray"
-                    />
+                    android:paddingTop="@dimen/dp1080_2" />
 
                 <!--android:drawableLeft="@drawable/address_dingwei"-->
                 <TextView
-                    android:textColor="@color/color_gray"
-                    android:textSize="@dimen/dp1080_40"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/iv_x2"
-                    android:paddingLeft="@dimen/dp1080_30"
                     android:layout_centerVertical="true"
-                    android:text="请选择收货地址"
+                    android:layout_toRightOf="@+id/iv_x2"
                     android:gravity="center"
-                    />
+                    android:paddingLeft="@dimen/dp1080_30"
+                    android:text="请选择收货地址"
+                    android:textColor="@color/color_gray"
+                    android:textSize="@dimen/dp1080_40" />
 
 
                 <ImageView
@@ -155,6 +150,7 @@
         android:layout_alignParentBottom="true">
 
         <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_topay"
             android:layout_width="@dimen/dp1080_300"
             android:layout_height="@dimen/dp1080_120"
             android:layout_alignParentRight="true"

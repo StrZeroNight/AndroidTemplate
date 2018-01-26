@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.zeronight.templet.R;
 import com.zeronight.templet.common.base.BaseActivity;
 import com.zeronight.templet.common.data.EventBusBundle;
 import com.zeronight.templet.common.utils.ToastUtils;
+import com.zeronight.templet.common.widget.SuperTextView;
+import com.zeronight.templet.common.widget.TitleBar;
 import com.zeronight.templet.module.address.edit.AddressDetialBean;
 import com.zeronight.templet.module.address.list.AddressListActivity;
 import com.zeronight.templet.module.address.list.AddressListAdapter;
@@ -27,8 +30,14 @@ public class ConfirmOrderActivity extends BaseActivity implements View.OnClickLi
     private final static int REQUEST_CODE = 1001;
     private final static int RESULT_CODE = 1002;
     private final static String ID = "ID";
-    private RelativeLayout mRlAddress;
-    private RelativeLayout mRlAddressNone;
+    private TitleBar titlebar;
+    private TextView tv_address_lianxiren;
+    private TextView tv_address_phone;
+    private TextView tv_address_content;
+    private RelativeLayout rl_address;
+    private RelativeLayout rl_address_none;
+    private SuperTextView stv_topay;
+    private RelativeLayout rl_bottombar;
 
     public static void start(Context context, String id) {
         Intent it = new Intent(context, ConfirmOrderActivity.class);
@@ -66,10 +75,17 @@ public class ConfirmOrderActivity extends BaseActivity implements View.OnClickLi
     }
 
     private void initView() {
-        mRlAddress = (RelativeLayout) findViewById(R.id.rl_address);
-        mRlAddress.setOnClickListener(this);
-        mRlAddressNone = (RelativeLayout) findViewById(R.id.rl_address_none);
-        mRlAddressNone.setOnClickListener(this);
+        titlebar = (TitleBar) findViewById(R.id.titlebar);
+        tv_address_lianxiren = (TextView) findViewById(R.id.tv_address_lianxiren);
+        tv_address_phone = (TextView) findViewById(R.id.tv_address_phone);
+        tv_address_content = (TextView) findViewById(R.id.tv_address_content);
+        rl_address = (RelativeLayout) findViewById(R.id.rl_address);
+        rl_address.setOnClickListener(this);
+        rl_address_none = (RelativeLayout) findViewById(R.id.rl_address_none);
+        rl_address_none.setOnClickListener(this);
+        stv_topay = (SuperTextView) findViewById(R.id.stv_topay);
+        stv_topay.setOnClickListener(this);
+        rl_bottombar = (RelativeLayout) findViewById(R.id.rl_bottombar);
     }
 
     @Override
@@ -79,6 +95,10 @@ public class ConfirmOrderActivity extends BaseActivity implements View.OnClickLi
                 AddressListActivity.start(this, AddressListActivity.FROM_CART);
                 break;
             case R.id.rl_address_none:
+                AddressListActivity.start(this, AddressListActivity.FROM_CART);
+                break;
+            case R.id.stv_topay:
+                PayActivity.start(this);
                 break;
         }
     }

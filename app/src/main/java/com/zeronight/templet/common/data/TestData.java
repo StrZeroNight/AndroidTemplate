@@ -34,4 +34,15 @@ public class TestData {
         return list;
     }
 
+    public static List<String> getLists(){
+        List<String> list = new ArrayList<>();
+        list.add("测试说");
+        list.add("测");
+        list.add("测试说测试说");
+        list.add("测试说测试说测试说测试说");
+        list.add("测试说测试说");
+        list.add("测试说");
+        return list;
+    }
+
 }

@@ -23,7 +23,8 @@
 
         <ImageView
             android:id="@+id/iv_choose_wx"
-            style="@style/paychoose_iv_choose" />
+            style="@style/paychoose_iv_choose"
+            />
 
     </RelativeLayout>
 

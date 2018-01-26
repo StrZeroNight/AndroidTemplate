@@ -11,6 +11,13 @@
         <attr name="aishow_content" format="boolean" />
     </declare-styleable>
 
+    <declare-styleable name="SearchBarMain">
+        <attr name="left_icon" format="reference|color" />
+        <attr name="right_icon" format="reference|color" />
+        <attr name="sbackground" format="reference|color" />
+        <attr name="shint" format="string" />
+    </declare-styleable>
+
     <declare-styleable name="TitleBar">
         <attr name="btitle" format="string" />
         <attr name="bright_text" format="string" />

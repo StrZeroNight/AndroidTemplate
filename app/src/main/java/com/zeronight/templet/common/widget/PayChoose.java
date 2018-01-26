@@ -55,7 +55,7 @@ public class PayChoose extends LinearLayout{
             @Override
             public void onClick(View v) {
                 if (payChooseListener != null) {
-                    payChooseListener.onWxChoose();
+                    payChooseListener.onZfbChoose();
                     changeChooseButton(iv_choose_zfb , iv_choose_ye , iv_choose_wx);
                 }
             }
@@ -65,7 +65,7 @@ public class PayChoose extends LinearLayout{
             @Override
             public void onClick(View v) {
                 if (payChooseListener != null) {
-                    payChooseListener.onWxChoose();
+                    payChooseListener.onYeChoose();
                     changeChooseButton(iv_choose_ye , iv_choose_wx , iv_choose_zfb);
                 }
             }
@@ -76,10 +76,10 @@ public class PayChoose extends LinearLayout{
     }
 
     private void changeChooseButton(ImageView ivChoose , ImageView...ivNones){
-        ivChoose.setBackgroundColor(Color.RED);
         for (ImageView ivNon : ivNones) {
             ivNon.setBackgroundColor(Color.BLACK);
         }
+        ivChoose.setBackgroundColor(Color.RED);
     }
 
     public interface PayChooseListener{

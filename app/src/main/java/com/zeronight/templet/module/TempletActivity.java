@@ -20,6 +20,7 @@ import com.zeronight.templet.module.main.MainActivity;
 import com.zeronight.templet.module.mine.UserInfoActivity;
 import com.zeronight.templet.module.permission.PermissionActivity;
 import com.zeronight.templet.module.richedit.RichEditActivity;
+import com.zeronight.templet.module.search.SearchActvity;
 import com.zeronight.templet.module.window.WindowActivity;
 
 /**
@@ -42,6 +43,7 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
     private Button btn_window;
     private Button btn_goods;
     private Button btn_rich;
+    private Button btn_search;
 
     public static void start(Context context, String id) {
         Intent it = new Intent(context, TempletActivity.class);
@@ -80,6 +82,8 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
     private void initView() {
         btn_main = (Button) findViewById(R.id.btn_main);
         btn_main.setOnClickListener(this);
+        btn_search = (Button) findViewById(R.id.btn_search);
+        btn_search.setOnClickListener(this);
         btn_login = (Button) findViewById(R.id.btn_login);
         btn_login.setOnClickListener(this);
         btn_address = (Button) findViewById(R.id.btn_address);
@@ -137,6 +141,9 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
                 break;
             case R.id.btn_window:
                 WindowActivity.start(this);
+                break;
+            case R.id.btn_search:
+                SearchActvity.start(this);
                 break;
 
         }

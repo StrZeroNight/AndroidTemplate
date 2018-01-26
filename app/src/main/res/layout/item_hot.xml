@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp1080_20"
+    android:layout_marginBottom="@dimen/dp1080_20"
+    android:id="@+id/ll_root"
+    android:clickable="true">
+
+    <com.zeronight.templet.common.widget.SuperTextView
+        android:id="@+id/stv_hot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="热门"
+        android:textSize="@dimen/dp1080_35"
+        android:textColor="@color/color_black_33"
+        android:paddingLeft="@dimen/dp1080_30"
+        android:paddingRight="@dimen/dp1080_30"
+        android:paddingTop="@dimen/dp1080_15"
+        android:paddingBottom="@dimen/dp1080_15"
+        app:normalBackgroundColor="@color/color_gray_cc"
+        app:pressedBackgroundColor="@color/color_gray"
+        app:round="true"
+        />
+
+</LinearLayout>

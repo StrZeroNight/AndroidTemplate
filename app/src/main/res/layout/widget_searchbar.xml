@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp1080_150"
+    android:orientation="vertical"
+    android:id="@+id/rl_root">
+    <!--top20是状态栏的高度-->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_gray" />
+
+    <RelativeLayout
+        android:id="@+id/rl_searchbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_left"
+            android:layout_width="@dimen/dp1080_64"
+            android:layout_height="@dimen/dp1080_64"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp1080_55"
+            android:clickable="true"/>
+
+        <LinearLayout
+            android:layout_width="@dimen/dp1080_745"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/dp1080_35"
+            android:layout_marginTop="@dimen/dp1080_35"
+            android:background="@drawable/select_wbtn"
+            android:clickable="true"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="@dimen/dp1080_40"
+                android:layout_height="@dimen/dp1080_40"
+                android:layout_marginLeft="@dimen/dp1080_25"
+                android:layout_marginRight="@dimen/dp1080_25"
+                android:src="@drawable/icon2" />
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="@dimen/dp1080_660"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="请输入关键词搜索"
+                android:paddingBottom="@dimen/dp1080_20"
+                android:paddingLeft="@dimen/dp1080_20"
+                android:paddingTop="@dimen/dp1080_20"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                android:textColor="@color/color_gray_cc"
+                android:textColorHint="@color/color_gray_cc"
+                android:textSize="@dimen/dp1080_30" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="@dimen/dp1080_64"
+            android:layout_height="@dimen/dp1080_64"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp1080_55"
+            />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

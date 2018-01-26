@@ -5,81 +5,102 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_main"
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="main"
-        />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="login"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
 
-    <Button
-        android:id="@+id/btn_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="address"
-        />
+            <Button
+                android:id="@+id/btn_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="main"
+                />
 
-    <Button
-        android:id="@+id/btn_userinfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="userinfo"
-        />
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="login"
+                />
 
-    <Button
-        android:id="@+id/btn_bankcard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="bankcard"
-        />
+            <Button
+                android:id="@+id/btn_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="address"
+                />
 
-    <Button
-        android:id="@+id/btn_permission"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="permission_and_download"
-        />
+            <Button
+                android:id="@+id/btn_userinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="userinfo"
+                />
 
-    <Button
-        android:id="@+id/btn_equipment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="equipment"
-        />
+            <Button
+                android:id="@+id/btn_bankcard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="bankcard"
+                />
 
-    <Button
-        android:id="@+id/btn_fileread"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="file_load"
-        />
+            <Button
+                android:id="@+id/btn_permission"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="permission_and_download"
+                />
 
-    <Button
-        android:id="@+id/btn_window"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="window"
-        />
+            <Button
+                android:id="@+id/btn_equipment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="equipment"
+                />
 
-    <Button
-        android:id="@+id/btn_goods"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="goods_and_confirmorder"
-        />
+            <Button
+                android:id="@+id/btn_fileread"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="file_load"
+                />
 
-    <Button
-        android:id="@+id/btn_rich"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="rich"
-        />
+            <Button
+                android:id="@+id/btn_window"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="window"
+                />
+
+            <Button
+                android:id="@+id/btn_goods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="goods_and_confirmorder"
+                />
+
+            <Button
+                android:id="@+id/btn_rich"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="rich"
+                />
+
+            <Button
+                android:id="@+id/btn_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="search"
+                />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
 
 </LinearLayout>
