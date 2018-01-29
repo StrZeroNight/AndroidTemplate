@@ -129,7 +129,7 @@
             />
 
         <activity
-            android:name=".module.equipment.EquipmentActivity"
+            android:name=".module.cart.CartActivity"
             android:launchMode="standard"
             android:screenOrientation="portrait"
             />

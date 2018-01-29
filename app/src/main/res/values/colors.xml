@@ -44,6 +44,7 @@
     <color name="color_gray_hengtiao">#e2e2e2</color>
     <!--橙色-->
     <color name="color_deep_orange">#ed683d</color>
+    <color name="color_deep_orange_80">#80ed683d</color>
     <!--红色-->
     <color name="color_red">#e5223f</color>
     <color name="color_red_80">#80e5223f</color>

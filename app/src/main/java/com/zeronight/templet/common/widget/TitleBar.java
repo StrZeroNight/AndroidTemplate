@@ -104,6 +104,10 @@ public class TitleBar extends RelativeLayout {
         tv_title.setText(title);
     }
 
+    public void setRightText(String rightText){
+        tv_right.setText(rightText);
+    }
+
     public interface TitlebarClick{
         void onRightClick();
         void onBackClick();

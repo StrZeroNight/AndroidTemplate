@@ -1,5 +1,6 @@
 package com.zeronight.templet.common.data;
 
+import com.zeronight.templet.module.cart.CartBean;
 import com.zeronight.templet.module.goods.AttrsBean2;
 import com.zeronight.templet.module.goods.AttrsBean;
 
@@ -42,6 +43,16 @@ public class TestData {
         list.add("测试说测试说测试说测试说");
         list.add("测试说测试说");
         list.add("测试说");
+        return list;
+    }
+
+    public static List<CartBean> getCartLists(){
+        List<CartBean> list = new ArrayList<>();
+        list.add(new CartBean("1" , "2.50" , "3"));
+        list.add(new CartBean("2" , "12.34" , "100"));
+        list.add(new CartBean("3" , "645.34" , "7"));
+        list.add(new CartBean("4" , "5476" , "4"));
+        list.add(new CartBean("5" , "208" , "9"));
         return list;
     }
 

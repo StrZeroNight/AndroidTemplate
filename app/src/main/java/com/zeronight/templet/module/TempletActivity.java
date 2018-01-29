@@ -12,7 +12,7 @@ import com.zeronight.templet.common.base.BaseActivity;
 import com.zeronight.templet.common.utils.ToastUtils;
 import com.zeronight.templet.module.address.list.AddressListActivity;
 import com.zeronight.templet.module.bankcard.WithdrawalsActivity;
-import com.zeronight.templet.module.equipment.EquipmentActivity;
+import com.zeronight.templet.module.cart.CartActivity;
 import com.zeronight.templet.module.filereader.FileReadActivity;
 import com.zeronight.templet.module.goods.GoodDetailActivity;
 import com.zeronight.templet.module.login.LoginActivity;
@@ -38,7 +38,7 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
     private Button btn_userinfo;
     private Button btn_bankcard;
     private Button btn_permission;
-    private Button btn_equipment;
+    private Button btn_cart;
     private Button btn_fileread;
     private Button btn_window;
     private Button btn_goods;
@@ -94,8 +94,8 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
         btn_bankcard.setOnClickListener(this);
         btn_permission = (Button) findViewById(R.id.btn_permission);
         btn_permission.setOnClickListener(this);
-        btn_equipment = (Button) findViewById(R.id.btn_equipment);
-        btn_equipment.setOnClickListener(this);
+        btn_cart = (Button) findViewById(R.id.btn_cart);
+        btn_cart.setOnClickListener(this);
         btn_fileread = (Button) findViewById(R.id.btn_fileread);
         btn_fileread.setOnClickListener(this);
         btn_window = (Button) findViewById(R.id.btn_window);
@@ -133,8 +133,8 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
             case R.id.btn_permission:
                 PermissionActivity.start(this);
                 break;
-            case R.id.btn_equipment:
-                EquipmentActivity.start(this);
+            case R.id.btn_cart:
+                CartActivity.start(this);
                 break;
             case R.id.btn_fileread:
                 FileReadActivity.start(this);
