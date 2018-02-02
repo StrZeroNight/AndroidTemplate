@@ -192,11 +192,14 @@ public class XRetrofitUtils {
                 if (string.startsWith("{") || string.startsWith("(")) {
                     if (string != null) {
                         ResultBean resultBean = JSON.parseObject(string, ResultBean.class);
-                        int returnCode = resultBean.getReturnCode();
-                        String message = resultBean.getMessage();
-                        String resultData = resultBean.getResultData();
+                        int returnCode = resultBean.getCode();
+                        String message = resultBean.getMsg();
+                        String resultData = resultBean.getData();
+                        Logger.i("returnCode:" + returnCode);
                         // TODO: 2017/9/20 返回值处理
-
+                        if (returnCode == 1) {
+                            onResultListener.onSuccess(resultData);
+                        }
                     } else {
                         onResultListener.onNoData();
                     }

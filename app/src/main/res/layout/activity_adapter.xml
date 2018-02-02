@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp1080_2"
+        android:background="@color/color_white">
+
+        <ImageView
+            android:id="@+id/iv_pic"
+            android:layout_width="@dimen/dp1080_360"
+            android:layout_height="@dimen/dp1080_240"
+            android:scaleType="fitXY"
+            android:background="@color/color_5e250a"
+            android:layout_marginTop="@dimen/dp1080_30"
+            android:layout_marginBottom="@dimen/dp1080_30"
+            android:layout_marginLeft="@dimen/dp1080_30"
+            android:layout_marginRight="@dimen/dp1080_38"
+            />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_pic"
+            android:text="商品名称"
+            android:layout_marginTop="@dimen/dp1080_30"
+            android:textColor="@color/color_black_33"
+            android:textSize="@dimen/dp1080_34"
+            android:singleLine="true"
+            android:ellipsize="end"
+            />
+
+        <TextView
+            android:id="@+id/tv_model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_pic"
+            android:text="商品型号"
+            android:layout_marginTop="@dimen/dp1080_28"
+            android:layout_below="@+id/tv_name"
+            android:textColor="@color/color_gray_99"
+            android:textSize="@dimen/dp1080_28"
+            />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_pic"
+            android:text="￥ 0.00"
+            android:layout_below="@+id/tv_model"
+            android:textColor="@color/color_red_ff5200"
+            android:textSize="@dimen/dp1080_42"
+            android:layout_marginTop="@dimen/dp1080_70"
+            />
+
+        <TextView
+            android:id="@+id/tv_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="数量"
+            android:layout_marginTop="@dimen/dp1080_233"
+            android:textColor="@color/color_gray_99"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp1080_30"
+            android:textSize="@dimen/dp1080_28"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp1080_360"
+        android:layout_marginBottom="@dimen/dp1080_2"
+        android:background="@color/color_white">
+
+        <ImageView
+            android:id="@+id/iv_pic2"
+            android:layout_width="@dimen/dp1080_300"
+            android:layout_height="@dimen/dp1080_300"
+            android:scaleType="fitXY"
+            android:background="@color/color_5e250a"
+            android:layout_marginTop="@dimen/dp1080_30"
+            android:layout_marginBottom="@dimen/dp1080_30"
+            android:layout_marginLeft="@dimen/dp1080_30"
+            android:layout_marginRight="@dimen/dp1080_38"
+            />
+
+        <TextView
+            android:id="@+id/tv_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_pic2"
+            android:text="商品名称"
+            android:layout_marginTop="@dimen/dp1080_30"
+            android:textColor="@color/color_black_33"
+            android:textSize="@dimen/dp1080_34"
+            android:singleLine="true"
+            android:ellipsize="end"
+            />
+
+        <TextView
+            android:id="@+id/tv_model2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_pic2"
+            android:text="商品型号"
+            android:layout_marginTop="@dimen/dp1080_28"
+            android:layout_below="@+id/tv_name2"
+            android:textColor="@color/color_gray_99"
+            android:textSize="@dimen/dp1080_28"
+            />
+
+        <TextView
+            android:id="@+id/tv_price2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_pic2"
+            android:text="￥ 0.00"
+            android:layout_below="@+id/tv_model2"
+            android:textColor="@color/color_red_ff5200"
+            android:textSize="@dimen/dp1080_42"
+            android:layout_marginTop="@dimen/dp1080_137"
+            />
+
+        <ImageView
+            android:id="@+id/iv_arror"
+            android:layout_width="@dimen/dp1080_100"
+            android:layout_height="@dimen/dp1080_100"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_black_33"
+            />
+
+        <TextView
+            android:id="@+id/tv_num2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="数量"
+            android:layout_marginTop="@dimen/dp1080_293"
+            android:textColor="@color/color_gray_99"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp1080_30"
+            android:textSize="@dimen/dp1080_28"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

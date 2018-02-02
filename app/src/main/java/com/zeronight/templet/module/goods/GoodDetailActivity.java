@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.zeronight.templet.R;
@@ -22,7 +21,6 @@ import com.zeronight.templet.common.base.BaseActivity;
 import com.zeronight.templet.common.data.TestData;
 import com.zeronight.templet.common.utils.ToastUtils;
 import com.zeronight.templet.common.widget.SuperTextView;
-import com.zeronight.templet.common.widget.TitleBar;
 import com.zeronight.templet.module.payorder.ConfirmOrderActivity;
 
 import static com.zeronight.templet.module.goods.AttrsAdapter.attrsMap;
@@ -36,9 +34,7 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
     private final static int REQUEST_CODE = 1001;
     private final static int RESULT_CODE = 1002;
     private final static String ID = "ID";
-    private TitleBar titlebar;
     private SuperTextView stv_addtocart;
-    private RelativeLayout rl_bottom;
 
     public static void start(Context context, String id) {
         Intent it = new Intent(context, GoodDetailActivity.class);
@@ -76,10 +72,8 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
     }
 
     private void initView() {
-        titlebar = (TitleBar) findViewById(R.id.titlebar);
         stv_addtocart = (SuperTextView) findViewById(R.id.stv_addtocart);
         stv_addtocart.setOnClickListener(this);
-        rl_bottom = (RelativeLayout) findViewById(R.id.rl_bottom);
     }
 
     @Override
@@ -99,15 +93,15 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
         rv_attrs.setLayoutManager(new LinearLayoutManager(this));
         rv_attrs.setAdapter(new AttrsAdapter(this , TestData.getAttrs()));
         ImageView iv_cancel = (ImageView)popuView.findViewById(R.id.iv_cancel);
-        TextView stv_buynow = (TextView)popuView.findViewById(R.id.stv_buynow);
-        TextView stv_addtocart = (TextView)popuView.findViewById(R.id.stv_addtocart);
-        stv_buynow.setOnClickListener(new View.OnClickListener() {
+        TextView stv_buynow2 = (TextView)popuView.findViewById(R.id.stv_buynow2);
+        TextView stv_addtocart2 = (TextView)popuView.findViewById(R.id.stv_addtocart2);
+        stv_buynow2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getAttrsFromMap();
             }
         });
-        stv_addtocart.setOnClickListener(new View.OnClickListener() {
+        stv_addtocart2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getAttrsFromMap();

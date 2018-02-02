@@ -44,6 +44,7 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
     private Button btn_goods;
     private Button btn_rich;
     private Button btn_search;
+    private Button btn_adapter;
 
     public static void start(Context context, String id) {
         Intent it = new Intent(context, TempletActivity.class);
@@ -80,6 +81,8 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
     }
 
     private void initView() {
+        btn_adapter = (Button) findViewById(R.id.btn_adapter);
+        btn_adapter.setOnClickListener(this);
         btn_main = (Button) findViewById(R.id.btn_main);
         btn_main.setOnClickListener(this);
         btn_search = (Button) findViewById(R.id.btn_search);
@@ -145,8 +148,11 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
             case R.id.btn_search:
                 SearchActvity.start(this);
                 break;
+            case R.id.btn_adapter:
 
+                break;
         }
     }
+
 
 }

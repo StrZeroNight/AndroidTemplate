@@ -82,7 +82,7 @@ public class DialogBuilder {
 //    AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
 //            builder.setTitle("找回密码");
 //            Spanned spanned = Html.fromHtml("忘记密码请联系客服<font color='#3DC8CB'>400-168-5116");
-//            builder.setMessage(spanned);
+//            builder.setMsg(spanned);
 //            builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
 //                @Override
 //                public void onClick(DialogInterface dialogInterface, int i) {

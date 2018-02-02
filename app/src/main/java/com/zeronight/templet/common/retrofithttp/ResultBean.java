@@ -7,39 +7,39 @@ package com.zeronight.templet.common.retrofithttp;
 public class ResultBean {
 
     /**
-     * returnCode : 0
-     * message : 验证码失效
-     * resultData : null
+     * code : 0
+     * msg : 验证码失效
+     * data : null
      * time : 1503286683007
      */
 
-    private int returnCode;
-    private String message;
-    private String resultData;
+    private int code;
+    private String msg;
+    private String data;
     private long time;
 
-    public int getReturnCode() {
-        return returnCode;
+    public int getCode() {
+        return code;
     }
 
-    public void setReturnCode(int returnCode) {
-        this.returnCode = returnCode;
+    public void setCode(int code) {
+        this.code = code;
     }
 
-    public String getMessage() {
-        return message;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
-    public String getResultData() {
-        return resultData;
+    public String getData() {
+        return data;
     }
 
-    public void setResultData(String resultData) {
-        this.resultData = resultData;
+    public void setData(String data) {
+        this.data = data;
     }
 
     public long getTime() {

@@ -4,29 +4,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp1080_255"
+        android:layout_height="@dimen/dp1080_365"
         >
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp1080_220"
+            android:layout_height="@dimen/dp1080_280"
             android:layout_alignParentBottom="true"
             android:background="@color/color_white"
             />
 
         <ImageView
             android:id="@+id/iv_pic"
-            android:layout_width="@dimen/dp1080_250"
-            android:layout_height="@dimen/dp1080_250"
+            android:layout_width="@dimen/dp1080_360"
+            android:layout_height="@dimen/dp1080_360"
             android:layout_marginLeft="@dimen/dp1080_40"
-            android:background="@color/color_gray_cc"
+            android:background="@color/color_white"
             android:elevation="@dimen/dp1080_3"
             android:padding="@dimen/dp1080_15"
             android:src="@mipmap/ic_launcher"
+            android:layout_marginRight="@dimen/dp1080_40"
             />
 
         <ImageView
@@ -36,28 +38,79 @@
             android:layout_alignParentRight="true"
             android:padding="@dimen/dp1080_40"
             android:background="@color/color_black"
-            android:layout_marginTop="@dimen/dp1080_35"
+            android:layout_marginTop="@dimen/dp1080_80"
+            />
+
+        <TextView
+            android:id="@+id/tv_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品名称商品名称商品名称商品名称商品名称"
+            android:maxLines="2"
+            android:minLines="2"
+            android:layout_toRightOf="@+id/iv_pic"
+            android:textSize="@dimen/dp1080_34"
+            android:textColor="@color/color_black_33"
+            android:layout_marginBottom="@dimen/dp1080_33"
+            android:layout_above="@+id/tv_price2"
+            />
+
+        <TextView
+            android:id="@+id/tv_price2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="价格"
+            android:layout_toRightOf="@+id/iv_pic"
+            android:textSize="@dimen/dp1080_42"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/color_red_ff5200"
+            />
+
+        <TextView
+            android:id="@+id/tv_store2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="库存"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp1080_260"
+            android:textSize="@dimen/dp1080_28"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="@dimen/dp1080_54"
+            android:textColor="@color/color_black_66"
             />
 
     </RelativeLayout>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp1080_40"
+        android:background="@color/color_white"
+        />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_attrs"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp1080_800"
-        android:paddingTop="@dimen/dp1080_40"
-        android:background="@color/color_white"/>
+        android:layout_height="@dimen/dp1080_500"
+        android:background="@color/color_gray_f5"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp1080_5"
+        android:background="@color/color_gray_f5"
+        />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/color_white">
+        android:background="@color/color_white"
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="购买数量"
             android:layout_centerVertical="true"
+            android:textSize="@dimen/dp1080_36"
             android:textColor="@color/color_black_33"
             android:paddingLeft="@dimen/dp1080_40"
             android:paddingTop="@dimen/dp1080_60"
@@ -73,36 +126,86 @@
 
     </RelativeLayout>
 
-    <LinearLayout
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp1080_120">
+        android:layout_height="@dimen/dp1080_5"
+        android:background="@color/color_gray_f5"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_white">
+
+        <!--这个不建议加在这里-->
+        <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:padding="@dimen/dp1080_35"-->
+        <!--&gt;-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="合计"-->
+        <!--android:textSize="@dimen/dp1080_36"-->
+        <!--android:textColor="@color/color_black_33"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--/>-->
+
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="@dimen/dp1080_52"-->
+        <!--android:textColor="@color/color_ff5200"-->
+        <!--android:text=" ￥0.00"-->
+        <!--/>-->
+
+        <!--</LinearLayout>-->
 
         <com.zeronight.templet.common.widget.SuperTextView
-            android:id="@+id/stv_buynow"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/dp1080_120"
-            android:layout_weight="1"
-            android:text="立即购买"
+            android:id="@+id/stv_addtocart2"
+            android:layout_width="@dimen/dp1080_300"
+            android:layout_height="@dimen/dp1080_90"
             android:gravity="center"
-            app:normalBackgroundColor="@color/color_red"
-            app:pressedBackgroundColor="@color/color_red_80"
-            android:textColor="@color/color_white"
-            android:clickable="true"
-            />
-
-        <com.zeronight.templet.common.widget.SuperTextView
-            android:id="@+id/stv_addtocart"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/dp1080_120"
-            android:layout_weight="1"
             android:text="加入购物车"
-            android:gravity="center"
-            app:normalBackgroundColor="@color/color_red"
-            app:pressedBackgroundColor="@color/color_red_80"
+            android:textSize="@dimen/dp1080_36"
             android:textColor="@color/color_white"
+            app:round="true"
             android:clickable="true"
+            android:layout_marginRight="@dimen/dp1080_20"
+            app:pressedBackgroundColor="@color/color_ff5200_80"
+            app:normalBackgroundColor="@color/color_ff5200"
+            android:layout_marginTop="@dimen/dp1080_20"
+            android:layout_marginBottom="@dimen/dp1080_20"
+            android:layout_toLeftOf="@+id/stv_buynow2"
             />
 
-    </LinearLayout>
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_buynow2"
+            android:layout_width="@dimen/dp1080_300"
+            android:layout_height="@dimen/dp1080_90"
+            android:gravity="center"
+            android:text="立即购买"
+            android:textSize="@dimen/dp1080_36"
+            android:textColor="@color/color_5e250a"
+            app:round="true"
+            android:clickable="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp1080_30"
+            app:pressedBackgroundColor="@color/colorPrimary_80"
+            app:normalBackgroundColor="@color/colorPrimary"
+            android:layout_marginTop="@dimen/dp1080_20"
+            android:layout_marginBottom="@dimen/dp1080_20"
+            />
+
+    </RelativeLayout>
+
 
 </LinearLayout>

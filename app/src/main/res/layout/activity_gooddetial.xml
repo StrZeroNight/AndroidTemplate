@@ -1,44 +1,305 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/main_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.zeronight.templet.common.widget.TitleBar
-        android:id="@+id/titlebar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_above="@+id/rl_bottom"
-        android:layout_below="@+id/titlebar"
-        >
+        android:layout_above="@+id/rl_bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1080_648">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--实际大小60-->
+                    <ImageView
+                        android:id="@+id/iv_back"
+                        android:layout_width="@dimen/dp1080_100"
+                        android:layout_height="@dimen/dp1080_100"
+                        android:padding="@dimen/dp1080_20"
+                        android:background="@color/color_black_33"
+                        />
+
+                    <ImageView
+                        android:id="@+id/iv_share"
+                        android:layout_width="@dimen/dp1080_100"
+                        android:layout_height="@dimen/dp1080_100"
+                        android:padding="@dimen/dp1080_20"
+                        android:background="@color/color_black_33"
+                        android:layout_alignParentRight="true"
+                        />
+
+                </RelativeLayout>
+
+                <cn.bingoogolapple.bgabanner.BGABanner
+                    android:id="@+id/bgabanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_proname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="商品名称"
+                android:background="@color/color_white"
+                android:textSize="@dimen/dp1080_42"
+                android:textColor="@color/color_black_33"
+                android:paddingLeft="@dimen/dp1080_44"
+                android:paddingTop="@dimen/dp1080_50"
+                android:paddingBottom="@dimen/dp1080_28"
+                android:singleLine="true"
+                android:ellipsize="end"
+                />
+
+            <TextView
+                android:id="@+id/tv_proparams"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="商品型号"
+                android:textSize="@dimen/dp1080_30"
+                android:background="@color/color_white"
+                android:textColor="@color/color_black_66"
+                android:paddingBottom="@dimen/dp1080_70"
+                android:paddingLeft="@dimen/dp1080_44"
+                android:singleLine="true"
+                android:ellipsize="end"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1080_90"
+                android:paddingLeft="@dimen/dp1080_48"
+                android:paddingRight="@dimen/dp1080_48"
+                android:background="@color/color_white"
+                android:paddingBottom="@dimen/dp1080_30"
+                >
+
+                <TextView
+                    android:id="@+id/tv_proprice"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="match_parent"
+                    android:text="商品价格"
+                    android:textSize="@dimen/dp1080_48"
+                    android:textColor="@color/color_red_ff5200"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:gravity="bottom"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_profreight"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="运费"
+                    android:gravity="bottom"
+                    android:textSize="@dimen/dp1080_26"
+                    android:textColor="@color/color_black_66"
+                    android:paddingLeft="@dimen/dp1080_44"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_prosales"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="销量"
+                    android:gravity="bottom"
+                    android:textSize="@dimen/dp1080_26"
+                    android:textColor="@color/color_black_66"
+                    android:paddingLeft="@dimen/dp1080_44"
+                    />
+
+            </LinearLayout>
 
 
-    </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/rl_params"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp1080_5"
+                android:paddingTop="@dimen/dp1080_52"
+                android:paddingBottom="@dimen/dp1080_52"
+                android:paddingLeft="@dimen/dp1080_44"
+                android:paddingRight="@dimen/dp1080_45"
+                android:clickable="true"
+                android:background="@drawable/select_view">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="产品参数"
+                    android:textSize="@dimen/dp1080_32"
+                    android:textColor="@color/color_5e250a"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    />
+
+                <ImageView
+                    android:layout_width="@dimen/dp1080_60"
+                    android:layout_height="@dimen/dp1080_15"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@color/color_5e250a"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_attrs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp1080_5"
+                android:paddingTop="@dimen/dp1080_52"
+                android:paddingBottom="@dimen/dp1080_52"
+                android:paddingLeft="@dimen/dp1080_44"
+                android:paddingRight="@dimen/dp1080_45"
+                android:clickable="true"
+                android:background="@drawable/select_view">
+
+                <TextView
+                    android:id="@+id/tv_attrsname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="选择"
+                    android:textSize="@dimen/dp1080_32"
+                    android:textColor="@color/color_5e250a"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_attrs"
+                    android:layout_toRightOf="@+id/tv_attrsname"
+                    android:layout_marginLeft="@dimen/dp1080_30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="参数"
+                    android:textSize="@dimen/dp1080_32"
+                    android:textColor="@color/color_black_66"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    />
+
+                <ImageView
+                    android:layout_width="@dimen/dp1080_60"
+                    android:layout_height="@dimen/dp1080_15"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@color/color_5e250a"
+                    />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white"
+                android:padding="@dimen/dp1080_44"
+                android:text="产品详情"
+                android:textColor="@color/color_5e250a"
+                android:layout_marginTop="@dimen/dp1080_10"
+                android:textSize="@dimen/dp1080_42"
+                android:drawablePadding="@dimen/dp1080_21"
+                />
+
+            <WebView
+                android:id="@+id/webview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <RelativeLayout
         android:id="@+id/rl_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_white">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/dp1080_35"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="合计"
+                android:textSize="@dimen/dp1080_36"
+                android:textColor="@color/color_black_33"
+                android:layout_centerVertical="true"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp1080_52"
+                android:textColor="@color/color_ff5200"
+                android:text=" ￥0.00"
+                />
+
+        </LinearLayout>
 
         <com.zeronight.templet.common.widget.SuperTextView
             android:id="@+id/stv_addtocart"
-            android:layout_width="@dimen/dp1080_400"
-            android:layout_height="@dimen/dp1080_120"
-            android:layout_alignParentRight="true"
-            app:normalBackgroundColor="@color/color_red"
-            android:text="加入购物车"
-            android:textColor="@color/color_white"
+            android:layout_width="@dimen/dp1080_300"
+            android:layout_height="@dimen/dp1080_90"
             android:gravity="center"
-            app:pressedBackgroundColor="@color/color_red_80"
+            android:text="加入购物车"
+            android:textSize="@dimen/dp1080_36"
+            android:textColor="@color/color_white"
+            app:round="true"
             android:clickable="true"
+            android:layout_marginRight="@dimen/dp1080_20"
+            app:pressedBackgroundColor="@color/color_ff5200_80"
+            app:normalBackgroundColor="@color/color_ff5200"
+            android:layout_marginTop="@dimen/dp1080_20"
+            android:layout_marginBottom="@dimen/dp1080_20"
+            android:layout_toLeftOf="@+id/stv_buy"
+            />
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_buy"
+            android:layout_width="@dimen/dp1080_300"
+            android:layout_height="@dimen/dp1080_90"
+            android:gravity="center"
+            android:text="立即购买"
+            android:textSize="@dimen/dp1080_36"
+            android:textColor="@color/color_5e250a"
+            app:round="true"
+            android:clickable="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp1080_30"
+            app:pressedBackgroundColor="@color/colorPrimary_80"
+            app:normalBackgroundColor="@color/colorPrimary"
+            android:layout_marginTop="@dimen/dp1080_20"
+            android:layout_marginBottom="@dimen/dp1080_20"
             />
 
     </RelativeLayout>

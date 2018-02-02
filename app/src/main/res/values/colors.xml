@@ -3,6 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary_80">#803F51B5</color>
 
     <color name="color_white">#ffffff</color>
     <color name="color_black_t70">#70000000</color>
@@ -48,6 +49,7 @@
     <!--红色-->
     <color name="color_red">#e5223f</color>
     <color name="color_red_80">#80e5223f</color>
+    <color name="color_red_ff5200">#ff5200</color>
 
     <color name="color_class_first_text">#ff9600</color>
     <color name="color_blue_0095ea">#0095ea</color>
@@ -55,5 +57,8 @@
 
     <color name="color_login">#50ffffff</color>
     <color name="color_login_press">#20ffffff</color>
+    <color name="color_5e250a">#5e250a</color>
+    <color name="color_ff5200">#ff5200</color>
+    <color name="color_ff5200_80">#80ff5200</color>
 
 </resources>
