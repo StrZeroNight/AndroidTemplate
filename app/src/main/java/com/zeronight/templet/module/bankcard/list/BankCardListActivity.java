@@ -91,6 +91,11 @@ public class BankCardListActivity extends BaseActivity implements View.OnClickLi
                             finish();
                         }
                     }
+
+                    @Override
+                    public void OnItemLongClick(int position) {
+
+                    }
                 })
                 .isLoadMore(true)
                 .isPullRefresh(true)

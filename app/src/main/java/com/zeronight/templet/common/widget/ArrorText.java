@@ -22,6 +22,7 @@ public class ArrorText extends RelativeLayout {
     private TextView tv_content;
     private ImageView iv_icon;
     private ImageView iv_arror;
+    private ImageView iv_point;
 
     public ArrorText(Context context) {
         this(context , null);
@@ -36,6 +37,7 @@ public class ArrorText extends RelativeLayout {
 
         LayoutInflater.from(context).inflate(R.layout.widget_arrortext, this, true);
         iv_icon = (ImageView) findViewById(R.id.iv_icon);
+        iv_point = (ImageView) findViewById(R.id.iv_point);
         iv_arror = (ImageView) findViewById(R.id.iv_arror);
         tv_title = (TextView) findViewById(R.id.tv_title);
         tv_content = (TextView) findViewById(R.id.tv_content);
@@ -48,6 +50,7 @@ public class ArrorText extends RelativeLayout {
         boolean isshow_icon = a.getBoolean(R.styleable.ArrorText_aishow_icon , true);
         boolean isshow_arror = a.getBoolean(R.styleable.ArrorText_aishow_arror , true);
         boolean isshow_content = a.getBoolean(R.styleable.ArrorText_aishow_content , true);
+        boolean ishow_point = a.getBoolean(R.styleable.ArrorText_aishow_point , false);
 
         if(title != null && !TextUtils.isEmpty(title)){
             tv_title.setText(title);
@@ -75,6 +78,12 @@ public class ArrorText extends RelativeLayout {
             tv_content.setVisibility(VISIBLE);
         }else{
             tv_content.setVisibility(GONE);
+        }
+
+        if (ishow_point) {
+            iv_point.setVisibility(VISIBLE);
+        }else{
+            iv_point.setVisibility(GONE);
         }
 
         a.recycle();

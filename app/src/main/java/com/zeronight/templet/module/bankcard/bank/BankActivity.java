@@ -64,6 +64,11 @@ public class BankActivity extends BaseActivity {
                         setResult(RESULT_CODE , mIntent);
                         finish();
                     }
+
+                    @Override
+                    public void OnItemLongClick(int position) {
+
+                    }
                 })
                 .isLoadMore(false)
                 .isPullRefresh(false)

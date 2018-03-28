@@ -3,15 +3,18 @@ package com.zeronight.templet.module.login;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
+import com.orhanobut.logger.Logger;
+import com.umeng.socialize.UMAuthListener;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.UMShareConfig;
+import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.zeronight.templet.R;
 import com.zeronight.templet.common.base.BaseActivity;
-import com.zeronight.templet.common.data.CommonData;
 import com.zeronight.templet.common.data.CommonString;
 import com.zeronight.templet.common.data.CommonUrl;
 import com.zeronight.templet.common.data.CustomerBean;
@@ -23,6 +26,8 @@ import com.zeronight.templet.common.utils.XStringUtils;
 import com.zeronight.templet.common.widget.LoginEditText;
 import com.zeronight.templet.common.widget.SuperTextView;
 
+import java.util.Map;
+
 
 /**
  * Created by Administrator on 2018/1/3.
@@ -30,68 +35,41 @@ import com.zeronight.templet.common.widget.SuperTextView;
 
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
-    private final static int REQUEST_CODE = 1001;
-    private final static int RESULT_CODE = 1002;
-    private final static String ID = "ID";
-
-    private ImageView iv_bg;
     private TextView tv_toforget;
     private TextView tv_toregister;
     private SuperTextView stv_login;
-    private ImageView iv_qq;
-    private ImageView iv_wx;
-    private ImageView iv_wb;
     private LoginEditText let_phone;
     private LoginEditText let_password;
-
-    public static void start(Context context, String id) {
-        Intent it = new Intent(context, LoginActivity.class);
-        it.putExtra(ID, id);
-        context.startActivity(it);
-    }
+    //
+    private UMShareAPI mShareAPI;
 
     public static void start(Context context) {
         Intent it = new Intent(context, LoginActivity.class);
         context.startActivity(it);
     }
 
-
-    public static void startActivityForResult(Context context) {
-        Intent it = new Intent(context, LoginActivity.class);
-        AppCompatActivity activity = (AppCompatActivity) context;
-        activity.startActivityForResult(it, REQUEST_CODE);
-    }
-
-    private void initIntent() {
-        Intent intent = getIntent();
-        if (intent.getStringExtra(ID) != null) {
-            String id = intent.getStringExtra(ID);
-            ToastUtils.showMessage("获取id" + id);
-        }
-
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        initUMShare();
         initView();
     }
 
+    private void initUMShare() {
+        UMShareConfig config = new UMShareConfig();
+        config.isNeedAuthOnGetUserInfo(true);
+        mShareAPI = UMShareAPI.get(this);
+        mShareAPI.setShareConfig(config);
+    }
+
     private void initView() {
-        iv_bg = (ImageView) findViewById(R.id.iv_bg);
         tv_toforget = (TextView) findViewById(R.id.tv_toforget);
         tv_toforget.setOnClickListener(this);
         tv_toregister = (TextView) findViewById(R.id.tv_toregister);
         tv_toregister.setOnClickListener(this);
-        stv_login = (SuperTextView) findViewById(R.id.stv_register);
+        stv_login = (SuperTextView) findViewById(R.id.stv_login);
         stv_login.setOnClickListener(this);
-        iv_qq = (ImageView) findViewById(R.id.iv_qq);
-        iv_qq.setOnClickListener(this);
-        iv_wx = (ImageView) findViewById(R.id.iv_wx);
-        iv_wx.setOnClickListener(this);
-        iv_wb = (ImageView) findViewById(R.id.iv_wb);
-        iv_wb.setOnClickListener(this);
         let_phone = (LoginEditText) findViewById(R.id.let_phone);
         let_password = (LoginEditText) findViewById(R.id.let_password);
     }
@@ -100,19 +78,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_toforget:
-                ForgetPassActivity.start(this);
                 break;
             case R.id.tv_toregister:
                 RegisterActivity.start(this);
                 break;
-            case R.id.stv_register:
+            case R.id.stv_login:
                 checkInput();
-                break;
-            case R.id.iv_qq:
-                break;
-            case R.id.iv_wx:
-                break;
-            case R.id.iv_wb:
                 break;
         }
     }
@@ -121,19 +92,19 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         String password = let_password.getContent();
         String phone = let_phone.getContent();
         if (XStringUtils.isEmpty(phone)) {
-            ToastUtils.showMessage(getString(R.string.phone_can_not_null));
+            ToastUtils.showMessage("手机号不能为空");
             return;
         }
         if (!XStringUtils.checkPhoneNum(phone)) {
-            ToastUtils.showMessage(getString(R.string.phone_can_not_normal));
+            ToastUtils.showMessage("手机号不是标准手机号");
             return;
         }
         if (XStringUtils.isEmpty(password)) {
-            ToastUtils.showMessage(getResources().getString(R.string.password_can_not_null));
+            ToastUtils.showMessage("密码不能为空");
             return;
         }
-        if (password.length() < 6) {
-            ToastUtils.showMessage(getResources().getString(R.string.password_can_not_be_less_than_6_bits));
+        if (password.length() < 6 || password.length() > 16) {
+            ToastUtils.showMessage("密码不能小于6位或大于16位");
             return;
         }
         login(phone, password);
@@ -170,28 +141,118 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         });
     }
 
+    private void wxLogin(){
+        mShareAPI.getPlatformInfo(LoginActivity.this, SHARE_MEDIA.WEIXIN, authListener);
+    }
+
+    UMAuthListener authListener = new UMAuthListener() {
+        /**
+         * @desc 授权开始的回调
+         * @param platform 平台名称
+         */
+        @Override
+        public void onStart(SHARE_MEDIA platform) {
+            ToastUtils.showMessage("授权调起");
+            Logger.i("授权调起");
+            showprogressDialog();
+        }
+
+        /**
+         * @desc 授权成功的回调
+         * @param platform 平台名称
+         * @param action 行为序号，开发者用不上
+         * @param data 用户资料返回
+         */
+        @Override
+        public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
+            dismissProgressDialog();
+            Logger.i("授权成功");
+            ToastUtils.showMessage("授权成功");
+            for (Map.Entry entry : data.entrySet()) {
+                String key = (String) entry.getKey();
+                String value = (String) entry.getValue();
+                Log.i("TAG", "onComplete: ===========================key：" + key + "---value：" + value);
+                String openid = data.get("openid");
+                wxLogin(openid);
+            }
+        }
+
+        /**
+         * @desc 授权失败的回调
+         * @param platform 平台名称
+         * @param action 行为序号，开发者用不上
+         * @param t 错误原因
+         */
+        @Override
+        public void onError(SHARE_MEDIA platform, int action, Throwable t) {
+            Logger.i("失败：" + t.getMessage());
+            ToastUtils.showMessage("授权失败");
+            dismissProgressDialog();
+        }
+
+        /**
+         * @desc 授权取消的回调
+         * @param platform 平台名称
+         * @param action 行为序号，开发者用不上
+         */
+        @Override
+        public void onCancel(SHARE_MEDIA platform, int action) {
+            Logger.i("取消");
+            ToastUtils.showMessage("授权取消");
+            dismissProgressDialog();
+        }
+    };
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        mShareAPI.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void wxLogin(String openid) {
+        showprogressDialog();
+        XRetrofitUtils retrofitUtils = new XRetrofitUtils.Builder()
+                .setUrl(CommonUrl.login)
+                .setParams("openid", openid)
+                .build();
+        retrofitUtils.AsynPost(new XRetrofitUtils.OnResultListener() {
+            @Override
+            public void onNetWorkError() {
+                dismissProgressDialog();
+            }
+
+            @Override
+            public void onSuccess(String data) {
+                dismissProgressDialog();
+                handleLogin(data);
+            }
+
+            @Override
+            public void onNoData() {
+                dismissProgressDialog();
+//                BindActivity.start(LoginActivity.this , bindUpBean);
+                finish();
+            }
+
+            @Override
+            public void onServerError() {
+                dismissProgressDialog();
+            }
+        });
+    }
 
     private void handleLogin(String data) {
         CommonUtils.hideSoft(LoginActivity.this, let_phone);
         CustomerBean customer = JSON.parseObject(data, CustomerBean.class);
         if (customer != null) {
-
             int customerId = customer.getCustomerId();
             String customerToken = customer.getCustomerToken();
             String phone = customer.getPhone();
-//            MobclickAgent.onProfileSignIn(customerId + "");
-
-            CommonData.clearUserPhone();
-            CommonData.clearToken();
-            CommonData.clearUserId();
-
             AppSetting.putBoolean(CommonString.USER_IS_LOGIN, true);
             AppSetting.putInt(CommonString.USER_ID, customerId);
             AppSetting.putString(CommonString.USER_TOKEN, customerToken);
             AppSetting.putString(CommonString.USER_PHONE, phone);
-
             finish();
-
         }
     }
 

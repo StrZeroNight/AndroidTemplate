@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/dp1080_850"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="@layout/fragment_second"
+    android:clickable="true"
+    android:id="@+id/rl_fliter1"
+    >
+
+    <ImageView
+        android:id="@+id/iv_x"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/colorPrimary"
+        />
+
+    <com.zeronight.templet.common.widget.TitleBar
+        android:layout_below="@+id/iv_x"
+        android:id="@+id/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:btitle="筛选"
+        app:bisback="false"
+        android:background="@color/color_white"
+        />
+
+    <TextView
+        android:id="@+id/tv_01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titlebar"
+        android:textSize="@dimen/dp1080_40"
+        android:textColor="@color/color_99"
+        android:padding="@dimen/dp1080_40"
+        android:text="按价格"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_x"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_01"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp1080_40"
+        android:paddingRight="@dimen/dp1080_40"
+        android:paddingBottom="@dimen/dp1080_30"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/et_lowestprice_filter"
+            android:hint="最低价"
+            style="@style/filetr_price" />
+
+        <ImageView
+            android:layout_width="@dimen/dp1080_44"
+            android:layout_height="@dimen/dp1080_4"
+            android:background="@color/color_99" />
+
+        <EditText
+            android:id="@+id/et_highestprice_filter"
+            style="@style/filetr_price"
+            android:hint="最高价"
+            android:layout_marginLeft="@dimen/dp1080_30" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_x"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_x"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:clickable="true"
+        android:visibility="gone"
+        android:paddingRight="@dimen/dp1080_55"
+        android:background="@drawable/select_view">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="按分类"
+            android:textSize="@dimen/dp1080_40"
+            android:textColor="@color/color_99"
+            android:padding="@dimen/dp1080_40" />
+
+        <TextView
+            android:id="@+id/tv_secondclass_filter"
+            android:textColor="@color/color_99"
+            android:textSize="@dimen/dp1080_40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:drawableRight="@drawable/icon6"
+            android:drawablePadding="@dimen/dp1080_30"
+            android:layout_centerVertical="true"
+            android:text="按分类" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_x"
+        android:layout_above="@+id/ll_bottom"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_x2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_x"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:clickable="true"
+        android:paddingRight="@dimen/dp1080_55"
+        android:background="@drawable/select_view">
+
+        <TextView
+            android:id="@+id/tv_x3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="热门品牌"
+            android:textSize="@dimen/dp1080_40"
+            android:textColor="@color/color_99"
+            android:padding="@dimen/dp1080_40" />
+
+        <TextView
+            android:id="@+id/tv_brand"
+            android:textColor="@color/color_99"
+            android:textSize="@dimen/dp1080_40"
+            android:layout_toRightOf="@+id/tv_x3"
+            android:paddingLeft="@dimen/dp1080_30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:drawableRight="@drawable/icon7"
+            android:drawablePadding="@dimen/dp1080_30"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp1080_20"
+        android:gravity="center">
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_clear"
+            android:layout_width="@dimen/dp1080_370"
+            android:layout_height="@dimen/dp1080_96"
+            android:gravity="center"
+            android:clickable="true"
+            android:text="重置"
+            app:normalStrokeWidth="@dimen/dp1080_2"
+            app:normalStrokeColor="@color/green_67c6a6"
+            app:radius="@dimen/dp1080_15"
+            android:textSize="@dimen/dp1080_42"
+            android:textColor="@color/color_black"
+            android:layout_marginRight="@dimen/dp1080_20" />
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_ok"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/dp1080_42"
+            android:layout_width="@dimen/dp1080_370"
+            android:layout_height="@dimen/dp1080_96"
+            android:layout_marginLeft="@dimen/dp1080_20"
+            app:radius="@dimen/dp1080_15"
+            android:clickable="true"
+            app:normalBackgroundColor="@color/green_67c6a6"
+            android:gravity="center"
+            android:text="确定" />
+
+    </LinearLayout>
+
+</RelativeLayout>

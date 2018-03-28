@@ -5,54 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.zeronight.templet.common.widget.TitleBar
-        android:id="@+id/titlebar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_below="@+id/titlebar"
-        android:layout_above="@+id/rl_bottom"
-        >
-
-        <com.jcodecraeer.xrecyclerview.XRecyclerView
-            android:id="@+id/xrv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/rl_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:elevation="@dimen/dp1080_2">
-
-        <TextView
-            android:id="@+id/tv_all"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:text="全选"
-            android:padding="@dimen/dp1080_20"
-            />
-
-        <com.zeronight.templet.common.widget.SuperTextView
-            android:layout_width="@dimen/dp1080_300"
-            android:layout_height="@dimen/dp1080_130"
-            android:text="去支付"
-            android:layout_alignParentRight="true"
-            android:gravity="center"
-            android:textColor="@color/color_white"
-            android:textSize="@dimen/dp1080_40"
-            app:normalBackgroundColor="@color/color_red"
-            app:pressedBackgroundColor="@color/color_red_80"
-            />
-
-    </RelativeLayout>
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:text="第二页"
+       android:gravity="center"
+       />
 
 </RelativeLayout>

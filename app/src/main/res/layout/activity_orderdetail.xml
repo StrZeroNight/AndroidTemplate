@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/main_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <com.zeronight.templet.common.widget.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:btitle="订单详情" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1080_225"
+                android:background="@color/green_449c7e"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dp1080_137">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="卖家已发货"
+                    android:textColor="@color/color_white"
+                    android:textSize="@dimen/dp1080_48" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="还剩9天21时自动确认"
+                    android:textColor="@color/color_white"
+                    android:textSize="@dimen/dp1080_30" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1080_155"
+                android:background="@drawable/select_view"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/iv_x2"
+                    android:layout_width="@dimen/dp1080_62"
+                    android:layout_height="@dimen/dp1080_62"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp1080_30"
+                    android:layout_marginTop="@dimen/dp1080_40"
+                    android:paddingBottom="@dimen/dp1080_2"
+                    android:paddingLeft="@dimen/dp1080_5"
+                    android:paddingRight="@dimen/dp1080_5"
+                    android:paddingTop="@dimen/dp1080_2"
+                    android:src="@drawable/icon21" />
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/iv_x2"
+                    android:paddingLeft="@dimen/dp1080_27"
+                    android:paddingRight="@dimen/dp1080_20"
+                    android:paddingTop="@dimen/dp1080_37"
+                    android:text="卖家发货"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/dp1080_42" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_content"
+                    android:layout_toRightOf="@+id/iv_x2"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:paddingLeft="@dimen/dp1080_30"
+                    android:paddingRight="@dimen/dp1080_30"
+                    android:text="时间"
+                    android:textColor="@color/color_99"
+                    android:textSize="@dimen/dp1080_28" />
+
+                <ImageView
+                    android:id="@+id/iv_arror_x2"
+                    android:layout_width="@dimen/dp1080_18"
+                    android:layout_height="@dimen/dp1080_30"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp1080_30"
+                    android:src="@drawable/icon14" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_address"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1080_280"
+                android:layout_marginTop="@dimen/dp1080_3"
+                android:background="@drawable/select_view"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/iv_x"
+                    android:layout_width="@dimen/dp1080_51"
+                    android:layout_height="@dimen/dp1080_75"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp1080_30"
+                    android:layout_marginTop="@dimen/dp1080_40"
+                    android:paddingBottom="@dimen/dp1080_2"
+                    android:paddingLeft="@dimen/dp1080_5"
+                    android:paddingRight="@dimen/dp1080_5"
+                    android:paddingTop="@dimen/dp1080_2"
+                    android:src="@drawable/icon18" />
+
+                <TextView
+                    android:id="@+id/tv_receiver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/iv_x"
+                    android:paddingBottom="@dimen/dp1080_10"
+                    android:paddingLeft="@dimen/dp1080_30"
+                    android:paddingRight="@dimen/dp1080_30"
+                    android:paddingTop="@dimen/dp1080_53"
+                    android:text="联系人"
+                    android:textColor="@color/color_22"
+                    android:textSize="@dimen/dp1080_42" />
+
+                <TextView
+                    android:id="@+id/tv_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/iv_arror_x"
+                    android:layout_toRightOf="@+id/tv_receiver"
+                    android:gravity="end"
+                    android:padding="@dimen/dp1080_40"
+                    android:text="电话"
+                    android:textColor="@color/color_99"
+                    android:textSize="@dimen/dp1080_45" />
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_receiver"
+                    android:layout_marginBottom="@dimen/dp1080_40"
+                    android:layout_marginTop="@dimen/dp1080_20"
+                    android:layout_toLeftOf="@+id/iv_arror_x"
+                    android:layout_toRightOf="@+id/iv_x"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:paddingLeft="@dimen/dp1080_30"
+                    android:paddingRight="@dimen/dp1080_30"
+                    android:text="详细地址"
+                    android:textColor="@color/color_22"
+                    android:textSize="@dimen/dp1080_42" />
+
+                <ImageView
+                    android:id="@+id/iv_arror_x"
+                    android:layout_width="@dimen/dp1080_18"
+                    android:layout_height="@dimen/dp1080_30"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp1080_30"
+                    android:src="@drawable/icon14" />
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp1080_20"
+                android:layout_marginTop="@dimen/dp1080_20" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dp1080_22"
+                android:paddingTop="@dimen/dp1080_22">
+
+                <com.zeronight.templet.common.widget.ArrorText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1080_85"
+                    app:acontent=" "
+                    app:aishow_arror="false"
+                    app:aishow_icon="false"
+                    app:atitle="订单编号" />
+
+                <com.zeronight.templet.common.widget.ArrorText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1080_85"
+                    app:acontent=" "
+                    app:aishow_arror="false"
+                    app:aishow_icon="false"
+                    app:atitle="下单时间" />
+
+            </LinearLayout>
+
+            <com.zeronight.templet.common.widget.ArrorText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp1080_3"
+                app:acontent=" "
+                app:aishow_arror="false"
+                app:aishow_icon="false"
+                app:atitle="支付方式" />
+
+            <com.zeronight.templet.common.widget.ArrorText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:acontent=" "
+                app:aishow_arror="false"
+                app:aishow_icon="false"
+                app:atitle="配送方式" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp1080_2"
+                android:background="@color/color_white"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dp1080_22"
+                android:paddingTop="@dimen/dp1080_22">
+
+                <com.zeronight.templet.common.widget.ArrorText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1080_85"
+                    app:acontent=" "
+                    app:aishow_arror="false"
+                    app:aishow_icon="false"
+                    app:atitle="是否需要发票" />
+
+                <com.zeronight.templet.common.widget.ArrorText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1080_85"
+                    app:acontent=" "
+                    app:aishow_arror="false"
+                    app:aishow_icon="false"
+                    app:atitle="发票抬头" />
+
+                <com.zeronight.templet.common.widget.ArrorText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1080_85"
+                    app:acontent=" "
+                    app:aishow_arror="false"
+                    app:aishow_icon="false"
+                    app:atitle="发票内容" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp1080_30"
+                android:background="@color/color_white"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dp1080_22"
+                android:paddingTop="@dimen/dp1080_22">
+
+                <com.zeronight.templet.common.widget.ArrorText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1080_85"
+                    app:acontent=" "
+                    app:acontent_color="@color/red_f0432a"
+                    app:aishow_arror="false"
+                    app:aishow_icon="false"
+                    app:atitle="商品金额" />
+
+                <com.zeronight.templet.common.widget.ArrorText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1080_85"
+                    app:acontent=" "
+                    app:acontent_color="@color/red_f0432a"
+                    app:aishow_arror="false"
+                    app:aishow_icon="false"
+                    app:atitle="运费" />
+
+                <com.zeronight.templet.common.widget.ArrorText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1080_85"
+                    app:acontent=" "
+                    app:acontent_color="@color/red_f0432a"
+                    app:aishow_arror="false"
+                    app:aishow_icon="false"
+                    app:atitle="创业基金" />
+
+                <com.zeronight.templet.common.widget.ArrorText
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp1080_85"
+                    app:acontent=" "
+                    app:acontent_color="@color/red_f0432a"
+                    app:aishow_arror="false"
+                    app:aishow_icon="false"
+                    app:atitle="发票税费" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dp1080_50"
+                    android:paddingLeft="@dimen/dp1080_32"
+                    android:paddingTop="@dimen/dp1080_50"
+                    android:text="共0件商品   合计: "
+                    android:textColor="@color/color_99"
+                    android:textSize="@dimen/dp1080_36" />
+
+                <TextView
+                    android:id="@+id/tv_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp1080_60"
+                    android:paddingBottom="@dimen/dp1080_50"
+                    android:paddingLeft="@dimen/dp1080_32"
+                    android:paddingTop="@dimen/dp1080_50"
+                    android:text="￥ 0.00"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/dp1080_54" />
+
+            </LinearLayout>
+
+            <com.zeronight.templet.common.widget.OrderButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

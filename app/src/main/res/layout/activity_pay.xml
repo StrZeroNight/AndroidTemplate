@@ -41,7 +41,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/color_black_33"
+                android:textColor="@color/color_33"
                 android:textSize="@dimen/dp1080_40"
                 android:text="实付款"
                 android:padding="@dimen/dp1080_40"
@@ -51,7 +51,7 @@
                 android:id="@+id/tv_pay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/color_red"
+                android:textColor="@color/red_e5223f"
                 android:textStyle="bold"
                 android:textSize="@dimen/dp1080_45"
                 android:text="0.00"

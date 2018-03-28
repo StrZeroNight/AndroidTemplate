@@ -17,13 +17,13 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/dp1080_47"
         android:visibility="gone"
-        android:background="@color/color_black_66"
+        android:background="@color/color_66"
         />
 
     <TextView
         android:id="@+id/tv_title"
         android:textSize="@dimen/dp1080_41"
-        android:textColor="@color/color_black_66"
+        android:textColor="@color/color_66"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/dp1080_47"
@@ -46,7 +46,7 @@
             android:layout_centerVertical="true"
             android:gravity="right"
             android:textSize="@dimen/dp1080_41"
-            android:textColor="@color/color_black_66"
+            android:textColor="@color/color_66"
             android:layout_toLeftOf="@+id/iv_arror"
             android:paddingRight="@dimen/dp1080_47"
             android:visibility="gone"

@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zeronight.templet.R;
+import com.zeronight.templet.common.base.BaseActivity;
 import com.zeronight.templet.common.base.BaseAdapter;
 import com.zeronight.templet.common.base.BaseRecyclerViewHolder;
 import com.zeronight.templet.common.data.EventBusBundle;
@@ -25,19 +26,19 @@ import java.util.Map;
 
 import de.greenrobot.event.EventBus;
 
-import static com.zeronight.templet.module.main.FourFragment.CHOOSE_ALL;
-import static com.zeronight.templet.module.main.FourFragment.CHOOSE_NOT_ALL;
-import static com.zeronight.templet.module.main.FourFragment.NUMBER_CHANGE;
+import static com.zeronight.templet.module.cart.CartFragment.CHOOSE_ALL;
+import static com.zeronight.templet.module.cart.CartFragment.CHOOSE_NOT_ALL;
+import static com.zeronight.templet.module.cart.CartFragment.NUMBER_CHANGE;
+
 
 /**
  * Created by Administrator on 2018/1/26.
  */
-
 public class CartAdapter extends BaseAdapter<CartBean> {
 
     private OnButtonClickListenr onButtonClickListenr;
     public Map<Integer , CartBean> map = new HashMap<>();
-    CartActivity cartActivity = (CartActivity)mContext;
+    BaseActivity baseActivity = (BaseActivity)mContext;
 
     public CartAdapter(Context mContext, List<CartBean> mList) {
         super(mContext, mList);
@@ -161,7 +162,7 @@ public class CartAdapter extends BaseAdapter<CartBean> {
     }
 
     private void changeNum(final String num , final CartBean cartBean , final NumButtom numButtom) {
-        cartActivity.showprogressDialog();
+        baseActivity.showprogressDialog();
         XRetrofitUtils retrofitUtils = new XRetrofitUtils.Builder()
 //                .setUrl(ConstantUrl.login)
 //                .setParams("phone", phone)
@@ -169,13 +170,13 @@ public class CartAdapter extends BaseAdapter<CartBean> {
         retrofitUtils.AsynPost(new XRetrofitUtils.OnResultListener() {
             @Override
             public void onNetWorkError() {
-                cartActivity.dismissProgressDialog();
+                baseActivity.dismissProgressDialog();
                 numButtom.minus();
             }
 
             @Override
             public void onSuccess(String data) {
-                cartActivity.dismissProgressDialog();
+                baseActivity.dismissProgressDialog();
                 ToastUtils.showMessage("修改成功");
                 cartBean.setNum(num);
                 EventBus.getDefault().post(new EventBusBundle(NUMBER_CHANGE , ""));
@@ -183,13 +184,13 @@ public class CartAdapter extends BaseAdapter<CartBean> {
 
             @Override
             public void onNoData() {
-                cartActivity.dismissProgressDialog();
+                baseActivity.dismissProgressDialog();
                 numButtom.minus();
             }
 
             @Override
             public void onServerError() {
-                cartActivity.dismissProgressDialog();
+                baseActivity.dismissProgressDialog();
                 numButtom.minus();
             }
         });

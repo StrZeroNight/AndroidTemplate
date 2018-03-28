@@ -20,7 +20,7 @@
         android:layout_marginTop="@dimen/dp1080_70"
         android:textSize="@dimen/dp1080_35"
         android:gravity="center"
-        android:textColor="@color/color_black_33"
+        android:textColor="@color/color_33"
         />
 
 </LinearLayout>

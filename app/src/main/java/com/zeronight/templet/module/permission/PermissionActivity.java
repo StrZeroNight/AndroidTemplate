@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -19,38 +18,13 @@ import com.zeronight.templet.common.utils.ToastUtils;
 
 public class PermissionActivity extends BaseActivity implements View.OnClickListener {
 
-    private final static int REQUEST_CODE = 1001;
-    private final static int RESULT_CODE = 1002;
-    private final static String ID = "ID";
     private Button btn_permission;
     private Button btn_download;
     private PermissionUtils permissionUtils;
 
-    public static void start(Context context, String id) {
-        Intent it = new Intent(context, PermissionActivity.class);
-        it.putExtra(ID, id);
-        context.startActivity(it);
-    }
-
     public static void start(Context context) {
         Intent it = new Intent(context, PermissionActivity.class);
         context.startActivity(it);
-    }
-
-
-    public static void startActivityForResult(Context context) {
-        Intent it = new Intent(context, PermissionActivity.class);
-        AppCompatActivity activity = (AppCompatActivity) context;
-        activity.startActivityForResult(it, REQUEST_CODE);
-    }
-
-    private void initIntent() {
-        Intent intent = getIntent();
-        if (intent.getStringExtra(ID) != null) {
-            String id = intent.getStringExtra(ID);
-            ToastUtils.showMessage("获取id" + id);
-        }
-
     }
 
     @Override
@@ -82,7 +56,6 @@ public class PermissionActivity extends BaseActivity implements View.OnClickList
                 permissionUtils.askActivityPermission(premission, PermissionUtils.REQUEST_CODE);
                 break;
             case R.id.btn_download:
-
                 break;
         }
     }

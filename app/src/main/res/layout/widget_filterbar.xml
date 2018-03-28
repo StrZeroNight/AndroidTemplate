@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp1080_125"
+    android:orientation="horizontal"
+    >
+
+    <TextView
+        android:id="@+id/tv_all"
+        android:text="综合"
+        style="@style/tv_filter" />
+
+    <TextView
+        android:id="@+id/tv_sale"
+        android:text="销量优先"
+        style="@style/tv_filter" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:text="价格"
+        style="@style/tv_filter"
+        android:drawableRight="@drawable/price"/>
+
+</LinearLayout>

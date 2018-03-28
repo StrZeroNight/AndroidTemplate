@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.zeronight.templet.R;
+import com.zeronight.templet.common.retrofithttp.CommenMethod;
 
 
 /**
@@ -16,10 +17,12 @@ import com.zeronight.templet.R;
 public abstract class BaseActivity extends AppCompatActivity {
 
     Dialog progressDialog;
+    protected CommenMethod commenMethod;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        commenMethod = new CommenMethod(this);
         initProgressDialog();
     }
 

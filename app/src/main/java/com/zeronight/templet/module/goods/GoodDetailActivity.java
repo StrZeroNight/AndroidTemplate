@@ -135,6 +135,41 @@ public class GoodDetailActivity extends BaseActivity implements View.OnClickList
         popupWindow.showAtLocation(showParentView, Gravity.BOTTOM, 0, 0);
     }
 
+    public void showParams(View showParentView) {
+        LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View popuView = layoutInflater.inflate(R.layout.popu_params, null);
+        RecyclerView rv_parmas = (RecyclerView) popuView.findViewById(R.id.rv_parmas);
+        rv_parmas.setLayoutManager(new LinearLayoutManager(this));
+        rv_parmas.setAdapter(new ParamsAdapter(this, TestData.getLists()));
+        SuperTextView stv_ok = (SuperTextView) popuView.findViewById(R.id.stv_ok);
+        //设置弹出窗口参数
+        final PopupWindow popupWindow = new PopupWindow(popuView, WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+        popupWindow.setFocusable(true);
+        popupWindow.setOutsideTouchable(true);
+        popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        WindowManager.LayoutParams lp = getWindow().getAttributes();
+        lp.alpha = 0.3f;
+        getWindow().setAttributes(lp);
+        //消去遮罩
+        popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                WindowManager.LayoutParams lp = getWindow().getAttributes();
+                lp.alpha = 1f;
+                getWindow().setAttributes(lp);
+
+            }
+        });
+        stv_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                popupWindow.dismiss();
+            }
+        });
+        popupWindow.setAnimationStyle(android.R.style.Animation_InputMethod);
+        popupWindow.showAtLocation(showParentView, Gravity.BOTTOM, 0, 0);
+    }
+
     private void getAttrsFromMap(){
         ConfirmOrderActivity.start(this);
 //        StringBuilder attrsString = new StringBuilder();

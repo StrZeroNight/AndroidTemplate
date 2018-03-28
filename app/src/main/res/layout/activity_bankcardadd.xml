@@ -9,30 +9,28 @@
         android:layout_height="wrap_content"
         app:btitle="添加银行卡"/>
 
-    <com.zeronight.templet.common.widget.DelEditText
-        android:id="@+id/det_user"
+    <com.zeronight.templet.common.widget.NorEditText
+        android:id="@+id/net_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="持卡人"
-        app:dhint="请输入持卡人姓名"
+        app:net_hint="请输入持卡人姓名"
+        app:net_title="持卡人"
         />
 
-    <com.zeronight.templet.common.widget.DelEditText
-        android:id="@+id/det_phone"
+    <com.zeronight.templet.common.widget.NorEditText
+        android:id="@+id/net_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="手机号"
-        app:dhint="请输入银行预留手机号"
-        app:textType="phone"
+        app:net_hint="请输入银行预留手机号"
+        app:net_title="手机号"
         />
 
-    <com.zeronight.templet.common.widget.DelEditText
-        android:id="@+id/det_number"
+    <com.zeronight.templet.common.widget.NorEditText
+        android:id="@+id/net_num"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="卡号"
-        app:dhint="请输入卡号"
-        app:textType="phone"
+        app:net_hint="请输入卡号"
+        app:net_title="卡号"
         />
 
     <com.zeronight.templet.common.widget.ArrorText
@@ -44,7 +42,6 @@
         app:acontent="请选择银行"
         />
 
-
     <com.zeronight.templet.common.widget.SuperTextView
         android:id="@+id/stv_save"
         android:layout_width="@dimen/dp1080_940"
@@ -53,6 +50,5 @@
         android:layout_marginTop="@dimen/dp1080_71"
         android:gravity="center"
         />
-
 
 </LinearLayout>

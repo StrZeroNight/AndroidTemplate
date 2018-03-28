@@ -57,18 +57,6 @@
             />
 
         <activity
-            android:name=".module.login.BindPhoneActivity"
-            android:launchMode="standard"
-            android:screenOrientation="portrait"
-            />
-
-        <activity
-            android:name=".module.login.ForgetPassActivity"
-            android:launchMode="standard"
-            android:screenOrientation="portrait"
-            />
-
-        <activity
             android:name=".module.address.list.AddressListActivity"
             android:launchMode="standard"
             android:screenOrientation="portrait"
@@ -179,6 +167,42 @@
 
         <activity
             android:name=".module.search.SearchActvity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".module.adapter.AdapterActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".module.classify.OneClassifyActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".module.order.OrderDetialActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".module.order.OrderListActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".module.order.OrderListOneActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".module.live.detial.LiveDetialActivity"
             android:launchMode="standard"
             android:screenOrientation="portrait"
             />

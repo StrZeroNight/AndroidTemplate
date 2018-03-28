@@ -9,13 +9,21 @@
         <attr name="aishow_icon" format="boolean" />
         <attr name="aishow_arror" format="boolean" />
         <attr name="aishow_content" format="boolean" />
+        <attr name="aishow_point" format="boolean" />
     </declare-styleable>
 
-    <declare-styleable name="SearchBarMain">
-        <attr name="left_icon" format="reference|color" />
-        <attr name="right_icon" format="reference|color" />
-        <attr name="sbackground" format="reference|color" />
-        <attr name="shint" format="string" />
+    <declare-styleable name="SearchBarClick">
+        <attr name="sbc_left_icon" format="reference|color" />
+        <attr name="sbc_right_icon" format="reference|color" />
+        <attr name="sbc_background" format="reference|color" />
+        <attr name="sbc_hint" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="SearchBarEdit">
+        <attr name="sbe_left_icon" format="reference|color" />
+        <attr name="sbe_right_icon" format="reference|color" />
+        <attr name="sbe_background" format="reference|color" />
+        <attr name="sbe_hint" format="string" />
     </declare-styleable>
 
     <declare-styleable name="TitleBar">
@@ -24,6 +32,7 @@
         <attr name="bright_image" format="reference" />
         <attr name="bishow_back" format="boolean" />
         <attr name="bisshow_bg" format="boolean" />
+        <attr name="bisback" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="LoginImageItem">
@@ -38,12 +47,12 @@
         <attr name="choosebutton_none" format="reference" />
     </declare-styleable>
 
-    <declare-styleable name="LoginEditTest">
+    <declare-styleable name="LoginEditText">
         <attr name="let_hint" format="string" />
         <attr name="let_icon" format="color|reference"/>
         <attr name="let_hintcolor" format="color" />
         <attr name="let_background" format="color|reference" />
-        <attr name="let_contenttype" >
+        <attr name="let_contenttype">
             <enum name="number" value="1"></enum>
             <enum name="password" value="2"></enum>
         </attr>
@@ -98,6 +107,44 @@
             <enum name="password" value="1" />
             <enum name="string" value="2" />
             <enum name="phone" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="AddressText">
+        <attr name="at_title" format="string" />
+        <attr name="at_hint" format="string" />
+        <attr name="at_textType">
+            <enum name="password" value="1" />
+            <enum name="phone" value="2" />
+        </attr>
+        <attr name="at_viewType">
+            <enum name="edit" value="0" />
+            <enum name="text" value="1" />
+            <enum name="switchs" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="OrderButton">
+        <attr name="order_type">
+            <enum name="daifukuan" value="1" />
+            <enum name="daishouhuo" value="2" />
+            <enum name="yishouhuo" value="3" />
+            <enum name="yiwancheng" value="4" />
+            <enum name="daifahuo" value="5" />
+            <enum name="shouhou" value="6" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="NorEditText">
+        <attr name="net_title" format="string" />
+        <attr name="net_hint" format="string" />
+        <attr name="net_title_size" format="dimension" />
+        <attr name="net_title_color" format="color" />
+        <attr name="net_hint_color" format="color" />
+        <attr name="net_hint_size" format="dimension" />
+        <attr name="net_texttype">
+            <enum name="password" value="1" />
+            <enum name="phone" value="2" />
         </attr>
     </declare-styleable>
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/drawerlayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_cc"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/color_white">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/colorPrimary"
+            />
+
+        <com.zeronight.templet.common.widget.SearchBarClick
+            android:id="@+id/searchbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:sbc_right_icon="@drawable/icon_filter"
+            app:sbc_hint="请输入关键词搜索商品"
+            app:sbc_background="@color/colorPrimary"
+            />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_ee"
+            app:tabGravity="center"
+            app:tabIndicatorColor="@color/colorPrimary"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            app:tabTextColor="@color/color_33" />
+
+        <com.zeronight.templet.common.widget.FilterBar
+            android:id="@+id/filterbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:id="@+id/xrv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_white"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp1080_850"
+        android:layout_height="match_parent"
+        android:layout_gravity="right">
+
+        <include layout="@layout/filter1" />
+
+        <include layout="@layout/filter2" />
+
+    </RelativeLayout>
+
+</android.support.v4.widget.DrawerLayout>

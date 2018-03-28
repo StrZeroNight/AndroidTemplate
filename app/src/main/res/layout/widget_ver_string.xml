@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="@dimen/dp1080_35"
+    android:background="@color/color_white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="@dimen/dp1080_60"
+        android:layout_height="@dimen/dp1080_60"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="@dimen/dp1080_340"
+        android:layout_height="wrap_content"
+        android:text="短信验证码"
+        android:paddingLeft="@dimen/dp1080_15"
+        android:paddingRight="@dimen/dp1080_60"
+        android:textColor="@color/color_22"
+        android:textSize="@dimen/dp1080_38"
+        android:layout_centerVertical="true" />
+
+    <EditText
+        android:id="@+id/et_content"
+        style="@style/login_et_string"
+        android:layout_centerVertical="true"
+        android:textColor="@color/color_66"
+        android:textSize="@dimen/dp1080_38"
+        android:layout_toLeftOf="@+id/tv_getvercode"
+        android:layout_toRightOf="@+id/tv_title"
+        android:hint="请输入验证码"
+        android:textColorHint="@color/color_99"
+        android:maxLength="10"
+        android:maxLines="1" />
+
+    <com.zeronight.templet.common.widget.SuperTextView
+        android:id="@+id/tv_getvercode"
+        android:layout_width="@dimen/dp1080_230"
+        android:layout_height="@dimen/dp1080_80"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp1080_20"
+        android:gravity="center"
+        android:text="发送验证码"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/dp1080_35"
+        app:radius="@dimen/dp1080_10"
+        app:normalBackgroundColor="@color/colorPrimary"
+        />
+
+</RelativeLayout>

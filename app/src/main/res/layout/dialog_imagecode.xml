@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="输入验证码"
         android:gravity="center"
-        android:textColor="@color/color_black_66"
+        android:textColor="@color/color_66"
         android:textSize="@dimen/dp1080_41"
         android:layout_marginTop="@dimen/dp1080_40"
         android:layout_marginBottom="@dimen/dp1080_40"
@@ -23,7 +23,7 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="@dimen/dp1080_40"
         android:layout_marginRight="@dimen/dp1080_40"
-        android:background="@color/color_gray_b5"
+        android:background="@color/color_b5"
         />
 
     <LinearLayout
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:text="验证码："
             android:textSize="@dimen/dp1080_37"
-            android:textColor="@color/color_black_66"
+            android:textColor="@color/color_66"
             />
 
         <EditText
@@ -47,8 +47,8 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/dp1080_37"
             android:inputType="text"
-            android:textColorHint="@color/color_gray_b1"
-            android:textColor="@color/color_black_66"
+            android:textColorHint="@color/color_b1"
+            android:textColor="@color/color_66"
             android:hint="请输入右侧验证码"
             />
 

@@ -14,7 +14,7 @@ import com.zeronight.templet.common.data.EventBusBundle;
 import com.zeronight.templet.common.utils.ToastUtils;
 import com.zeronight.templet.common.widget.SuperTextView;
 import com.zeronight.templet.common.widget.TitleBar;
-import com.zeronight.templet.module.address.edit.AddressDetialBean;
+import com.zeronight.templet.module.address.list.AddressDetialBean;
 import com.zeronight.templet.module.address.list.AddressListActivity;
 import com.zeronight.templet.module.address.list.AddressListAdapter;
 

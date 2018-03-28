@@ -55,7 +55,7 @@
             android:padding="@dimen/dp1080_20"
             android:layout_marginRight="@dimen/dp1080_40"
             android:layout_toLeftOf="@+id/stv_confirmorder"
-            android:textColor="@color/color_red"
+            android:textColor="@color/red_e5223f"
             android:textSize="@dimen/dp1080_40"
             />
 
@@ -68,8 +68,7 @@
             android:gravity="center"
             android:textColor="@color/color_white"
             android:textSize="@dimen/dp1080_40"
-            app:normalBackgroundColor="@color/color_red"
-            app:pressedBackgroundColor="@color/color_red_80"
+            app:normalBackgroundColor="@color/red_e5223f"
             />
 
         <com.zeronight.templet.common.widget.SuperTextView
@@ -82,8 +81,8 @@
             android:textColor="@color/color_white"
             android:textSize="@dimen/dp1080_40"
             android:visibility="gone"
-            app:normalBackgroundColor="@color/color_deep_orange"
-            app:pressedBackgroundColor="@color/color_deep_orange_80"
+            app:normalBackgroundColor="@color/orange_ed683d"
+            app:pressedBackgroundColor="@color/orange_80ed683d"
             />
 
     </RelativeLayout>

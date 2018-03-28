@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp1080_850"
+    android:layout_height="match_parent"
+    android:id="@+id/rl_fliter2"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_white"
+    android:visibility="gone">
+
+    <ImageView
+        android:id="@+id/iv_x2"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/colorPrimary"
+        />
+
+    <com.zeronight.templet.common.widget.TitleBar
+        android:id="@+id/titlebar2"
+        android:layout_below="@+id/iv_x2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bisback="false"
+        app:btitle="品牌"
+        android:background="@color/color_white"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_brand"
+        android:layout_above="@+id/ll_bottom2"
+        android:layout_below="@+id/titlebar2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp1080_20"
+        android:background="@color/color_white"
+        android:gravity="center">
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_clear2"
+            android:layout_width="@dimen/dp1080_370"
+            android:layout_height="@dimen/dp1080_96"
+            android:gravity="center"
+            android:text="重置"
+            app:normalStrokeWidth="@dimen/dp1080_2"
+            app:normalStrokeColor="@color/color_99"
+            app:radius="@dimen/dp1080_15"
+            android:textSize="@dimen/dp1080_42"
+            android:clickable="true"
+            android:textColor="@color/color_99"
+            android:layout_marginRight="@dimen/dp1080_20" />
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_ok2"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/dp1080_42"
+            android:layout_width="@dimen/dp1080_370"
+            android:layout_height="@dimen/dp1080_96"
+            android:layout_marginLeft="@dimen/dp1080_20"
+            app:radius="@dimen/dp1080_15"
+            android:clickable="true"
+            app:normalBackgroundColor="@color/color_99"
+            android:gravity="center"
+            android:text="确定" />
+
+    </LinearLayout>
+
+</RelativeLayout>

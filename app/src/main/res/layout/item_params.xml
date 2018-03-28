@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/tv_paramsname"
+        android:layout_width="@dimen/dp1080_240"
+        android:layout_height="wrap_content"
+        android:text="参数名"
+        android:gravity="center"
+        android:textSize="@dimen/dp1080_34"
+        android:textColor="@color/color_99"
+        android:padding="@dimen/dp1080_50"
+        />
+
+    <TextView
+        android:id="@+id/tv_params"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="参数"
+        android:textSize="@dimen/dp1080_34"
+        android:textColor="@color/color_33"
+        android:paddingTop="@dimen/dp1080_50"
+        android:paddingBottom="@dimen/dp1080_50"
+        android:gravity="center"
+        />
+
+</LinearLayout>

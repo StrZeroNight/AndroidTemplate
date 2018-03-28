@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/main_background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="产品参数"
+        android:background="@color/color_white"
+        android:textSize="@dimen/dp1080_45"
+        android:textColor="@color/brown_5e250a"
+        android:gravity="center"
+        android:padding="@dimen/dp1080_58"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_parmas"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp1080_880"
+        android:background="@color/color_white"
+        android:layout_marginTop="@dimen/dp1080_5"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/color_white"
+        android:layout_marginTop="@dimen/dp1080_5"
+        >
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_ok"
+            android:layout_width="@dimen/dp1080_600"
+            android:layout_height="@dimen/dp1080_90"
+            android:textSize="@dimen/dp1080_36"
+            android:textColor="@color/brown_5e250a"
+            android:gravity="center"
+            app:normalBackgroundColor="@color/colorPrimary"
+            app:round="true"
+            android:text="确认"
+            android:layout_margin="@dimen/dp1080_34"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

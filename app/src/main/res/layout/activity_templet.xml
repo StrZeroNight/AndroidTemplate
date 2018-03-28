@@ -19,91 +19,120 @@
                 android:id="@+id/btn_main"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="main"
+                android:text="首页"
+                android:clickable="true"
                 />
 
             <Button
                 android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="login"
+                android:text="登录注册"
+                android:clickable="true"
                 />
 
             <Button
                 android:id="@+id/btn_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="address"
+                android:text="地址相关"
+                android:clickable="true"
                 />
 
             <Button
                 android:id="@+id/btn_userinfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="userinfo"
+                android:text="用户信息"
+                android:clickable="true"
                 />
 
             <Button
                 android:id="@+id/btn_bankcard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="bankcard"
+                android:text="提现模块"
+                android:clickable="true"
                 />
 
             <Button
                 android:id="@+id/btn_permission"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="permission_and_download"
+                android:text="权限添加和加载图片"
+                android:clickable="true"
                 />
 
             <Button
                 android:id="@+id/btn_cart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="cart"
+                android:text="购物车"
+                android:clickable="true"
                 />
 
             <Button
                 android:id="@+id/btn_fileread"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="file_load"
+                android:text="文本文件加载"
+                android:clickable="true"
                 />
 
             <Button
                 android:id="@+id/btn_window"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="window"
+                android:text="全局悬浮窗"
+                android:clickable="true"
                 />
 
             <Button
                 android:id="@+id/btn_goods"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="goods_and_confirmorder"
+                android:text="商品详情和提交"
+                android:clickable="true"
                 />
 
             <Button
                 android:id="@+id/btn_rich"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="rich"
+                android:text="富文本编辑页面"
+                android:clickable="true"
                 />
 
             <Button
                 android:id="@+id/btn_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="search"
+                android:text="搜索页面"
+                android:clickable="true"
                 />
 
             <Button
                 android:id="@+id/btn_adapter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="adapter"
+                android:text="adapter页面"
+                android:clickable="true"
+                />
+
+            <Button
+                android:id="@+id/btn_classify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="一级分类页面"
+                android:clickable="true"
+                />
+
+            <Button
+                android:id="@+id/btn_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="订单页面"
+                android:clickable="true"
                 />
 
         </LinearLayout>

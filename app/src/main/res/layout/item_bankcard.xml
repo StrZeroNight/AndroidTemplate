@@ -24,7 +24,7 @@
         android:id="@+id/tv_bank_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/color_black_22"
+        android:textColor="@color/color_22"
         android:textSize="@dimen/dp1080_41"
         android:text="银行名称"
         android:layout_marginTop="@dimen/dp1080_46"
@@ -35,7 +35,7 @@
         android:id="@+id/tv_bank_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/color_gray_93"
+        android:textColor="@color/color_93"
         android:textSize="@dimen/dp1080_41"
         android:layout_toRightOf="@+id/iv_bank_image"
         android:text="银行卡号"
@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/iv_bank_image"
-        android:textColor="@color/color_gray_93"
+        android:textColor="@color/color_93"
         android:textSize="@dimen/dp1080_41"
         android:layout_marginTop="@dimen/dp1080_27"
         android:text="持卡人"
@@ -60,7 +60,7 @@
         android:id="@+id/iv_x"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp1080_3"
-        android:background="@color/color_gray_e2"
+        android:background="@color/color_e2"
         android:layout_marginBottom="@dimen/dp1080_27"
         android:layout_below="@+id/tv_bank_user"
         android:layout_marginLeft="@dimen/dp1080_64"
@@ -71,8 +71,8 @@
         android:id="@+id/stv_delete"
         android:text="删除"
         android:layout_toLeftOf="@+id/stv_edit"
-        app:normalBackgroundColor="@color/color_black_33"
-        app:pressedBackgroundColor="@color/color_gray"
+        app:normalBackgroundColor="@color/color_33"
+        app:pressedBackgroundColor="@color/color_8c"
         style="@style/bank_btn" />
 
     <com.zeronight.templet.common.widget.SuperTextView
@@ -81,8 +81,8 @@
         style="@style/bank_btn"
         android:layout_alignParentRight="true"
         android:layout_marginRight="@dimen/dp1080_56"
-        app:normalBackgroundColor="@color/color_black_33"
-        app:pressedBackgroundColor="@color/color_gray"
+        app:normalBackgroundColor="@color/color_33"
+        app:pressedBackgroundColor="@color/color_8c"
         />
 
 </RelativeLayout>

@@ -15,7 +15,7 @@
         <TextView
             android:id="@+id/tv_men"
             android:textSize="@dimen/dp1080_45"
-            android:textColor="@color/color_black_33"
+            android:textColor="@color/color_33"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -25,13 +25,13 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp1080_2"
-            android:background="@color/color_gray_cc"
+            android:background="@color/color_cc"
             />
 
         <TextView
             android:id="@+id/tv_women"
             android:textSize="@dimen/dp1080_45"
-            android:textColor="@color/color_black_33"
+            android:textColor="@color/color_33"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -43,7 +43,7 @@
     <TextView
         android:id="@+id/tv_cancel"
         android:textSize="@dimen/dp1080_45"
-        android:textColor="@color/color_gray"
+        android:textColor="@color/color_8c"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp1080_30"

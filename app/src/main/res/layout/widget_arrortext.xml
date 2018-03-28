@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/dp1080_150"
     android:background="@drawable/select_view"
-    android:paddingLeft="@dimen/dp1080_24"
-    android:paddingRight="@dimen/dp1080_19"
+    android:paddingLeft="@dimen/dp1080_25"
+    android:paddingRight="@dimen/dp1080_20"
     android:orientation="horizontal">
 
     <ImageView
@@ -14,17 +14,17 @@
         android:layout_height="@dimen/dp1080_54"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/dp1080_47"
-        android:background="@color/color_black_66"
+        android:layout_marginLeft="@dimen/dp1080_45"
+        android:background="@color/color_66"
         />
 
     <TextView
         android:id="@+id/tv_title"
-        android:textSize="@dimen/dp1080_41"
-        android:textColor="@color/color_black_66"
+        android:textSize="@dimen/dp1080_40"
+        android:textColor="@color/color_66"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/dp1080_47"
+        android:layout_marginLeft="@dimen/dp1080_45"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/iv_icon"
         tools:text="标题" />
@@ -43,22 +43,33 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:gravity="right"
-            android:textSize="@dimen/dp1080_41"
-            android:textColor="@color/color_black_66"
+            android:textSize="@dimen/dp1080_40"
+            android:textColor="@color/color_66"
             android:layout_toLeftOf="@+id/iv_arror"
-            android:paddingRight="@dimen/dp1080_47"
+            android:paddingRight="@dimen/dp1080_45"
             android:text="内容" />
 
         <ImageView
             android:id="@+id/iv_arror"
-            android:layout_width="@dimen/dp1080_39"
-            android:layout_height="@dimen/dp1080_39"
+            android:layout_width="@dimen/dp1080_40"
+            android:layout_height="@dimen/dp1080_40"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/dp1080_47"
-            android:src="@color/color_black_66"
+            android:layout_marginRight="@dimen/dp1080_45"
+            android:src="@color/color_66"
             />
 
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_point"
+        android:layout_width="@dimen/dp1080_12"
+        android:layout_height="@dimen/dp1080_12"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp1080_85"
+        android:background="@color/color_black"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/dp1080_30"
+        />
 
 </RelativeLayout>

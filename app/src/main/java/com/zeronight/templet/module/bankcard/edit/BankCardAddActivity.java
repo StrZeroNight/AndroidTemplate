@@ -14,7 +14,7 @@ import com.zeronight.templet.common.retrofithttp.XRetrofitUtils;
 import com.zeronight.templet.common.utils.ToastUtils;
 import com.zeronight.templet.common.utils.XStringUtils;
 import com.zeronight.templet.common.widget.ArrorText;
-import com.zeronight.templet.common.widget.DelEditText;
+import com.zeronight.templet.common.widget.NorEditText;
 import com.zeronight.templet.common.widget.SuperTextView;
 import com.zeronight.templet.module.bankcard.bank.BankActivity;
 import com.zeronight.templet.module.bankcard.bank.BankBean;
@@ -31,9 +31,11 @@ public class BankCardAddActivity extends BaseActivity implements View.OnClickLis
     private final static int REQUEST_CODE = 1001;
     private final static int RESULT_CODE = 1002;
     private final static String ID = "ID";
-    private DelEditText det_user;
-    private DelEditText det_phone;
-    private DelEditText det_number;
+    private NorEditText net_name;
+    private NorEditText net_phone;
+
+    private NorEditText net_num;
+
     private ArrorText at_choosebank;
     private SuperTextView stv_save;
     private BankBean bank;
@@ -73,9 +75,9 @@ public class BankCardAddActivity extends BaseActivity implements View.OnClickLis
     }
 
     private void initView() {
-        det_phone = (DelEditText) findViewById(R.id.det_phone);
-        det_user = (DelEditText) findViewById(R.id.det_user);
-        det_number = (DelEditText) findViewById(R.id.det_number);
+        net_name =  findViewById(R.id.net_name);
+        net_phone = findViewById(R.id.net_phone);
+        net_num = findViewById(R.id.net_num);
         at_choosebank = (ArrorText) findViewById(R.id.at_choosebank);
         at_choosebank.setOnClickListener(this);
         stv_save = (SuperTextView) findViewById(R.id.stv_save);
@@ -97,9 +99,9 @@ public class BankCardAddActivity extends BaseActivity implements View.OnClickLis
     private void checkBankCardInfo() {
 
         BankCardUpdateBean bankCard = new BankCardUpdateBean();
-        String user = det_user.getContent();
-        String number = det_number.getContent();
-        String phone = det_phone.getContent();
+        String user = net_name.getContent();
+        String number = net_num.getContent();
+        String phone = net_phone.getContent();
         String bank = at_choosebank.getContent();
 
         if (XStringUtils.isEmpty(user)) {

@@ -13,7 +13,7 @@
         android:paddingBottom="@dimen/dp1080_40"
         android:text="正在更新"
         android:textSize="@dimen/dp1080_50"
-        android:textColor="@color/color_black_66"
+        android:textColor="@color/color_66"
         />
 
     <ProgressBar

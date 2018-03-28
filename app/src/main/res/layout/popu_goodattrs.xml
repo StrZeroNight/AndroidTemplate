@@ -50,7 +50,7 @@
             android:minLines="2"
             android:layout_toRightOf="@+id/iv_pic"
             android:textSize="@dimen/dp1080_34"
-            android:textColor="@color/color_black_33"
+            android:textColor="@color/color_33"
             android:layout_marginBottom="@dimen/dp1080_33"
             android:layout_above="@+id/tv_price2"
             />
@@ -63,7 +63,7 @@
             android:layout_toRightOf="@+id/iv_pic"
             android:textSize="@dimen/dp1080_42"
             android:layout_alignParentBottom="true"
-            android:textColor="@color/color_red_ff5200"
+            android:textColor="@color/red_ff5200"
             />
 
         <TextView
@@ -76,7 +76,7 @@
             android:textSize="@dimen/dp1080_28"
             android:layout_alignParentBottom="true"
             android:layout_marginRight="@dimen/dp1080_54"
-            android:textColor="@color/color_black_66"
+            android:textColor="@color/color_66"
             />
 
     </RelativeLayout>
@@ -91,12 +91,12 @@
         android:id="@+id/rv_attrs"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp1080_500"
-        android:background="@color/color_gray_f5"/>
+        android:background="@color/color_f5"/>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp1080_5"
-        android:background="@color/color_gray_f5"
+        android:background="@color/color_f5"
         />
 
     <RelativeLayout
@@ -111,7 +111,7 @@
             android:text="购买数量"
             android:layout_centerVertical="true"
             android:textSize="@dimen/dp1080_36"
-            android:textColor="@color/color_black_33"
+            android:textColor="@color/color_33"
             android:paddingLeft="@dimen/dp1080_40"
             android:paddingTop="@dimen/dp1080_60"
             android:paddingBottom="@dimen/dp1080_60"
@@ -129,7 +129,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp1080_5"
-        android:background="@color/color_gray_f5"
+        android:background="@color/color_f5"
         />
 
     <RelativeLayout
@@ -180,8 +180,7 @@
             app:round="true"
             android:clickable="true"
             android:layout_marginRight="@dimen/dp1080_20"
-            app:pressedBackgroundColor="@color/color_ff5200_80"
-            app:normalBackgroundColor="@color/color_ff5200"
+            app:normalBackgroundColor="@color/orange_ff5200"
             android:layout_marginTop="@dimen/dp1080_20"
             android:layout_marginBottom="@dimen/dp1080_20"
             android:layout_toLeftOf="@+id/stv_buynow2"
@@ -194,12 +193,11 @@
             android:gravity="center"
             android:text="立即购买"
             android:textSize="@dimen/dp1080_36"
-            android:textColor="@color/color_5e250a"
+            android:textColor="@color/brown_5e250a"
             app:round="true"
             android:clickable="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/dp1080_30"
-            app:pressedBackgroundColor="@color/colorPrimary_80"
             app:normalBackgroundColor="@color/colorPrimary"
             android:layout_marginTop="@dimen/dp1080_20"
             android:layout_marginBottom="@dimen/dp1080_20"

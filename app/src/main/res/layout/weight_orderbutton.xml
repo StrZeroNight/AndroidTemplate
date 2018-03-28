@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_dafukuan"
+        style="@style/orderbutton_ll">
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_cancel"
+            style="@style/orderbutton_tv"
+            android:layout_marginRight="@dimen/dp1080_25"
+            android:text="取消订单"
+            app:normalBackgroundColor="@color/colorPrimary"
+            app:radius="@dimen/dp1080_10" />
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_pay"
+            style="@style/orderbutton_tv"
+            android:text="付款"
+            app:normalBackgroundColor="@color/colorPrimary"
+            app:radius="@dimen/dp1080_10"
+
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_daishouhuo"
+        style="@style/orderbutton_ll">
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_wuliu"
+            style="@style/orderbutton_tv2"
+            android:layout_marginRight="@dimen/dp1080_25"
+            android:text="查看物流"
+            app:normalStrokeColor="@color/color_22"
+            app:normalStrokeWidth="@dimen/dp1080_2"
+            app:round="true" />
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_shouhuo"
+            style="@style/orderbutton_tv"
+            android:text="确认收货"
+            app:normalBackgroundColor="@color/colorPrimary"
+            app:radius="@dimen/dp1080_10"
+
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_yishouhuo"
+        style="@style/orderbutton_ll">
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_payback"
+            style="@style/orderbutton_tv2"
+            android:layout_marginRight="@dimen/dp1080_25"
+            android:text="申请售后"
+            app:normalStrokeColor="@color/color_22"
+            app:normalStrokeWidth="@dimen/dp1080_2"
+            app:round="true" />
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_wuliu2"
+            style="@style/orderbutton_tv2"
+            android:layout_marginRight="@dimen/dp1080_25"
+            android:text="查看物流"
+            app:normalStrokeColor="@color/color_22"
+            app:normalStrokeWidth="@dimen/dp1080_2"
+            app:round="true" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_yiwancheng"
+        style="@style/orderbutton_ll">
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_shanchu"
+            style="@style/orderbutton_tv2"
+            android:layout_marginRight="@dimen/dp1080_25"
+            android:text="删除订单"
+            app:normalStrokeColor="@color/color_22"
+            app:normalStrokeWidth="@dimen/dp1080_2"
+            app:round="true" />
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_payback2"
+            style="@style/orderbutton_tv2"
+            android:layout_marginRight="@dimen/dp1080_25"
+            android:text="申请售后"
+            app:normalStrokeColor="@color/color_22"
+            app:normalStrokeWidth="@dimen/dp1080_2"
+            app:round="true" />
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_wuliu3"
+            style="@style/orderbutton_tv2"
+            android:layout_marginRight="@dimen/dp1080_25"
+            android:text="查看物流"
+            app:normalStrokeColor="@color/color_22"
+            app:normalStrokeWidth="@dimen/dp1080_2"
+            app:round="true" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_daifahuo"
+        style="@style/orderbutton_ll">
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_tuikuan"
+            style="@style/orderbutton_tv2"
+            android:layout_marginRight="@dimen/dp1080_25"
+            android:text="申请退款"
+            app:normalStrokeColor="@color/color_22"
+            app:normalStrokeWidth="@dimen/dp1080_2"
+            app:round="true" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_shouhou"
+        style="@style/orderbutton_ll">
+
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_detial"
+            style="@style/orderbutton_tv"
+            android:text="查看详情"
+            app:normalBackgroundColor="@color/colorPrimary"
+            app:radius="@dimen/dp1080_10" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_payback1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1080_150"
+            android:drawableLeft="@drawable/ic4"
+            android:drawablePadding="@dimen/dp1080_30"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp1080_48"
+            android:text="退款成功"
+            android:textColor="@color/color_33"
+            android:textSize="@dimen/dp1080_36" />
+
+        <LinearLayout style="@style/orderbutton_ll">
+
+            <com.zeronight.templet.common.widget.SuperTextView
+                android:id="@+id/stv_detial1"
+                style="@style/orderbutton_tv2"
+                android:textSize="@dimen/dp1080_40"
+                android:layout_marginRight="@dimen/dp1080_25"
+                android:text="查看详情"
+                app:round="true" />
+
+            <com.zeronight.templet.common.widget.SuperTextView
+                android:id="@+id/stv_write"
+                style="@style/orderbutton_tv2"
+                android:textSize="@dimen/dp1080_40"
+                android:layout_marginRight="@dimen/dp1080_25"
+                android:text="填写物流"
+                android:textColor="@color/colorPrimary"
+                app:round="true" />
+
+            <com.zeronight.templet.common.widget.SuperTextView
+                style="@style/orderbutton_tv"
+                android:text="商家同意退款"
+                android:textSize="@dimen/dp1080_36"
+                android:clickable="false"
+                app:pressedBackgroundColor="@color/green_34bab6"
+                app:normalBackgroundColor="@color/green_34bab6"
+                app:radius="@dimen/dp1080_10" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_payback2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1080_150"
+            android:drawableLeft="@drawable/ic4"
+            android:drawablePadding="@dimen/dp1080_30"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp1080_48"
+            android:text="退款成功"
+            android:textColor="@color/color_33"
+            android:textSize="@dimen/dp1080_36" />
+
+        <LinearLayout
+            style="@style/orderbutton_ll">
+
+            <com.zeronight.templet.common.widget.SuperTextView
+                android:id="@+id/stv_detial2"
+                style="@style/orderbutton_tv2"
+                android:layout_marginRight="@dimen/dp1080_25"
+                android:text="查看详情"
+                android:textSize="@dimen/dp1080_40"
+                app:round="true" />
+
+            <com.zeronight.templet.common.widget.SuperTextView
+                style="@style/orderbutton_tv"
+                android:text="审核中"
+                android:textSize="@dimen/dp1080_36"
+                app:pressedBackgroundColor="@color/red_ff15525"
+                app:normalBackgroundColor="@color/red_ff15525"
+                app:radius="@dimen/dp1080_10"
+                android:clickable="false"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

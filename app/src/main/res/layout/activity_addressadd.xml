@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,47 +10,49 @@
         android:id="@+id/titlebar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:btitle="新增收货地址"
-        />
+        app:btitle="新增收货地址" />
 
-    <com.zeronight.templet.common.widget.DelEditText
-        android:id="@+id/det_user"
+    <com.zeronight.templet.common.widget.AddressText
+        android:id="@+id/addt_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="收  货  人" />
+        app:at_hint="请填写收货人"
+        app:at_title="收货人"
+        app:at_viewType="edit" />
 
-    <com.zeronight.templet.common.widget.DelEditText
-        android:id="@+id/det_phone"
+    <com.zeronight.templet.common.widget.AddressText
+        android:id="@+id/addt_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:textType="phone"
-        app:title="手机号码" />
+        app:at_hint="请填写号码"
+        app:at_textType="phone"
+        app:at_title="手机号码"
+        app:at_viewType="edit" />
 
-    <com.zeronight.templet.common.widget.ArrorText
-        android:id="@+id/at_city"
+    <com.zeronight.templet.common.widget.AddressText
+        android:id="@+id/addt_city"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:atitle="所在城市"
-        app:aishow_arror="true"
-        app:aishow_icon="false"
-        app:aishow_content="true"
+        app:at_hint="请选择收货地址"
+        app:at_title="所在城市"
         android:clickable="true"
-        app:acontent="请选择所在地区"
-        />
+        app:at_viewType="text" />
 
-    <com.zeronight.templet.common.widget.DelEditText
-        android:id="@+id/det_address"
+    <com.zeronight.templet.common.widget.AddressText
+        android:id="@+id/addt_detial"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="详细地址" />
+        app:at_hint="请填写详细地址"
+        app:at_title="详细地址"
+        app:at_viewType="edit" />
 
-    <com.zeronight.templet.common.widget.SwitchText
-        android:id="@+id/st_default"
+    <com.zeronight.templet.common.widget.AddressText
+        android:id="@+id/addt_default"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:aishow_icon="false"
-        app:atitle="是否默认地址"
-        />
+        app:at_textType="phone"
+        app:at_title="是否默认地址"
+        app:at_viewType="switchs" />
 
     <com.zeronight.templet.common.widget.SuperTextView
         android:id="@+id/stv_add"
@@ -62,9 +63,9 @@
         android:gravity="center"
         android:padding="@dimen/dp1080_30"
         android:text="保存地址"
+        android:clickable="true"
         android:textColor="@color/color_white"
-        app:normalBackgroundColor="@color/color_black_33"
-        app:pressedBackgroundColor="@color/color_black_33_tran70"
-        />
+        app:normalBackgroundColor="@color/color_33"
+        app:pressedBackgroundColor="@color/color_black_33_tran70" />
 
 </LinearLayout>

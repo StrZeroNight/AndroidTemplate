@@ -64,14 +64,14 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/dp1080_35</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/color_black_66</item>
+        <item name="android:textColor">@color/color_66</item>
     </style>
 
     <style name="paychoose_icon">
         <item name="android:layout_width">@dimen/dp1080_100</item>
         <item name="android:layout_height">@dimen/dp1080_100</item>
         <item name="android:layout_centerVertical">true</item>
-        <item name="android:background">@color/color_black_66</item>
+        <item name="android:background">@color/color_66</item>
         <item name="android:layout_margin">@dimen/dp1080_40</item>
     </style>
 
@@ -80,13 +80,13 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:textSize">@dimen/dp1080_40</item>
-        <item name="android:textColor">@color/color_black_66</item>
+        <item name="android:textColor">@color/color_66</item>
     </style>
 
     <style name="paychoose_iv_choose">
         <item name="android:layout_width">@dimen/dp1080_45</item>
         <item name="android:layout_height">@dimen/dp1080_45</item>
-        <item name="android:background">@color/color_black_66</item>
+        <item name="android:background">@color/color_66</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:layout_marginRight">@dimen/dp1080_50</item>
@@ -116,7 +116,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@null</item>
-        <item name="android:textColorHint">@color/color_gray_ee</item>
+        <item name="android:textColorHint">@color/color_ee</item>
     </style>
 
     <style name="login_white_line">
@@ -133,7 +133,7 @@
         <item name="android:paddingBottom">@dimen/dp1080_30</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/dp1080_50</item>
-        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textColor">@color/color_33</item>
         <item name="android:layout_marginTop">@dimen/dp1080_50</item>
     </style>
 
@@ -142,14 +142,14 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:gravity">center_horizontal</item>
         <item name="android:orientation">vertical</item>
-        <item name="android:background">@color/color_gray_cc</item>
+        <item name="android:background">@color/color_cc</item>
     </style>
 
     <style name="bank_btn">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/dp1080_42</item>
-        <item name="android:textColor">@color/color_black_66</item>
+        <item name="android:textColor">@color/color_66</item>
         <item name="android:layout_below">@+id/iv_x</item>
         <item name="android:layout_marginRight">@dimen/dp1080_22</item>
         <item name="android:layout_marginBottom">@dimen/dp1080_32</item>
@@ -186,7 +186,7 @@
         <!-- 提示文案的文字颜色 -->
         <item name="banner_tipTextColor">@android:color/white</item>
         <!-- 加载网络数据时覆盖在BGABanner最上层的占位图 -->
-        <item name="banner_placeholderDrawable">@color/color_gray</item>
+        <item name="banner_placeholderDrawable">@color/color_8c</item>
         <!--动画效果-->
         <item name="banner_transitionEffect">alpha</item>
     </style>
@@ -195,7 +195,7 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:textColor">@color/color_black_33</item>
+        <item name="android:textColor">@color/color_33</item>
         <item name="android:textSize">@dimen/dp1080_45</item>
         <item name="android:gravity">center</item>
         <item name="android:padding">@dimen/dp1080_30</item>
@@ -203,5 +203,119 @@
         <item name="android:clickable">true</item>
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
     </style>
+
+    <style name="tv_filter">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/dp1080_36</item>
+        <item name="android:textColor">@color/color_33</item>
+        <item name="android:background">@drawable/select_view</item>
+        <item name="android:clickable">true</item>
+        <item name="android:paddingLeft">@dimen/dp1080_100</item>
+        <item name="android:paddingRight">@dimen/dp1080_100</item>
+    </style>
+
+    <style name="filetr_price">
+        <item name="android:textColor">@color/color_99</item>
+        <item name="android:textSize">@dimen/dp1080_40</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/color_f6</item>
+        <item name="android:layout_marginRight">@dimen/dp1080_40</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingTop">@dimen/dp1080_20</item>
+        <item name="android:paddingBottom">@dimen/dp1080_20</item>
+        <item name="android:paddingLeft">@dimen/dp1080_30</item>
+        <item name="android:paddingRight">@dimen/dp1080_30</item>
+    </style>
+
+    <style name="orderbutton_ll">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/color_white</item>
+        <item name="android:gravity">center_vertical|end</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingBottom">@dimen/dp1080_25</item>
+        <item name="android:paddingRight">@dimen/dp1080_43</item>
+        <item name="android:paddingTop">@dimen/dp1080_25</item>
+    </style>
+
+    <style name="orderbutton_tv">
+        <item name="android:layout_width">@dimen/dp1080_300</item>
+        <item name="android:layout_height">@dimen/dp1080_85</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">@dimen/dp1080_42</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="orderbutton_tv2">
+        <item name="android:layout_width">@dimen/dp1080_215</item>
+        <item name="android:layout_height">@dimen/dp1080_66</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/color_22</item>
+        <item name="android:textSize">@dimen/dp1080_32</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="mine_tv">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">@dimen/dp1080_30</item>
+        <item name="android:textSize">@dimen/dp1080_36</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/color_22</item>
+        <item name="android:background">@drawable/select_view</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="mine_tv1">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">@dimen/dp1080_50</item>
+        <item name="android:textSize">@dimen/dp1080_36</item>
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textColor">@color/color_22</item>
+        <item name="android:background">@drawable/select_view</item>
+    </style>
+
+    <style name="mine_tv2">
+        <item name="android:layout_width">@dimen/dp1080_273</item>
+        <item name="android:layout_height">@dimen/dp1080_96</item>
+        <item name="android:textSize">@dimen/dp1080_36</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">@dimen/dp1080_40</item>
+        <item name="android:paddingLeft">@dimen/dp1080_50</item>
+        <item name="android:paddingRight">@dimen/dp1080_50</item>
+        <item name="android:layout_marginRight">@dimen/dp1080_40</item>
+        <item name="android:textColor">@color/color_22</item>
+        <item name="android:background">@color/color_ee</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="live_tv_title">
+        <item name="android:layout_width">@dimen/dp1080_220</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">end</item>
+        <item name="android:textColor">@color/color_33</item>
+        <item name="android:textSize">@dimen/dp1080_40</item>
+    </style>
+
+    <style name="live_tv_content">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">start</item>
+        <item name="android:paddingRight">@dimen/dp1080_40</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/color_33</item>
+        <item name="android:textSize">@dimen/dp1080_40</item>
+    </style>
+
 
 </resources>

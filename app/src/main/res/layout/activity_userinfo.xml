@@ -16,15 +16,16 @@
         android:background="@color/color_white"
         android:orientation="horizontal"
         android:paddingBottom="@dimen/dp1080_20"
-        android:paddingTop="@dimen/dp1080_20">
+        android:paddingTop="@dimen/dp1080_20"
+        android:layout_marginTop="@dimen/dp1080_2">
 
         <TextView
-            android:textSize="@dimen/dp1080_45"
-            android:textColor="@color/color_black_33"
+            android:textSize="@dimen/dp1080_40"
+            android:textColor="@color/color_66"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/dp1080_30"
+            android:layout_marginLeft="@dimen/dp1080_70"
             android:text="头像" />
 
         <ImageView
@@ -32,16 +33,17 @@
             android:layout_width="@dimen/dp1080_200"
             android:layout_height="@dimen/dp1080_200"
             android:layout_toLeftOf="@+id/iv_x"
-            android:background="@color/color_gray"/>
+            android:background="@color/color_8c"/>
 
         <ImageView
             android:id="@+id/iv_x"
-            android:layout_width="@dimen/dp1080_50"
-            android:layout_height="@dimen/dp1080_60"
+            android:layout_width="@dimen/dp1080_40"
+            android:layout_height="@dimen/dp1080_40"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_margin="@dimen/dp1080_15"
-            android:background="@color/color_gray" />
+            android:layout_marginRight="@dimen/dp1080_65"
+            android:layout_marginLeft="@dimen/dp1080_40"
+            android:background="@color/color_8c" />
 
     </RelativeLayout>
 

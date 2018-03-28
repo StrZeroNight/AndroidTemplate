@@ -43,7 +43,7 @@
             <ImageView
                 android:id="@+id/bottombar_iv_first"
                 style="@style/main_fragment_bottombar_iv"
-                android:src="@color/color_black_66"
+                android:src="@color/color_66"
                 />
 
             <TextView
@@ -62,7 +62,7 @@
             <ImageView
                 android:id="@+id/bottombar_iv_second"
                 style="@style/main_fragment_bottombar_iv"
-                android:src="@color/color_black_66" />
+                android:src="@color/color_66" />
 
             <TextView
                 android:id="@+id/bottombar_tv_second"
@@ -80,7 +80,7 @@
             <ImageView
                 android:id="@+id/bottombar_iv_third"
                 style="@style/main_fragment_bottombar_iv"
-                android:src="@color/color_black_66"
+                android:src="@color/color_66"
                 />
 
             <TextView
@@ -99,7 +99,7 @@
             <ImageView
                 android:id="@+id/bottombar_iv_fourth"
                 style="@style/main_fragment_bottombar_iv"
-                android:src="@color/color_black_66"
+                android:src="@color/color_66"
                 />
 
             <TextView
@@ -118,7 +118,7 @@
             <ImageView
                 android:id="@+id/bottombar_iv_fifth"
                 style="@style/main_fragment_bottombar_iv"
-                android:src="@color/color_black_66"
+                android:src="@color/color_66"
                 />
 
             <TextView

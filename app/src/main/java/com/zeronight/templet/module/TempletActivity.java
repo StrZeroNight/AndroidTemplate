@@ -10,14 +10,17 @@ import android.widget.Button;
 import com.zeronight.templet.R;
 import com.zeronight.templet.common.base.BaseActivity;
 import com.zeronight.templet.common.utils.ToastUtils;
+import com.zeronight.templet.module.adapter.AdapterActivity;
 import com.zeronight.templet.module.address.list.AddressListActivity;
 import com.zeronight.templet.module.bankcard.WithdrawalsActivity;
 import com.zeronight.templet.module.cart.CartActivity;
+import com.zeronight.templet.module.classify.OneClassifyActivity;
 import com.zeronight.templet.module.filereader.FileReadActivity;
 import com.zeronight.templet.module.goods.GoodDetailActivity;
 import com.zeronight.templet.module.login.LoginActivity;
 import com.zeronight.templet.module.main.MainActivity;
 import com.zeronight.templet.module.mine.UserInfoActivity;
+import com.zeronight.templet.module.order.OrderListActivity;
 import com.zeronight.templet.module.permission.PermissionActivity;
 import com.zeronight.templet.module.richedit.RichEditActivity;
 import com.zeronight.templet.module.search.SearchActvity;
@@ -45,6 +48,14 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
     private Button btn_rich;
     private Button btn_search;
     private Button btn_adapter;
+    /**
+     * 分类页面
+     */
+    private Button btn_classify;
+    /**
+     * 订单页面
+     */
+    private Button btn_order;
 
     public static void start(Context context, String id) {
         Intent it = new Intent(context, TempletActivity.class);
@@ -107,6 +118,10 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
         btn_goods.setOnClickListener(this);
         btn_rich = (Button) findViewById(R.id.btn_rich);
         btn_rich.setOnClickListener(this);
+        btn_classify = (Button) findViewById(R.id.btn_classify);
+        btn_classify.setOnClickListener(this);
+        btn_order = (Button) findViewById(R.id.btn_order);
+        btn_order.setOnClickListener(this);
     }
 
     @Override
@@ -149,7 +164,13 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
                 SearchActvity.start(this);
                 break;
             case R.id.btn_adapter:
-
+                AdapterActivity.start(this);
+                break;
+            case R.id.btn_classify:
+                OneClassifyActivity.start(this);
+                break;
+            case R.id.btn_order:
+                OrderListActivity.start(this);
                 break;
         }
     }

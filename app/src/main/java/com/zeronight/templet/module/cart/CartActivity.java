@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import com.zeronight.templet.R;
 import com.zeronight.templet.common.base.BaseActivity;
 import com.zeronight.templet.common.utils.ToastUtils;
-import com.zeronight.templet.module.main.FourFragment;
 
 /**
  * 这个放在main里面的activity里面
@@ -51,9 +50,10 @@ public class CartActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
+        CartFragment cartFragment = new CartFragment();
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.fg_cart , new FourFragment())
+                .add(R.id.fg_cart , cartFragment)
                 .commit();
     }
 

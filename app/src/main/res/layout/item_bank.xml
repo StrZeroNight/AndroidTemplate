@@ -24,7 +24,7 @@
         android:layout_marginLeft="@dimen/dp1080_40"
         android:paddingLeft="@dimen/dp1080_20"
         android:text="银行名"
-        android:textColor="@color/color_gray_99"
+        android:textColor="@color/color_99"
         android:textSize="@dimen/dp1080_35" />
 
 </LinearLayout>

@@ -79,7 +79,7 @@ public class VerCodeUtils {
         final EditText et_image_code = (EditText) view.findViewById(R.id.et_image_code);
         final ImageView iv_image_code = (ImageView) view.findViewById(R.id.iv_image_code);
         TextView tv_ok = (TextView) view.findViewById(R.id.tv_ok);
-        Glide.with(appCompatActivity).load(CommonUrl.imageUrl + path).into(iv_image_code);
+        Glide.with(appCompatActivity).load(CommonUrl.IMAGE_URL + path).into(iv_image_code);
 
         tv_ok.setOnClickListener(new View.OnClickListener() {
             @Override

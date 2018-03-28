@@ -3,62 +3,57 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorPrimary_80">#803F51B5</color>
 
     <color name="color_white">#ffffff</color>
     <color name="color_black_t70">#70000000</color>
     <color name="color_black_t30">#40000000</color>
     <color name="color_black_t00">#00000000</color>
-    <color name="color_black_33">#333333</color>
-    <color name="color_black_22">#222222</color>
-    <color name="color_black_66">#666666</color>
-    <color name="color_gray_99">#999999</color>
-    <color name="color_gray_cc">#cccccc</color>
-    <color name="color_gray_b5">#b5b5b5</color>
-    <color name="color_gray_84">#848484</color>
-    <color name="color_gray_93">#939393</color>
-    <color name="color_gray_b1">#b1b1b1</color>
-    <color name="color_gray_f3">#f3f3f3</color>
-    <color name="color_gray_ed">#ededed</color>
+    <color name="color_33">#333333</color>
+    <color name="color_22">#222222</color>
+    <color name="color_66">#666666</color>
+    <color name="color_99">#999999</color>
+    <color name="color_cc">#cccccc</color>
+    <color name="color_b5">#b5b5b5</color>
+    <color name="color_84">#848484</color>
+    <color name="color_93">#939393</color>
+    <color name="color_b1">#b1b1b1</color>
+    <color name="color_f3">#f3f3f3</color>
+    <color name="color_ed">#ededed</color>
+    <color name="color_8c">#8c8c8c</color>
+    <color name="color_da">#dadada</color>
+    <color name="color_c2">#c2c2c2</color>
+    <color name="color_ee">#99eeeeee</color>
+    <color name="color_f5">#f5f5f5</color>
+    <color name="color_e2">#e2e2e2</color>
+    <color name="color_8033">#80333333</color>
+    <color name="color_a0">#a0a0a0</color>
+    <color name="color_f6">#f6f6f6</color>
 
     <color name="color_black">#333333</color>
-    <color name="color_black_cc33">#cc333333</color>
+    <color name="color_cc33">#cc333333</color>
     <color name="color_black_e633">#e6333333</color>
     <color name="color_black_33_tran70">#af000000</color>
     <color name="color_white_00">#00ffffff</color>
-    <color name="color_white_trans50">#50ffffff</color>
-    <color name="color_white_trans20">#50ffffff</color>
-    <color name="color_white_trans80">#80ffffff</color>
-    <!--灰色-->
-    <color name="color_gray">#8c8c8c</color>
-    <!--浅灰色-->
-    <color name="color_gray_light">#dadada</color>
-    <color name="color_gray_c2">#c2c2c2</color>
-    <color name="color_gray_ee">#99eeeeee</color>
-    <color name="color_gray_f5">#f5f5f5</color>
-    <color name="color_gray_e2">#e2e2e2</color>
-    <color name="color_gray_33">#80333333</color>
-    <color name="color_gray_a0">#a0a0a0</color>
-    <!--背景灰色-->
-    <color name="color_gray_background">#f6f6f6</color>
-    <!--横条灰色-->
-    <color name="color_gray_hengtiao">#e2e2e2</color>
-    <!--橙色-->
-    <color name="color_deep_orange">#ed683d</color>
-    <color name="color_deep_orange_80">#80ed683d</color>
-    <!--红色-->
-    <color name="color_red">#e5223f</color>
-    <color name="color_red_80">#80e5223f</color>
-    <color name="color_red_ff5200">#ff5200</color>
+    <color name="color_white_t50">#50ffffff</color>
+    <color name="color_white_t20">#50ffffff</color>
+    <color name="color_white_t80">#80ffffff</color>
+
+    <color name="orange_ed683d">#ed683d</color>
+    <color name="orange_80ed683d">#80ed683d</color>
+    <color name="red_e5223f">#e5223f</color>
+    <color name="red_ff5200">#ff5200</color>
+    <color name="blue_0095ea">#0095ea</color>
+    <color name="blue_3d85fc">#3d85fc</color>
+    <color name="brown_5e250a">#5e250a</color>
+    <color name="orange_ff5200">#ff5200</color>
+    <color name="green_67c6a6">#67c6a6</color>
+    <color name="green_34bab6">#34bab6</color>
+    <color name="red_ff15525">#f15525</color>
+    <color name="green_449c7e">#449c7e</color>
+    <color name="red_f0432a">#f0432a</color>
+    <color name="red_fffd6f">#fffd6f</color>
 
     <color name="color_class_first_text">#ff9600</color>
-    <color name="color_blue_0095ea">#0095ea</color>
-    <color name="color_blue_3d85fc">#3d85fc</color>
-
-    <color name="color_login">#50ffffff</color>
-    <color name="color_login_press">#20ffffff</color>
-    <color name="color_5e250a">#5e250a</color>
-    <color name="color_ff5200">#ff5200</color>
-    <color name="color_ff5200_80">#80ff5200</color>
+    <color name="color_numberbtn_frame">#666666</color>
 
 </resources>

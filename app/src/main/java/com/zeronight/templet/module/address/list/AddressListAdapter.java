@@ -19,7 +19,6 @@ import com.zeronight.templet.common.data.CommonUrl;
 import com.zeronight.templet.common.data.EventBusBundle;
 import com.zeronight.templet.common.retrofithttp.XRetrofitUtils;
 import com.zeronight.templet.common.utils.ToastUtils;
-import com.zeronight.templet.module.address.edit.AddressDetialBean;
 import com.zeronight.templet.module.address.edit.AddressEditActivity;
 
 import java.text.ParseException;
@@ -36,8 +35,6 @@ public class AddressListAdapter extends BaseAdapter<AddressDetialBean> {
     //订单结算 或者 我的
     // 1是从购物车跳入 2是从地址编辑跳入
     private int intentType;
-    private final static String ADDRESS_TAG_COMPANY = "1";
-    private final static String ADDRESS_TAG_HOME = "2";
     public final static String ADDRESS_INFO = "ADDRESS_INFO";
 
     public AddressListAdapter(Context mContext, List<AddressDetialBean> mList, int intentType) {

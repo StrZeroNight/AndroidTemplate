@@ -3,18 +3,12 @@ package com.zeronight.templet.module.bankcard;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
 import android.text.Html;
-import android.text.InputFilter;
-import android.text.Spanned;
-import android.text.TextWatcher;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.orhanobut.logger.Logger;
 import com.zeronight.templet.R;
 import com.zeronight.templet.common.base.BaseActivity;
 import com.zeronight.templet.common.data.CommonUrl;
@@ -25,6 +19,7 @@ import com.zeronight.templet.common.utils.ImageLoad;
 import com.zeronight.templet.common.utils.ToastUtils;
 import com.zeronight.templet.common.utils.XStringUtils;
 import com.zeronight.templet.common.widget.ArrorText;
+import com.zeronight.templet.common.widget.MoneyEditText;
 import com.zeronight.templet.common.widget.SuperTextView;
 import com.zeronight.templet.module.bankcard.list.BankCardListActivity;
 import com.zeronight.templet.module.bankcard.list.BankCardListBean;
@@ -37,15 +32,12 @@ import de.greenrobot.event.Subscribe;
  */
 public class WithdrawalsActivity extends BaseActivity implements View.OnClickListener {
 
-    private TextView tv_balance;
-    private TextView tv_detial;
+    private MoneyEditText met;
     private ImageView iv_bank_icon;
     private TextView tv_bank_name;
     private TextView tv_bank_num;
     private RelativeLayout rl_bank;
     private TextView tv_x2;
-    private EditText et_balance;
-    private ImageView iv_delete;
     private SuperTextView stv_confirm;
     private ArrorText at_add_bank;
     //
@@ -74,81 +66,20 @@ public class WithdrawalsActivity extends BaseActivity implements View.OnClickLis
         setContentView(R.layout.activity_withdrawals);
         EventBus.getDefault().register(this);
         initView();
-        initEditText();
         getBalance(false);
     }
 
-    private void initEditText() {
-        et_balance.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                String money = s.toString();
-                if (money.startsWith("00")) {
-                    et_balance.setText("0");
-                    et_balance.setSelection(1);
-                }
-                if (XStringUtils.isEmpty(money)) {
-                    return;
-                }
-                if (XStringUtils.isEmpty(balance)) {
-                    if (!money.startsWith("0")) {
-                        et_balance.setText("0.00");
-                        et_balance.setSelection("0.00".length());
-                    }
-                    return;
-                }
-                float moneyFloat = Float.parseFloat(money);
-                float balanceFloat = Float.parseFloat(balance);
-                if (balanceFloat < moneyFloat) {
-                    et_balance.setText(balance);
-                    et_balance.setSelection(balance.length());
-                }
-            }
-        });
-
-        et_balance.setFilters(new InputFilter[]{new InputFilter() {
-            @Override
-            public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
-                Logger.i("source(当前输入的字符):" + source + "   dest(所有字符):" + dest);
-                if (source.equals(".") && dest.toString().length() == 0) {
-                    return "0.";
-                }
-                if (dest.toString().contains(".")) {
-                    int index = dest.toString().indexOf(".");
-                    int mlength = dest.toString().substring(index).length();
-                    if (mlength == 3) {
-                        return ""; //return 返回的是当前的信息
-                    }
-                }
-                return null;
-            }
-        }});
-    }
 
     private void initView() {
+        met = findViewById(R.id.met);
         at_add_bank = (ArrorText) findViewById(R.id.at_add_bank);
         at_add_bank.setOnClickListener(this);
-        tv_balance = (TextView) findViewById(R.id.tv_balance);
-        tv_detial = (TextView) findViewById(R.id.tv_detial);
-        tv_detial.setOnClickListener(this);
         iv_bank_icon = (ImageView) findViewById(R.id.iv_bank_icon);
         tv_bank_name = (TextView) findViewById(R.id.tv_bank_name);
         tv_bank_num = (TextView) findViewById(R.id.tv_bank_num);
         rl_bank = (RelativeLayout) findViewById(R.id.rl_bankcard);
         rl_bank.setOnClickListener(this);
         tv_x2 = (TextView) findViewById(R.id.tv_x2);
-        et_balance = (EditText) findViewById(R.id.et_balance);
-        iv_delete = (ImageView) findViewById(R.id.iv_delete);
-        iv_delete.setOnClickListener(this);
         stv_confirm = (SuperTextView) findViewById(R.id.stv_confirm);
         stv_confirm.setOnClickListener(this);
     }
@@ -156,18 +87,11 @@ public class WithdrawalsActivity extends BaseActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.ll_back:
-                finish();
-//                EventBus.getDefault().post(new EventBusBundle(MineFragment.NOTIFY_MINE, ""));
-                break;
-            case R.id.tv_detial:
-//                WebViewActivity.start(WithdrawalsActivity.this, ConstantUrl.income);
-                break;
             case R.id.rl_bankcard:
                 intentBankList();
                 break;
             case R.id.stv_confirm:
-                final String money = et_balance.getText().toString();
+                final String money = met.getMoney();
                 if (XStringUtils.isEmpty(money) || !XStringUtils.isStringAreNum(money)) {
                     ToastUtils.showMessage("提现金额不能为0");
                     return;
@@ -191,9 +115,6 @@ public class WithdrawalsActivity extends BaseActivity implements View.OnClickLis
                 } else {
                     ToastUtils.showMessage("请选择银行卡");
                 }
-                break;
-            case R.id.iv_delete:
-                et_balance.setText("");
                 break;
             case R.id.at_add_bank:
                 intentBankList();
@@ -373,14 +294,14 @@ public class WithdrawalsActivity extends BaseActivity implements View.OnClickLis
     @Subscribe
     public void notifyMoney(final EventBusBundle eventBusBundle) {
         if (eventBusBundle.getKey().equals(ITEM_WITHDRAWALS)) {
-            et_balance.post(new Runnable() {
+            met.post(new Runnable() {
                 @Override
                 public void run() {
                     Bundle bundle = eventBusBundle.getBundle();
                     String money = bundle.getString(ITEM_MONEY);
                     cids = bundle.getString(ITEM_C_IDS);
                     pids = bundle.getString(ITEM_P_IDS);
-                    et_balance.setText(money);
+                    met.setMoney(money);
                 }
             });
         }

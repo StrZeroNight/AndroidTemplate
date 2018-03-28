@@ -7,8 +7,8 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
-import com.orhanobut.logger.Logger;
 import com.zeronight.templet.common.application.BaseApplication;
+import com.zeronight.templet.common.data.CommonUrl;
 
 
 /**
@@ -16,17 +16,23 @@ import com.zeronight.templet.common.application.BaseApplication;
  */
 public class ImageLoad {
 
-    private final static String imageUrl = "";
+    private final static String imageUrl = CommonUrl.IMAGE_URL;
 
     /**
      * glide加载图片
      */
     public static void loadImage(String imagePath, ImageView imageView) {
-
-        Logger.i("图片加载的内容：" + imageUrl + handleImagePath(imagePath));
-        Glide.with(BaseApplication.getInstance().getApplicationContext())
-                .load(imageUrl + handleImagePath(imagePath))
-                .into(imageView);
+        if(!XStringUtils.isEmpty(imagePath)){
+            if (imagePath.startsWith("http")) {
+                Glide.with(BaseApplication.getInstance().getApplicationContext())
+                        .load(imagePath)
+                        .into(imageView);
+            }else{
+                Glide.with(BaseApplication.getInstance().getApplicationContext())
+                        .load(imageUrl + handleImagePath(imagePath))
+                        .into(imageView);
+            }
+        }
     }
 
     /**
@@ -44,20 +50,40 @@ public class ImageLoad {
      */
     public static void loadCircleImage(String url, final ImageView iv_show) {
         //加载圆角图片
-        if (BaseApplication.getInstance().getApplicationContext() != null) {
-            Glide.with(BaseApplication.getInstance().getApplicationContext())
-                    .load(imageUrl + handleImagePath(url))
-                    .asBitmap()
-                    .centerCrop()
-                    .into(new BitmapImageViewTarget(iv_show) {
-                @Override
-                protected void setResource(Bitmap resource) {
-                    RoundedBitmapDrawable circularBitmapDrawable =
-                            RoundedBitmapDrawableFactory.create(BaseApplication.getInstance().getApplicationContext().getResources(), resource);
-                    circularBitmapDrawable.setCircular(true);
-                    iv_show.setImageDrawable(circularBitmapDrawable);
+        if(!XStringUtils.isEmpty(url)){
+            if (url.startsWith("http")) {
+                if (BaseApplication.getInstance().getApplicationContext() != null) {
+                    Glide.with(BaseApplication.getInstance().getApplicationContext())
+                            .load(url)
+                            .asBitmap()
+                            .centerCrop()
+                            .into(new BitmapImageViewTarget(iv_show) {
+                                @Override
+                                protected void setResource(Bitmap resource) {
+                                    RoundedBitmapDrawable circularBitmapDrawable =
+                                            RoundedBitmapDrawableFactory.create(BaseApplication.getInstance().getApplicationContext().getResources(), resource);
+                                    circularBitmapDrawable.setCircular(true);
+                                    iv_show.setImageDrawable(circularBitmapDrawable);
+                                }
+                            });
                 }
-            });
+            }else{
+                if (BaseApplication.getInstance().getApplicationContext() != null) {
+                    Glide.with(BaseApplication.getInstance().getApplicationContext())
+                            .load(imageUrl + handleImagePath(url))
+                            .asBitmap()
+                            .centerCrop()
+                            .into(new BitmapImageViewTarget(iv_show) {
+                                @Override
+                                protected void setResource(Bitmap resource) {
+                                    RoundedBitmapDrawable circularBitmapDrawable =
+                                            RoundedBitmapDrawableFactory.create(BaseApplication.getInstance().getApplicationContext().getResources(), resource);
+                                    circularBitmapDrawable.setCircular(true);
+                                    iv_show.setImageDrawable(circularBitmapDrawable);
+                                }
+                            });
+                }
+            }
         }
     }
 
@@ -74,14 +100,14 @@ public class ImageLoad {
                     .error(errorDrawable)
                     .placeholder(errorDrawable)
                     .into(new BitmapImageViewTarget(iv_show) {
-                @Override
-                protected void setResource(Bitmap resource) {
-                    RoundedBitmapDrawable circularBitmapDrawable =
-                            RoundedBitmapDrawableFactory.create(BaseApplication.getInstance().getApplicationContext().getResources(), resource);
-                    circularBitmapDrawable.setCircular(true);
-                    iv_show.setImageDrawable(circularBitmapDrawable);
-                }
-            });
+                        @Override
+                        protected void setResource(Bitmap resource) {
+                            RoundedBitmapDrawable circularBitmapDrawable =
+                                    RoundedBitmapDrawableFactory.create(BaseApplication.getInstance().getApplicationContext().getResources(), resource);
+                            circularBitmapDrawable.setCircular(true);
+                            iv_show.setImageDrawable(circularBitmapDrawable);
+                        }
+                    });
         }
     }
 
@@ -95,14 +121,14 @@ public class ImageLoad {
                 .asBitmap()
                 .centerCrop()
                 .into(new BitmapImageViewTarget(iv_show) {
-            @Override
-            protected void setResource(Bitmap resource) {
-                RoundedBitmapDrawable roundedBitmapDrawable =
-                        RoundedBitmapDrawableFactory.create(BaseApplication.getInstance().getApplicationContext().getResources() , resource);
-                roundedBitmapDrawable.setCornerRadius(radius);
-                iv_show.setImageDrawable(roundedBitmapDrawable);
-            }
-        });
+                    @Override
+                    protected void setResource(Bitmap resource) {
+                        RoundedBitmapDrawable roundedBitmapDrawable =
+                                RoundedBitmapDrawableFactory.create(BaseApplication.getInstance().getApplicationContext().getResources() , resource);
+                        roundedBitmapDrawable.setCornerRadius(radius);
+                        iv_show.setImageDrawable(roundedBitmapDrawable);
+                    }
+                });
     }
 
     private static String handleImagePath(String imagePath){
@@ -117,6 +143,7 @@ public class ImageLoad {
         }
         return imagePathF;
     }
+
 
 
 }

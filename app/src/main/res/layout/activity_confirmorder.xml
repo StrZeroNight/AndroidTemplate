@@ -35,7 +35,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/dp1080_30"
                     android:layout_marginTop="@dimen/dp1080_40"
-                    android:background="@color/color_gray"
+                    android:background="@color/color_8c"
                     android:paddingBottom="@dimen/dp1080_2"
                     android:paddingLeft="@dimen/dp1080_5"
                     android:paddingRight="@dimen/dp1080_5"
@@ -51,7 +51,7 @@
                     android:paddingRight="@dimen/dp1080_30"
                     android:paddingTop="@dimen/dp1080_40"
                     android:text="联系人"
-                    android:textColor="@color/color_black_33"
+                    android:textColor="@color/color_33"
                     android:textSize="@dimen/dp1080_40" />
 
                 <TextView
@@ -62,7 +62,7 @@
                     android:layout_toRightOf="@+id/tv_address_lianxiren"
                     android:padding="@dimen/dp1080_40"
                     android:text="电话"
-                    android:textColor="@color/color_black_33"
+                    android:textColor="@color/color_33"
                     android:textSize="@dimen/dp1080_40" />
 
                 <TextView
@@ -77,7 +77,7 @@
                     android:paddingLeft="@dimen/dp1080_30"
                     android:paddingRight="@dimen/dp1080_30"
                     android:text="详细地址"
-                    android:textColor="@color/color_gray"
+                    android:textColor="@color/color_8c"
                     android:textSize="@dimen/dp1080_35" />
 
                 <ImageView
@@ -87,7 +87,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/dp1080_30"
-                    android:background="@color/color_gray" />
+                    android:background="@color/color_8c" />
 
             </RelativeLayout>
 
@@ -107,7 +107,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/dp1080_30"
                     android:layout_marginTop="@dimen/dp1080_40"
-                    android:background="@color/color_gray"
+                    android:background="@color/color_8c"
                     android:paddingBottom="@dimen/dp1080_2"
                     android:paddingLeft="@dimen/dp1080_5"
                     android:paddingRight="@dimen/dp1080_5"
@@ -122,7 +122,7 @@
                     android:gravity="center"
                     android:paddingLeft="@dimen/dp1080_30"
                     android:text="请选择收货地址"
-                    android:textColor="@color/color_gray"
+                    android:textColor="@color/color_8c"
                     android:textSize="@dimen/dp1080_40" />
 
 
@@ -133,7 +133,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="@dimen/dp1080_30"
-                    android:background="@color/color_gray" />
+                    android:background="@color/color_8c" />
 
 
             </RelativeLayout>
@@ -157,8 +157,8 @@
             android:gravity="center"
             android:text="去支付"
             android:textColor="@color/color_white"
-            app:normalBackgroundColor="@color/color_red"
-            app:pressedBackgroundColor="@color/color_red_80" />
+            app:normalBackgroundColor="@color/red_e5223f"
+            />
 
     </RelativeLayout>
 

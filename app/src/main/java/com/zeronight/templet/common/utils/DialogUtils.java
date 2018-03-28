@@ -28,7 +28,7 @@ import java.util.Calendar;
  */
 public class DialogUtils {
 
-    public static void showPayDialog(final Context context , final OnDialogButtonClickListener onDialogButtonClickListener) {
+    public static void showPayDialog(final Context context, final OnDialogButtonClickListener onDialogButtonClickListener) {
         android.app.AlertDialog.Builder dialog = new android.app.AlertDialog.Builder(context);
         dialog.setTitle("确认暂不支付？");
         dialog.setMessage("您的订单暂未支付，确认离开？");
@@ -36,7 +36,7 @@ public class DialogUtils {
         dialog.setPositiveButton("确认离开", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                onDialogButtonClickListener.ok(dialogInterface,i);
+                onDialogButtonClickListener.ok(dialogInterface, i);
             }
         });
         dialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -156,7 +156,7 @@ public class DialogUtils {
 
     }
 
-    public static void showDeleteDialog(Context context,String content,final OnDialogButtonClickListener onDialogButtonClickListener) {
+    public static void showDeleteDialog(Context context, String content, final OnDialogButtonClickListener onDialogButtonClickListener) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setMessage("请问是否要删除" + content);
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -178,7 +178,7 @@ public class DialogUtils {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         final AlertDialog alertDialog = builder.create();
         View view = LayoutInflater.from(context).inflate(R.layout.dialog_numchange, null, false);
-        ImageButton ib_minus_cargoods = (ImageButton) view.findViewById(R.id.ib_minus_cargoods);
+        final ImageButton ib_minus_cargoods = (ImageButton) view.findViewById(R.id.ib_minus_cargoods);
         final EditText et_num_change = (EditText) view.findViewById(R.id.et_num_change);
         ImageButton ib_plus_cargoods = (ImageButton) view.findViewById(R.id.ib_plus_cargoods);
         TextView tv_cancel = (TextView) view.findViewById(R.id.tv_cancel);
@@ -196,7 +196,7 @@ public class DialogUtils {
                     if (numz > 1) {
                         numz--;
                         et_num_change.setText(numz + "");
-                    }else{
+                    } else {
                         ToastUtils.showMessage("您输入的数量过大");
                     }
                 }
@@ -211,7 +211,7 @@ public class DialogUtils {
                     int numz = Integer.parseInt(num);
                     numz++;
                     et_num_change.setText(numz + "");
-                }else{
+                } else {
                     ToastUtils.showMessage("您输入的数量过大");
                 }
             }
@@ -222,13 +222,17 @@ public class DialogUtils {
             public void onClick(View v) {
                 String sProNum = et_num_change.getText().toString();
                 if (sProNum.length() < 9) {
-                    int proNum = Integer.parseInt(sProNum);
-                    if (proNum > 0) {
-                        onDialogButtonClickListener.numchange(alertDialog, proNum);
-                    } else {
-                        ToastUtils.showMessage("数量不能为0");
+                    if (!XStringUtils.isEmpty(sProNum) && XStringUtils.isStringAreNum(sProNum)) {
+                        int proNum = Integer.parseInt(sProNum);
+                        if (proNum > 0) {
+                            onDialogButtonClickListener.numchange(alertDialog, proNum);
+                        } else {
+                            ToastUtils.showMessage("数量不能为0");
+                        }
+                    }else{
+                        ToastUtils.showMessage("请输入数量");
                     }
-                }else{
+                } else {
                     ToastUtils.showMessage("您输入的数量过大");
                 }
             }
@@ -253,7 +257,7 @@ public class DialogUtils {
         alertDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {
-                CommonUtils.hideSoft((AppCompatActivity) context , et_num_change);
+                CommonUtils.hideSoft((AppCompatActivity) context, et_num_change);
             }
         });
 

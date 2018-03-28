@@ -7,8 +7,8 @@ import android.text.InputType;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.zeronight.templet.R;
 import com.zeronight.templet.common.utils.XStringUtils;
@@ -21,7 +21,7 @@ import com.zeronight.templet.common.utils.XStringUtils;
  */
 public class LoginEditText extends RelativeLayout {
 
-    private ImageView iv_icon;
+    private TextView tv_icon;
     private EditText et_content;
 
     public LoginEditText(Context context) {
@@ -35,24 +35,24 @@ public class LoginEditText extends RelativeLayout {
     @SuppressLint("ResourceAsColor")
     public LoginEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        LayoutInflater.from(context).inflate(R.layout.widget_login_edittext, this, true);
-        iv_icon = (ImageView) findViewById(R.id.iv_icon);
-        et_content = (EditText) findViewById(R.id.et_content);
+        LayoutInflater.from(context).inflate(R.layout.widget_loginedittext, this, true);
+        tv_icon = findViewById(R.id.tv_icon);
+        et_content = findViewById(R.id.et_content);
 
-        TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.LoginEditTest, defStyleAttr, 0);
-        String hint = a.getString(R.styleable.LoginEditTest_let_hint);
-        int hintColor = a.getResourceId(R.styleable.LoginEditTest_let_hintcolor , defStyleAttr);
-        int contentType = a.getInt(R.styleable.LoginEditTest_let_contenttype , defStyleAttr);
-        int icon = a.getResourceId(R.styleable.LoginEditTest_let_icon , defStyleAttr);
+        TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.LoginEditText, defStyleAttr, 0);
+        String hint = a.getString(R.styleable.LoginEditText_let_hint);
+        int hintColor = a.getResourceId(R.styleable.LoginEditText_let_hintcolor, defStyleAttr);
+        int contentType = a.getInt(R.styleable.LoginEditText_let_contenttype, defStyleAttr);
+        int icon = a.getResourceId(R.styleable.LoginEditText_let_icon, defStyleAttr);
 
         if (!XStringUtils.isEmpty(hint)) {
             et_content.setHint(hint);
         }
-        if (hintColor != 0) { // TODO: 2018/1/3 no use
+        if (hintColor != 0) {
             et_content.setHintTextColor(hintColor);
         }
         if (icon != 0) {
-            iv_icon.setImageResource(icon);
+            tv_icon.setBackgroundResource(icon);
         }
         if (contentType == 1) {
             et_content.setInputType(InputType.TYPE_CLASS_NUMBER|InputType.TYPE_NUMBER_VARIATION_NORMAL);

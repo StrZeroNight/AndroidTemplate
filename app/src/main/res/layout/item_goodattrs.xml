@@ -10,7 +10,7 @@
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/color_black_33"
+        android:textColor="@color/color_33"
         android:text="属性"
         android:textSize="@dimen/dp1080_45"
         android:paddingLeft="@dimen/dp1080_35"

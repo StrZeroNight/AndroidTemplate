@@ -18,7 +18,7 @@ import com.zeronight.templet.R;
 
 
 /**
- * 带删除的文本编辑框
+ * 带删除的文本编辑框 暂时废弃
  * <p>
  * Created by Administrator on 2016/6/6.
  */

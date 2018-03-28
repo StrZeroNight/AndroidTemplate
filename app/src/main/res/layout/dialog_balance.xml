@@ -23,7 +23,7 @@
             android:paddingLeft="@dimen/dp1080_40"
             android:paddingRight="@dimen/dp1080_40"
             android:textSize="@dimen/dp1080_41"
-            android:textColor="@color/color_black_66"
+            android:textColor="@color/color_66"
             />
 
     </LinearLayout>

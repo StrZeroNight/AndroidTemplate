@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +19,6 @@ import com.zeronight.templet.R;
 import com.zeronight.templet.common.base.BaseActivity;
 import com.zeronight.templet.common.retrofithttp.XRetrofitUtils;
 import com.zeronight.templet.common.utils.PermissionUtils;
-import com.zeronight.templet.common.utils.ToastUtils;
 import com.zeronight.templet.common.utils.camera.ImageChoose;
 import com.zeronight.templet.common.widget.ArrorText;
 
@@ -30,9 +28,6 @@ import com.zeronight.templet.common.widget.ArrorText;
 
 public class UserInfoActivity extends BaseActivity implements View.OnClickListener {
 
-    private final static int REQUEST_CODE = 1001;
-    private final static int RESULT_CODE = 1002;
-    private final static String ID = "ID";
     private ImageView iv_pic;
     private RelativeLayout rl_image;
     private ArrorText at_nike;
@@ -40,44 +35,37 @@ public class UserInfoActivity extends BaseActivity implements View.OnClickListen
     private ArrorText at_phone;
     private ArrorText at_age;
     private ArrorText at_area;
-    //
-    private PermissionUtils permissionUtils;
-    private ImageChoose imageChoose;
-
-    public static void start(Context context, String id) {
-        Intent it = new Intent(context, UserInfoActivity.class);
-        it.putExtra(ID, id);
-        context.startActivity(it);
-    }
 
     public static void start(Context context) {
         Intent it = new Intent(context, UserInfoActivity.class);
         context.startActivity(it);
     }
 
-
-    public static void startActivityForResult(Context context) {
-        Intent it = new Intent(context, UserInfoActivity.class);
-        AppCompatActivity activity = (AppCompatActivity) context;
-        activity.startActivityForResult(it, REQUEST_CODE);
-    }
-
-    private void initIntent() {
-        Intent intent = getIntent();
-        if (intent.getStringExtra(ID) != null) {
-            String id = intent.getStringExtra(ID);
-            ToastUtils.showMessage("获取id" + id);
-        }
-
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userinfo);
+        initCarme();
+        initView();
+    }
+
+    private PermissionUtils permissionUtils;
+    private ImageChoose imageChoose;
+    private void initCarme() {
         permissionUtils = new PermissionUtils(UserInfoActivity.this);
         imageChoose = new ImageChoose(this);
-        initView();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        imageChoose.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        permissionUtils.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     private void initView() {
@@ -215,18 +203,6 @@ public class UserInfoActivity extends BaseActivity implements View.OnClickListen
                 dismissProgressDialog();
             }
         });
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        imageChoose.onActivityResult(requestCode, resultCode, data);
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        permissionUtils.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
 

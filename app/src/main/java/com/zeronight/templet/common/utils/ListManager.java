@@ -1,22 +1,27 @@
 package com.zeronight.templet.common.utils;
 
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.LinearLayout;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.orhanobut.logger.Logger;
-import com.zeronight.templet.R;
 import com.zeronight.templet.common.base.BaseAdapter;
+import com.zeronight.templet.common.data.EventBusBundle;
 import com.zeronight.templet.common.retrofithttp.XRetrofitUtils;
 import com.zeronight.templet.common.widget.loadlayout.LoadingAndRetryManager;
 import com.zeronight.templet.common.widget.loadlayout.OnLoadingAndRetryListener;
+import com.zeronight.templet.module.cart.CartAdapter;
+import com.zeronight.templet.module.cart.CartFragment;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import de.greenrobot.event.EventBus;
 
 /**
  * Created by Administrator on 2017/11/29.
@@ -34,7 +39,10 @@ public class ListManager<T> {
     private boolean isPullRefresh = true;
     private boolean isLoadMore = false;
     private OnItemClickListener onItemClickListener;
+    private OnNullListener onNullListener; //监听code=0
     private OnReceiveHttpDataListener receiveHttpData;
+    //
+    boolean isCart = false;
 
     public ListManager(AppCompatActivity context) {
         this.context = context;
@@ -50,8 +58,17 @@ public class ListManager<T> {
         return this;
     }
 
+    public ListManager isCart(boolean isCart){
+        this.isCart = isCart;
+        return this;
+    }
+
     public List<T> getAllList(){
         return allList;
+    }
+
+    public BaseAdapter<T> getAdapter(){
+        return mAdapter;
     }
 
     public ListManager setUrl(String url){
@@ -78,17 +95,46 @@ public class ListManager<T> {
         getListRefresh(xrv);
     }
 
+    Object paramsObject = null;
+    public ListManager setParamsObject(Object paramsObject){
+        this.paramsObject = paramsObject;
+        return this;
+    }
+
+    public final static int LINEAR_LAYOUT = 1;
+    public final static int GLID_LAYOUT_TWO = 2;
+    RecyclerView.LayoutManager layoutManager;
+    public ListManager setLayoutManagerType(int type){
+        if (type == LINEAR_LAYOUT) {
+            layoutManager = new LinearLayoutManager(context);
+        }else if (type == GLID_LAYOUT_TWO){
+            layoutManager = new GridLayoutManager(context , 2);
+        }
+        return this;
+    }
+
     private void initClass() {
         mAdapter.setOnItemClickListener(new BaseAdapter.OnItemClickListener() {
             @Override
             public void click(int position) {
-                Logger.i("in position:" + position);
                 if (onItemClickListener != null) {
                     onItemClickListener.OnItemClick(position);
                 }
             }
         });
-        xrv.setLayoutManager(new LinearLayoutManager(context));
+        mAdapter.setOnItemLongClickListener(new BaseAdapter.OnItemLongClickListener() {
+            @Override
+            public void longClick(int position) {
+                if (onItemClickListener != null) {
+                    onItemClickListener.OnItemLongClick(position);
+                }
+            }
+        });
+        if (layoutManager != null) {
+            xrv.setLayoutManager(layoutManager);
+        }else{
+            Logger.e("请使用setLayoutManagerType()方法填充LayoutManager");
+        }
         xrv.setAdapter(mAdapter);
         if (isPullRefresh) {
             xrv.setPullRefreshEnabled(true);
@@ -117,8 +163,8 @@ public class ListManager<T> {
         mLoadingAndRetryManager = LoadingAndRetryManager.generate(xrv, new OnLoadingAndRetryListener() {
             @Override
             public void setRetryEvent(View retryView) {
-                LinearLayout ll_retry = (LinearLayout) retryView.findViewById(R.id.ll_retry);
-                ll_retry.setOnClickListener(new View.OnClickListener() {
+                // TODO: 2018/3/21 根据不同的页面，显示不同的错误页面样式
+                retryView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         mLoadingAndRetryManager.showLoading();
@@ -126,6 +172,16 @@ public class ListManager<T> {
                         getListFirst(xrv);
                     }
                 });
+            }
+
+            @Override
+            public void setEmptyEvent(View emptyView) {
+                // TODO: 2018/3/21 根据不同的页面，显示不同的空页面样式
+                if (isCart) {
+                    
+                }else{
+                    
+                }
             }
         });
     }
@@ -145,13 +201,20 @@ public class ListManager<T> {
     }
 
     private void getList(final XRecyclerView xrv) {
-        XRetrofitUtils retrofitUtils = new XRetrofitUtils.Builder()
-                .setUrl(url)
-                .setParams("token" , "")
-                .setParams("page" , page + "")
-                .build();
-        retrofitUtils.AsynPost(new XRetrofitUtils.OnResultListener() {
-
+        XRetrofitUtils retrofitUtils = null;
+        if (paramsObject != null) {
+            retrofitUtils = new XRetrofitUtils.Builder()
+                    .setUrl(url)
+                    .setParams("page" , page + "")
+                    .setObjectParams(paramsObject)
+                    .build();
+        }else{
+            retrofitUtils = new XRetrofitUtils.Builder()
+                    .setUrl(url)
+                    .setParams("page" , page + "")
+                    .build();
+        }
+        retrofitUtils.AsynPostByBean(new XRetrofitUtils.OnResultListener() {
             @Override
             public void onServerError() {
                 if (mLoadingAndRetryManager != null && xrv != null) {
@@ -172,6 +235,12 @@ public class ListManager<T> {
 
             @Override
             public void onSuccess(String data) {
+                //根据不同的页面显示不同的内容
+                if (isCart){
+                    CartAdapter mAdapter = (CartAdapter) ListManager.this.mAdapter;
+                    mAdapter.map.clear();
+                    EventBus.getDefault().post(new EventBusBundle(CartFragment.CHOOSE_NOT_ALL , ""));
+                }
                 xrv.setPullRefreshEnabled(true);
                 mLoadingAndRetryManager.showContent();
                 xrv.refreshComplete();
@@ -204,6 +273,9 @@ public class ListManager<T> {
 
             @Override
             public void onNoData() {
+                if (onNullListener != null) {
+                    onNullListener.OnNull();
+                }
                 xrv.setPullRefreshEnabled(true);
                 if (page == 1) {
                     mLoadingAndRetryManager.showEmpty();
@@ -220,12 +292,23 @@ public class ListManager<T> {
 
     public interface OnItemClickListener{
         void OnItemClick(int position);
+        void OnItemLongClick(int position);
     }
 
     public ListManager setOnItemClickListener(OnItemClickListener onItemClickListener){
         this.onItemClickListener = onItemClickListener;
         return this;
     }
+
+    public interface OnNullListener{
+        void OnNull();
+    }
+
+    public ListManager setOnNullListener(OnNullListener onNullListener){
+        this.onNullListener = onNullListener;
+        return this;
+    }
+
 
     public interface OnReceiveHttpDataListener{
         JSONArray ReceiveHttpData(String data);
@@ -248,5 +331,7 @@ public class ListManager<T> {
         }
         return jsonArray;
     }
+
+
 
 }

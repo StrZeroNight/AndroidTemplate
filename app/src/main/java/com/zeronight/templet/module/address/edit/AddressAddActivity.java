@@ -3,7 +3,6 @@ package com.zeronight.templet.module.address.edit;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.zeronight.templet.R;
@@ -14,12 +13,11 @@ import com.zeronight.templet.common.retrofithttp.XRetrofitUtils;
 import com.zeronight.templet.common.utils.CommonUtils;
 import com.zeronight.templet.common.utils.ToastUtils;
 import com.zeronight.templet.common.utils.XStringUtils;
-import com.zeronight.templet.common.widget.ArrorText;
-import com.zeronight.templet.common.widget.DelEditText;
+import com.zeronight.templet.common.widget.AddressText;
 import com.zeronight.templet.common.widget.SuperTextView;
-import com.zeronight.templet.common.widget.SwitchText;
 import com.zeronight.templet.common.widget.TitleBar;
 import com.zeronight.templet.module.address.chooser.AddressChooer;
+import com.zeronight.templet.module.address.list.AddressDetialBean;
 import com.zeronight.templet.module.address.list.AddressListActivity;
 
 import de.greenrobot.event.EventBus;
@@ -30,41 +28,18 @@ import de.greenrobot.event.EventBus;
 
 public class AddressAddActivity extends BaseActivity implements View.OnClickListener {
 
-    private final static int REQUEST_CODE = 1001;
-    private final static int RESULT_CODE = 1002;
     private final static String ID = "ID";
-    private DelEditText det_user;
-    private DelEditText det_phone;
-    private ArrorText at_city;
-    private DelEditText det_address;
-    private SwitchText st_default;
-    private SuperTextView stv_add;
     protected TitleBar titlebar;
-
-
-    public static void start(Context context, String id) {
-        Intent it = new Intent(context, AddressAddActivity.class);
-        it.putExtra(ID, id);
-        context.startActivity(it);
-    }
+    private AddressText addt_name;
+    private AddressText addt_phone;
+    private AddressText addt_city;
+    private AddressText addt_detial;
+    private AddressText addt_default;
+    private SuperTextView stv_add;
 
     public static void start(Context context) {
         Intent it = new Intent(context, AddressAddActivity.class);
         context.startActivity(it);
-    }
-
-    public static void startActivityForResult(Context context) {
-        Intent it = new Intent(context, AddressAddActivity.class);
-        AppCompatActivity activity = (AppCompatActivity) context;
-        activity.startActivityForResult(it, REQUEST_CODE);
-    }
-
-    private void initIntent() {
-        Intent intent = getIntent();
-        if (intent.getStringExtra(ID) != null) {
-            String id = intent.getStringExtra(ID);
-            ToastUtils.showMessage("获取id" + id);
-        }
     }
 
     @Override
@@ -76,12 +51,12 @@ public class AddressAddActivity extends BaseActivity implements View.OnClickList
 
     private void initView() {
         titlebar = (TitleBar) findViewById(R.id.titlebar);
-        det_user = (DelEditText) findViewById(R.id.det_user);
-        det_phone = (DelEditText) findViewById(R.id.det_phone);
-        at_city = (ArrorText) findViewById(R.id.at_city);
-        at_city.setOnClickListener(this);
-        det_address = (DelEditText) findViewById(R.id.det_address);
-        st_default = (SwitchText) findViewById(R.id.st_default);
+        addt_name = (AddressText) findViewById(R.id.addt_name);
+        addt_phone = (AddressText) findViewById(R.id.addt_phone);
+        addt_city = (AddressText) findViewById(R.id.addt_city);
+        addt_city.setOnClickListener(this);
+        addt_detial = (AddressText) findViewById(R.id.addt_detial);
+        addt_default = (AddressText) findViewById(R.id.addt_default);
         stv_add = (SuperTextView) findViewById(R.id.stv_add);
         stv_add.setOnClickListener(this);
     }
@@ -89,13 +64,13 @@ public class AddressAddActivity extends BaseActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.at_city:
-                CommonUtils.hideSoft(this , at_city);
+            case R.id.addt_city:
+                CommonUtils.hideSoft(this , addt_city);
                 AddressChooer addressChooer = new AddressChooer(this);
                 addressChooer.showAddressChoose(new AddressChooer.OnAddressChoose() {
                     @Override
                     public void onAddressChoose(String address) {
-                        at_city.setContent(address);
+                        addt_city.setTextView(address);
                     }
                 });
                 break;
@@ -107,11 +82,11 @@ public class AddressAddActivity extends BaseActivity implements View.OnClickList
 
     private void checkAddressInfo() {
         AddressDetialBean addressDetial = new AddressDetialBean();
-        String user = det_user.getContent();
-        String phone = det_phone.getContent();
-        String address = det_address.getContent();
-        String city = at_city.getContent();
-        boolean switchStatus = st_default.getSwitchStatus();
+        String user = addt_name.getEditText();
+        String phone = addt_phone.getEditText();
+        String city = addt_city.getTextView();
+        String address = addt_detial.getEditText();
+        boolean switchStatus = addt_default.getSwitchStatus();
 
         if (XStringUtils.isEmpty(user)) {
             ToastUtils.showMessage("收货人不能为空");
@@ -176,7 +151,6 @@ public class AddressAddActivity extends BaseActivity implements View.OnClickList
             }
         });
     }
-
 
     protected void notifyAddressLsit(){
         EventBus.getDefault().post(new EventBusBundle(AddressListActivity.NOTIFY_ADDRESS, ""));

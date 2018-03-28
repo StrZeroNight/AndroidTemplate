@@ -1,5 +1,6 @@
 package com.zeronight.templet.common.data;
 
+import com.zeronight.templet.module.address.list.AddressDetialBean;
 import com.zeronight.templet.module.cart.CartBean;
 import com.zeronight.templet.module.goods.AttrsBean2;
 import com.zeronight.templet.module.goods.AttrsBean;
@@ -53,6 +54,16 @@ public class TestData {
         list.add(new CartBean("3" , "645.34" , "7"));
         list.add(new CartBean("4" , "5476" , "4"));
         list.add(new CartBean("5" , "208" , "9"));
+        return list;
+    }
+
+    public static List<AddressDetialBean> getAddress(){
+        List<AddressDetialBean> list = new ArrayList<>();
+        list.add(new AddressDetialBean("1" , "小七" , "15222898621" , "北京市" , "长安区长安区长安区长安区" , 0));
+        list.add(new AddressDetialBean("2" , "小八" , "15222898621" , "北京市" , "长安区" , 0));
+        list.add(new AddressDetialBean("3" , "小九" , "15222898621" , "北京市" , "长安区" , 1));
+        list.add(new AddressDetialBean("4" , "小十" , "15222898621" , "北京市" , "长安区长安区" , 0));
+        list.add(new AddressDetialBean("5" , "小六" , "15222898621" , "北京市" , "长安区" , 0));
         return list;
     }
 

@@ -15,13 +15,13 @@
         android:layout_height="wrap_content"
         android:text="热门"
         android:textSize="@dimen/dp1080_35"
-        android:textColor="@color/color_black_33"
+        android:textColor="@color/color_33"
         android:paddingLeft="@dimen/dp1080_30"
         android:paddingRight="@dimen/dp1080_30"
         android:paddingTop="@dimen/dp1080_15"
         android:paddingBottom="@dimen/dp1080_15"
-        app:normalBackgroundColor="@color/color_gray_cc"
-        app:pressedBackgroundColor="@color/color_gray"
+        app:normalBackgroundColor="@color/color_cc"
+        app:pressedBackgroundColor="@color/color_8c"
         app:round="true"
         />
 

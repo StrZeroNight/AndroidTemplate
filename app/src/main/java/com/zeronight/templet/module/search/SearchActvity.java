@@ -21,7 +21,7 @@ import com.zeronight.templet.common.utils.CommonUtils;
 import com.zeronight.templet.common.utils.ListManager;
 import com.zeronight.templet.common.utils.SearchHistoryUtils;
 import com.zeronight.templet.common.utils.ToastUtils;
-import com.zeronight.templet.common.widget.SearchBar;
+import com.zeronight.templet.common.widget.SearchBarEdit;
 
 import java.util.List;
 
@@ -36,7 +36,7 @@ public class SearchActvity extends BaseActivity {
     private final static int REQUEST_CODE = 1001;
     private final static int RESULT_CODE = 1002;
     private final static String ID = "ID";
-    private SearchBar searchbar;
+    private SearchBarEdit searchbar;
     private RecyclerView rv_hot;
     private RecyclerView rv_history;
     private XRecyclerView xrv;
@@ -79,7 +79,7 @@ public class SearchActvity extends BaseActivity {
 
     private void initView() {
         nsc_history = (NestedScrollView) findViewById(R.id.nsc_history);
-        searchbar = (SearchBar) findViewById(R.id.searchbar);
+        searchbar = (SearchBarEdit) findViewById(R.id.searchbar);
         initSearchBar();
         xrv = (XRecyclerView) findViewById(R.id.xrv);
         initSearchList();
@@ -107,7 +107,7 @@ public class SearchActvity extends BaseActivity {
     }
 
     private void initSearchBar(){
-        searchbar.setOnSearchBarClickListener(new SearchBar.OnSearchBarClickListener() {
+        searchbar.setOnEditSearchClickListener(new SearchBarEdit.OnEditSearchClickListener() {
             @Override
             public void OnLeftClick() {
                 finish();
@@ -133,6 +133,7 @@ public class SearchActvity extends BaseActivity {
                     nsc_history.setVisibility(View.VISIBLE);
                 }
             }
+
         });
     }
 

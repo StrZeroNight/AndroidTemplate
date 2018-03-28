@@ -53,6 +53,7 @@ public class TitleBar extends RelativeLayout {
         int image = a.getResourceId(R.styleable.TitleBar_bright_image , defStyleAttr);
         boolean isShowBack = a.getBoolean(R.styleable.TitleBar_bishow_back , true);
         boolean isShowBg = a.getBoolean(R.styleable.TitleBar_bisshow_bg , true);
+        final boolean isBack = a.getBoolean(R.styleable.TitleBar_bisback , true);
 
         if (!isShowBg) {
             titlebar.setBackgroundColor(0);
@@ -88,8 +89,10 @@ public class TitleBar extends RelativeLayout {
         ll_back.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppCompatActivity appCompatActivity = (AppCompatActivity) context;
-                appCompatActivity.finish();
+                if (isBack) {
+                    AppCompatActivity appCompatActivity = (AppCompatActivity) context;
+                    appCompatActivity.finish();
+                }
                 if (onTitlebarClickListener != null) {
                     onTitlebarClickListener.onBackClick();
                 }
