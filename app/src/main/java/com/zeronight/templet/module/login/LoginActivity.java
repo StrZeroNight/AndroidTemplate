@@ -45,6 +45,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     public static void start(Context context) {
         Intent it = new Intent(context, LoginActivity.class);
+        it.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(it);
     }
 

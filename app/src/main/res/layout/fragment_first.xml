@@ -9,7 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="第一页"
-        android:background="@color/color_black_t70"
         android:gravity="center"
         />
 

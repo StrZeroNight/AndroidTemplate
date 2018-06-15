@@ -20,12 +20,10 @@ public class BasePresenter {
      * 添加fragment
      */
     public void addFragment(int contentId , Fragment fragment){
-
         rootActivity.getSupportFragmentManager().beginTransaction()
                 .add(contentId , fragment)
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .commit();
-
     }
 
 

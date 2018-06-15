@@ -56,7 +56,7 @@ public class CartFragment extends BaseFragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_four, container, false);
+        View view = inflater.inflate(R.layout.fragment_cart, container, false);
         EventBus.getDefault().register(this);
         initView(view);
         return view;

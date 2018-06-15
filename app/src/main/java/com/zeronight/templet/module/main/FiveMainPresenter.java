@@ -3,9 +3,6 @@ package com.zeronight.templet.module.main;
 
 import com.zeronight.templet.R;
 import com.zeronight.templet.common.base.BaseActivity;
-import com.zeronight.templet.module.cart.CartFragment;
-import com.zeronight.templet.module.classify.OneClassifyFragment;
-import com.zeronight.templet.module.mine.MineFragment;
 
 /**
  *
@@ -16,9 +13,9 @@ public class FiveMainPresenter extends BasePresenter {
 
     private FirstFragment firstFragment;
     private SecondFragment secondFragment;
-    private OneClassifyFragment thirdFragment;
-    private CartFragment cartFragment;
-    private MineFragment fiveFragment;
+    private ThirdFragment thirdFragment;
+    private FourFragment fourFragment;
+    private FiveFragment fiveFragment;
     private BaseActivity rootActivity;
 
     public FiveMainPresenter(BaseActivity rootActivity) {
@@ -36,9 +33,9 @@ public class FiveMainPresenter extends BasePresenter {
         if (firstFragment == null) {
             firstFragment = new FirstFragment();
             secondFragment = new SecondFragment();
-            thirdFragment = new OneClassifyFragment();
-            cartFragment = new CartFragment();
-            fiveFragment = new MineFragment();
+            thirdFragment = new ThirdFragment();
+            fourFragment = new FourFragment();
+            fiveFragment = new FiveFragment();
         }
     }
 
@@ -58,7 +55,7 @@ public class FiveMainPresenter extends BasePresenter {
     }
 
     public void refreshFourFragment(){
-        if (cartFragment != null) {
+        if (fourFragment != null) {
         }
     }
 
@@ -78,7 +75,7 @@ public class FiveMainPresenter extends BasePresenter {
         }
         rootActivity.getSupportFragmentManager().beginTransaction()
                 .hide(secondFragment)
-                .hide(cartFragment)
+                .hide(fourFragment)
                 .hide(thirdFragment)
                 .hide(fiveFragment)
                 .commitAllowingStateLoss();
@@ -98,7 +95,7 @@ public class FiveMainPresenter extends BasePresenter {
         rootActivity.getSupportFragmentManager().beginTransaction()
                 .hide(firstFragment)
                 .hide(thirdFragment)
-                .hide(cartFragment)
+                .hide(fourFragment)
                 .hide(fiveFragment)
                 .commit();
     }
@@ -116,7 +113,7 @@ public class FiveMainPresenter extends BasePresenter {
         rootActivity.getSupportFragmentManager().beginTransaction()
                 .hide(firstFragment)
                 .hide(secondFragment)
-                .hide(cartFragment)
+                .hide(fourFragment)
                 .hide(fiveFragment)
                 .commit();
     }
@@ -125,10 +122,10 @@ public class FiveMainPresenter extends BasePresenter {
      * 显示第四个页面
      */
     public void iniFourFragment() {
-        if (!cartFragment.isAdded()) {
-            rootActivity.getSupportFragmentManager().beginTransaction().add(R.id.fg_main, cartFragment).show(cartFragment).commit();
+        if (!fourFragment.isAdded()) {
+            rootActivity.getSupportFragmentManager().beginTransaction().add(R.id.fg_main, fourFragment).show(fourFragment).commit();
         } else {
-            rootActivity.getSupportFragmentManager().beginTransaction().show(cartFragment).commit();
+            rootActivity.getSupportFragmentManager().beginTransaction().show(fourFragment).commit();
         }
         rootActivity.getSupportFragmentManager().beginTransaction()
                 .hide(firstFragment)
@@ -151,7 +148,7 @@ public class FiveMainPresenter extends BasePresenter {
                 .hide(firstFragment)
                 .hide(secondFragment)
                 .hide(thirdFragment)
-                .hide(cartFragment)
+                .hide(fourFragment)
                 .commit();
     }
 

@@ -17,7 +17,7 @@ public class UserProtocol extends RelativeLayout {
 
     private TextView tv_ok;
     private TextView tv_agrament;
-    private boolean isAgree = true;
+    private boolean isAgree = false;
 
     public UserProtocol(Context context) {
         this(context, null);
@@ -39,9 +39,9 @@ public class UserProtocol extends RelativeLayout {
             @Override
             public void onClick(View view) {
                 if (isAgree) {
-//                    tv_ok.setCompoundDrawables(R.drawable. , 0 ,0 ,0);
+//                    tv_ok.setCompoundDrawablesWithIntrinsicBounds(R.drawable. , 0 ,0 ,0);
                 }else{
-//                    tv_ok.setCompoundDrawables(R.drawable. , 0 ,0 ,0);
+//                    tv_ok.setCompoundDrawablesWithIntrinsicBounds(R.drawable. , 0 ,0 ,0);
                 }
                 isAgree = !isAgree;
                 if (onProtocolClickListener != null) {
@@ -73,7 +73,7 @@ public class UserProtocol extends RelativeLayout {
         this.onProtocolClickListener = onProtocolClickListener;
     }
 
-    private boolean getIsAgree(){
+    public boolean getIsAgree(){
         return isAgree;
     }
 

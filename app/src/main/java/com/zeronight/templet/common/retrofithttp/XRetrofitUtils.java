@@ -9,7 +9,13 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.orhanobut.logger.Logger;
 import com.zeronight.templet.common.application.BaseApplication;
+import com.zeronight.templet.common.data.CommonData;
+import com.zeronight.templet.common.data.CommonString;
+import com.zeronight.templet.common.data.CommonUrl;
+import com.zeronight.templet.common.utils.AppSetting;
 import com.zeronight.templet.common.utils.ToastUtils;
+import com.zeronight.templet.common.utils.XStringUtils;
+import com.zeronight.templet.module.login.LoginActivity;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,24 +33,19 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 /**
- * 配置BASE_URL
- * 配置TOKEN
- * 配置params.put(TOKEN , "");
+ * 配置TOKEN 参数名
  * <p>
  * 优化问题：
  * 上传图片和上传json或者文件分开处理
  * 日志报出的位置是代码所在位置而不是封装类
  * 日志不需要报出线程
  * 进一步封装不同网络状态的显示情况loadandretry
- * 如何封装处理分页内容
  * <p>
  * Created by Administrator on 2016/11/4.
  */
 public class XRetrofitUtils {
 
     private Builder builder;
-    private final static String BASE_URL = "http://sea.tjtomato.com/Clientapi/";
-    private final static String IMAGE_URL = "";
     private final static String TOKEN = "TOKEN";
 
     public XRetrofitUtils(Builder builder) {
@@ -54,13 +55,18 @@ public class XRetrofitUtils {
     private Retrofit createRetrofit() {
         Retrofit retrofit = new Retrofit.Builder()
                 .client(addLogSetting())
-                .baseUrl(BASE_URL)
+                .baseUrl(CommonUrl.BASE_URL)
                 .build();
         return retrofit;
     }
 
     private OkHttpClient addLogSetting() {
-        HttpLogInterceptor httpLoggingInterceptor = new HttpLogInterceptor(builder.params.toString());
+        HttpLogInterceptor httpLoggingInterceptor = null;
+        if (builder.object != null) {
+            httpLoggingInterceptor = new HttpLogInterceptor(java2Map(builder.object).toString());
+        }else{
+            httpLoggingInterceptor = new HttpLogInterceptor(builder.params.toString());
+        }
         return new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build();
     }
 
@@ -147,6 +153,10 @@ public class XRetrofitUtils {
         String s = JSON.toJSONString(javaBean);
         JSONObject myJson = JSONObject.parseObject(s);
         Map m = myJson;
+        //object和 map可以一起使用
+        if (builder.params != null) {
+            m.putAll(builder.params);
+        }
         return m;
     }
 
@@ -162,7 +172,7 @@ public class XRetrofitUtils {
         }
         Retrofit retrofit = createRetrofit();
         RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.FORM)
-                .addFormDataPart(TOKEN, "")
+                .addFormDataPart(TOKEN, CommonData.getToken())
                 .addFormDataPart(key, file.getName(), RequestBody.create(MediaType.parse("image/*"), file))
                 .build();
         // 执行请求
@@ -183,8 +193,7 @@ public class XRetrofitUtils {
 
     }
 
-
-    private void handleResult(Response<ResponseBody> response, @NonNull final OnResultListener onResultListener) {
+    private void handleResult(Response<ResponseBody> response , @NonNull final OnResultListener onResultListener) {
         //判断返回结果
         if (response.code() == 200) {
             try {
@@ -196,9 +205,20 @@ public class XRetrofitUtils {
                         String message = resultBean.getMsg();
                         String resultData = resultBean.getData();
                         Logger.i("returnCode:" + returnCode);
-                        // TODO: 2017/9/20 返回值处理
+                        // 返回值处理
                         if (returnCode == 1) {
                             onResultListener.onSuccess(resultData);
+                        }else if (returnCode == 0){
+                            onResultListener.onNoData();
+                        }else if(returnCode == 20003){
+                            LoginActivity.start(BaseApplication.getInstance());
+                            AppSetting.putBoolean(CommonString.USER_IS_LOGIN , false);
+                            onResultListener.onServerError();
+                        }else{
+                            if (!XStringUtils.isEmpty(message)) {
+                                ToastUtils.showMessage(message);
+                            }
+                            onResultListener.onServerError();
                         }
                     } else {
                         onResultListener.onNoData();
@@ -239,7 +259,7 @@ public class XRetrofitUtils {
         private Object object = null;
 
         public Builder() {
-            params.put(TOKEN, "");//所有必传参数都可以写在这里
+            params.put(TOKEN, CommonData.getToken());//所有必传参数都可以写在这里
         }
 
         public Builder setUrl(String url) {

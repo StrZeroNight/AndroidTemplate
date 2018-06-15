@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp1080_190"
+    android:orientation="vertical">
+
+    <!--如果要变成普通的，就把iv_translate改成白色，-->
+    <!--修改一下图标的颜色即可-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp1080_140"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        >
+
+        <ImageView
+            android:id="@+id/iv_translate"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1080_60"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1080_150"
+            android:background="@color/color_white"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_icon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dp1080_65"
+        android:paddingLeft="@dimen/dp1080_10"
+        android:paddingRight="@dimen/dp1080_10"
+        >
+
+        <!--第一个bar-->
+        <LinearLayout
+            android:id="@+id/bottombar_ll_first"
+            style="@style/main_bottombar_ll">
+
+            <ImageView
+                android:id="@+id/bottombar_iv_first"
+                style="@style/main_fragment_bottombar_iv"
+                android:src="@drawable/bot1_on"
+                />
+
+            <TextView
+                android:id="@+id/bottombar_tv_first"
+                style="@style/main_fragment_bottombar_tv"
+                android:text="1"
+                android:textColor="@color/color_33" />
+
+        </LinearLayout>
+
+        <!--第二个bar-->
+        <LinearLayout
+            android:id="@+id/bottombar_ll_second"
+            style="@style/main_bottombar_ll">
+
+            <ImageView
+                android:id="@+id/bottombar_iv_second"
+                style="@style/main_fragment_bottombar_iv"
+                android:src="@drawable/bot2" />
+
+            <TextView
+                android:id="@+id/bottombar_tv_second"
+                style="@style/main_fragment_bottombar_tv"
+                android:text="2" />
+
+        </LinearLayout>
+
+        <!--第三个bar-->
+        <LinearLayout
+            android:id="@+id/bottombar_ll_third"
+            style="@style/main_bottombar_ll"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/bottombar_iv_third"
+                style="@style/main_fragment_bottombar_iv"
+                android:src="@drawable/bot3"
+                />
+
+            <TextView
+                android:id="@+id/bottombar_tv_third"
+                style="@style/main_fragment_bottombar_tv"
+                android:text="3"
+                />
+
+        </LinearLayout>
+
+        <!--第四个bar-->
+        <LinearLayout
+            android:id="@+id/bottombar_ll_fourth"
+            style="@style/main_bottombar_ll">
+
+            <ImageView
+                android:id="@+id/bottombar_iv_fourth"
+                style="@style/main_fragment_bottombar_iv"
+                android:src="@drawable/bot4"
+                />
+
+            <TextView
+                android:id="@+id/bottombar_tv_fourth"
+                style="@style/main_fragment_bottombar_tv"
+                android:text="4" />
+
+        </LinearLayout>
+
+        <!--第五个bar-->
+        <LinearLayout
+            android:id="@+id/bottombar_ll_fifth"
+            style="@style/main_bottombar_ll"
+            >
+
+            <ImageView
+                android:id="@+id/bottombar_iv_fifth"
+                style="@style/main_fragment_bottombar_iv"
+                android:src="@drawable/bot5"
+                />
+
+            <TextView
+                android:id="@+id/bottombar_tv_fifth"
+                style="@style/main_fragment_bottombar_tv"
+                android:text="5" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--中间额外的icon 使用的时候隐藏第三个bar-->
+    <ImageView
+        android:id="@+id/iv_middle"
+        android:layout_width="@dimen/dp1080_140"
+        android:layout_height="@dimen/dp1080_140"
+        android:layout_centerHorizontal="true"
+        android:background="@color/color_black_t70"
+        />
+
+</RelativeLayout>

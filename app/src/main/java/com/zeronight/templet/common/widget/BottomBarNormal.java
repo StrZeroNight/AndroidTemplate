@@ -50,7 +50,7 @@ public class BottomBarNormal extends RelativeLayout {
     public static final int ICON_FIVE = 4;
 
     //文字切换颜色
-    private int colorDisplay = Color.parseColor("#4bb4db");
+    private int colorDisplay = getResources().getColor(R.color.colorPrimary);
     private int color = Color.GRAY;
 
     OnBottomButtonClickListener onBottomButtonClickListener;
@@ -265,53 +265,53 @@ public class BottomBarNormal extends RelativeLayout {
     }
 
     private void setFirstColorSelected() {
-//        bottombar_iv_first.setImageDrawable(getResources().getDrawable(R.drawable.));
+        bottombar_iv_first.setImageDrawable(getResources().getDrawable(R.drawable.bot1_on));
         bottombar_tv_first.setTextColor(colorDisplay);
     }
 
     private void setFirstColorNormal() {
-//        bottombar_iv_first.setImageDrawable(getResources().getDrawable(R.drawable.));
+        bottombar_iv_first.setImageDrawable(getResources().getDrawable(R.drawable.bot1));
         bottombar_tv_first.setTextColor(color);
     }
 
     private void setSecondColorSelected() {
-//        bottombar_iv_second.setImageDrawable(getResources().getDrawable(R.drawable.));
+        bottombar_iv_second.setImageDrawable(getResources().getDrawable(R.drawable.bot2_on));
         bottombar_tv_second.setTextColor(colorDisplay);
     }
 
     private void setSecondColorNormal() {
-//        bottombar_iv_second.setImageDrawable(getResources().getDrawable(R.drawable.));
+        bottombar_iv_second.setImageDrawable(getResources().getDrawable(R.drawable.bot2));
         bottombar_tv_second.setTextColor(color);
     }
 
     private void setThirdColorSelected() {
-//        bottombar_iv_third.setImageDrawable(getResources().getDrawable(R.drawable.));
+        bottombar_iv_third.setImageDrawable(getResources().getDrawable(R.drawable.bot3_on));
         bottombar_tv_third.setTextColor(colorDisplay);
     }
 
     private void setThirdColorNormal() {
-//        bottombar_iv_third.setImageDrawable(getResources().getDrawable(R.drawable.));
+        bottombar_iv_third.setImageDrawable(getResources().getDrawable(R.drawable.bot3));
         bottombar_tv_third.setTextColor(color);
     }
 
     private void setFourthColorSelected() {
-//        bottombar_iv_fourth.setImageDrawable(getResources().getDrawable(R.drawable.));
+        bottombar_iv_fourth.setImageDrawable(getResources().getDrawable(R.drawable.bot4_on));
         bottombar_tv_fourth.setTextColor(colorDisplay);
     }
 
     private void setFourthColorNormal() {
-//        bottombar_iv_fourth.setImageDrawable(getResources().getDrawable(R.drawable.));
+        bottombar_iv_fourth.setImageDrawable(getResources().getDrawable(R.drawable.bot4));
         bottombar_tv_fourth.setTextColor(color);
     }
 
     private void setFifthColorSelected() {
-//        bottombar_iv_fifth.setImageDrawable(getResources().getDrawable(R.drawable.));
+        bottombar_iv_fifth.setImageDrawable(getResources().getDrawable(R.drawable.bot5_on));
         bottombar_tv_fifth.setTextColor(colorDisplay);
     }
 
     //mine白色
     private void setFifthColorNormal() {
-//        bottombar_iv_fifth.setImageDrawable(getResources().getDrawable(R.drawable.));
+        bottombar_iv_fifth.setImageDrawable(getResources().getDrawable(R.drawable.bot5));
         bottombar_tv_fifth.setTextColor(color);
     }
 

@@ -59,12 +59,13 @@ public class PermissionUtils {
     public static String AUDIO = Manifest.permission.RECORD_AUDIO;
     public static String PHONE_STATUS = Manifest.permission.READ_PHONE_STATE;
     public static String WRITE_EXTERNAL = Manifest.permission.WRITE_EXTERNAL_STORAGE;
+    public static String READ_EXTERNAL = Manifest.permission.READ_EXTERNAL_STORAGE;
     public static String LOCION = Manifest.permission.ACCESS_COARSE_LOCATION;
-    public static String location2 = Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS;
-    public static String location3 = Manifest.permission.ACCESS_FINE_LOCATION;
-    public static String location4 = Manifest.permission.LOCATION_HARDWARE;
-    public static String location5 = Manifest.permission.INSTALL_LOCATION_PROVIDER;
-    public static String location6 = Manifest.permission.CONTROL_LOCATION_UPDATES;
+    public static String ACCESS_LOCATION_EXTRA_COMMANDS = Manifest.permission.ACCESS_LOCATION_EXTRA_COMMANDS;
+    public static String ACCESS_FINE_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION;
+    public static String LOCATION_HARDWARE = Manifest.permission.LOCATION_HARDWARE;
+    public static String INSTALL_LOCATION_PROVIDER = Manifest.permission.INSTALL_LOCATION_PROVIDER;
+    public static String CONTROL_LOCATION_UPDATES = Manifest.permission.CONTROL_LOCATION_UPDATES;
     private IPermissionFinish iPermissionFinish;
 
     public PermissionUtils(AppCompatActivity rootActivity) {

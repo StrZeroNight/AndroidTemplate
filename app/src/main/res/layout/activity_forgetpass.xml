@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f5"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_99"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <!--头部 随意添加 目前有三种 一种titlebar 一种 imagelogo 一种string-->
+        <com.zeronight.star.common.widget.TitleBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:bisshow_bg="false"
+            app:btitle="注册" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp1080_30"
+            android:src="@drawable/logo"
+            android:visibility="gone"
+             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp1080_130"
+            android:text="密码找回"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/dp1080_80" />
+
+        <LinearLayout
+            android:id="@+id/ll_edit_forgetpass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_toolbar_login"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp1080_50"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp1080_150"
+            android:paddingRight="@dimen/dp1080_150">
+
+            <com.zeronight.templet.common.widget.vercode.LoginEditTextString
+                android:id="@+id/let_phone_forgetpass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:let_contenttype="number"
+                app:let_hint="请输入手机号"
+                app:let_icon="@drawable/login_user"
+                />
+
+            <com.zeronight.templet.common.widget.vercode.LoginEditTextString
+                android:id="@+id/let_vercode_forgetpass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:let_hint="短信验证码" />
+
+            <com.zeronight.templet.common.widget.vercode.LoginEditTextString
+                android:id="@+id/let_password_forgetpass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                app:let_contenttype="password"
+                app:let_hint="请输入密码"
+                app:let_icon="@drawable/login_password" />
+
+            <com.zeronight.templet.common.widget.vercode.LoginEditTextString
+                android:id="@+id/let_npassword_forgetpass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:let_contenttype="password"
+                app:let_hint="请再次输入密码"
+                app:let_icon="@drawable/login_password" />
+
+
+        </LinearLayout>
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            android:id="@+id/stv_ok_register"
+            style="@style/login_btn"
+            android:text="确认修改"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/dp1080_40"
+            app:normalBackgroundColor="@color/color_white"
+            app:round="true" />
+
+        <com.zeronight.templet.common.widget.SuperTextView
+            style="@style/login_btn"
+            android:text="返回登录"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/dp1080_40"
+            app:normalStrokeColor="@color/color_white"
+            app:normalStrokeWidth="@dimen/dp1080_2"
+            app:round="true" />
+
+    </LinearLayout>
+
+</RelativeLayout>

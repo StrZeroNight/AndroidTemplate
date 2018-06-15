@@ -207,6 +207,24 @@
             android:screenOrientation="portrait"
             />
 
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".common.webview.WebViewActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            />
+
         <service
             android:name=".module.window.WindowService"
             android:process=":service"

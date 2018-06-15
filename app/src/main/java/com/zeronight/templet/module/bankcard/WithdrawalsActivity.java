@@ -13,7 +13,7 @@ import com.zeronight.templet.R;
 import com.zeronight.templet.common.base.BaseActivity;
 import com.zeronight.templet.common.data.CommonUrl;
 import com.zeronight.templet.common.data.EventBusBundle;
-import com.zeronight.templet.common.dialog.BalanceDialog;
+import com.zeronight.templet.common.dialog.TipDialog2;
 import com.zeronight.templet.common.retrofithttp.XRetrofitUtils;
 import com.zeronight.templet.common.utils.ImageLoad;
 import com.zeronight.templet.common.utils.ToastUtils;
@@ -102,7 +102,7 @@ public class WithdrawalsActivity extends BaseActivity implements View.OnClickLis
                 }
                 if (bank != null) {
                     String tip = "是否向尾号<font color='#4bb4db'>" + XStringUtils.endFourNum(bank.getNumber()) + "</font>的银行卡提现<font color='#ff0000'>" + money + "</font>元";
-                    new BalanceDialog(WithdrawalsActivity.this, Html.fromHtml(tip), new BalanceDialog.DialogButtonClick() {
+                    new TipDialog2(WithdrawalsActivity.this, Html.fromHtml(tip), new TipDialog2.DialogButtonClick() {
                         @Override
                         public void onSure() {
                             if (XStringUtils.isEmpty(cids) && XStringUtils.isEmpty(pids)) {

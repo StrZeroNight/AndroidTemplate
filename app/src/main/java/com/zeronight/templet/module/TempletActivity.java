@@ -3,13 +3,11 @@ package com.zeronight.templet.module;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
 import com.zeronight.templet.R;
 import com.zeronight.templet.common.base.BaseActivity;
-import com.zeronight.templet.common.utils.ToastUtils;
 import com.zeronight.templet.module.adapter.AdapterActivity;
 import com.zeronight.templet.module.address.list.AddressListActivity;
 import com.zeronight.templet.module.bankcard.WithdrawalsActivity;
@@ -32,9 +30,6 @@ import com.zeronight.templet.module.window.WindowActivity;
 
 public class TempletActivity extends BaseActivity implements View.OnClickListener {
 
-    private final static int REQUEST_CODE = 1001;
-    private final static int RESULT_CODE = 1002;
-    private final static String ID = "ID";
     private Button btn_main;
     private Button btn_login;
     private Button btn_address;
@@ -48,39 +43,14 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
     private Button btn_rich;
     private Button btn_search;
     private Button btn_adapter;
-    /**
-     * 分类页面
-     */
     private Button btn_classify;
-    /**
-     * 订单页面
-     */
     private Button btn_order;
-
-    public static void start(Context context, String id) {
-        Intent it = new Intent(context, TempletActivity.class);
-        it.putExtra(ID, id);
-        context.startActivity(it);
-    }
+    private Button btn_share;
+    private Button btn_webview;
 
     public static void start(Context context) {
         Intent it = new Intent(context, TempletActivity.class);
         context.startActivity(it);
-    }
-
-    public static void startActivityForResult(Context context) {
-        Intent it = new Intent(context, TempletActivity.class);
-        AppCompatActivity activity = (AppCompatActivity) context;
-        activity.startActivityForResult(it, REQUEST_CODE);
-    }
-
-    private void initIntent() {
-        Intent intent = getIntent();
-        if (intent.getStringExtra(ID) != null) {
-            String id = intent.getStringExtra(ID);
-            ToastUtils.showMessage("获取id" + id);
-        }
-
     }
 
     @Override
@@ -88,7 +58,6 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_templet);
         initView();
-
     }
 
     private void initView() {
@@ -122,6 +91,10 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
         btn_classify.setOnClickListener(this);
         btn_order = (Button) findViewById(R.id.btn_order);
         btn_order.setOnClickListener(this);
+        btn_share = (Button) findViewById(R.id.btn_share);
+        btn_share.setOnClickListener(this);
+        btn_webview = (Button) findViewById(R.id.btn_webview);
+        btn_webview.setOnClickListener(this);
     }
 
     @Override
@@ -171,6 +144,11 @@ public class TempletActivity extends BaseActivity implements View.OnClickListene
                 break;
             case R.id.btn_order:
                 OrderListActivity.start(this);
+                break;
+            case R.id.btn_share:
+                break;
+            case R.id.btn_webview:
+//                WebViewActivity.start(TempletActivity.this , );
                 break;
         }
     }

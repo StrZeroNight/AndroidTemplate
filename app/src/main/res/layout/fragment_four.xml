@@ -1,90 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    >
 
-    <com.zeronight.templet.common.widget.TitleBar
-        android:id="@+id/titlebar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:bishow_back="false"
-        app:bright_text="编辑"/>
-
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_below="@+id/titlebar"
-        android:layout_above="@+id/rl_bottom"
-        >
+        android:text="第三页"
+        android:gravity="center"
+        />
 
-        <com.jcodecraeer.xrecyclerview.XRecyclerView
-            android:id="@+id/xrv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/rl_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:elevation="@dimen/dp1080_2"
-        android:background="@color/color_white">
-
-        <TextView
-            android:id="@+id/tv_all"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="全选"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/dp1080_50"
-            android:drawableLeft="@drawable/choice_normal"
-            android:drawablePadding="@dimen/dp1080_40"
-            />
-
-        <TextView
-            android:id="@+id/tv_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cart_allprice"
-            android:layout_centerVertical="true"
-            android:padding="@dimen/dp1080_20"
-            android:layout_marginRight="@dimen/dp1080_40"
-            android:layout_toLeftOf="@+id/stv_confirmorder"
-            android:textColor="@color/red_e5223f"
-            android:textSize="@dimen/dp1080_40"
-            />
-
-        <com.zeronight.templet.common.widget.SuperTextView
-            android:id="@+id/stv_confirmorder"
-            android:layout_width="@dimen/dp1080_300"
-            android:layout_height="@dimen/dp1080_130"
-            android:text="提交订单"
-            android:layout_alignParentRight="true"
-            android:gravity="center"
-            android:textColor="@color/color_white"
-            android:textSize="@dimen/dp1080_40"
-            app:normalBackgroundColor="@color/red_e5223f"
-            />
-
-        <com.zeronight.templet.common.widget.SuperTextView
-            android:id="@+id/stv_delete"
-            android:layout_width="@dimen/dp1080_300"
-            android:layout_height="@dimen/dp1080_130"
-            android:text="删除"
-            android:layout_alignParentRight="true"
-            android:gravity="center"
-            android:textColor="@color/color_white"
-            android:textSize="@dimen/dp1080_40"
-            android:visibility="gone"
-            app:normalBackgroundColor="@color/orange_ed683d"
-            app:pressedBackgroundColor="@color/orange_80ed683d"
-            />
-
-    </RelativeLayout>
-
-</RelativeLayout>
+</LinearLayout>

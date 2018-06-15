@@ -17,16 +17,16 @@ import com.zeronight.templet.R;
  * Created by Administrator on 2017/10/19.
  */
 
-public class BalanceDialog extends Dialog {
+public class TipDialog2 extends Dialog {
 
     private AlertDialog dialog;
 
-    public BalanceDialog(Context context, Spanned tip) {
+    public TipDialog2(Context context, Spanned tip) {
         super(context);
         showdialog(context, tip , null);
     }
 
-    public BalanceDialog(Context context, Spanned tip , DialogButtonClick dialogButtonClick) {
+    public TipDialog2(Context context, Spanned tip , DialogButtonClick dialogButtonClick) {
         super(context);
         showdialog(context, tip , dialogButtonClick);
     }
@@ -36,7 +36,7 @@ public class BalanceDialog extends Dialog {
         dialog = new AlertDialog.Builder(context).create();
         dialog.show();
         Window window = dialog.getWindow();
-        window.setContentView(R.layout.dialog_balance);
+        window.setContentView(R.layout.dialog_tip2);
         window.setBackgroundDrawableResource(android.R.color.transparent);
         window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         window.setGravity(Gravity.CENTER);

@@ -1,12 +1,10 @@
 package com.zeronight.templet.common.utils;
 
-import android.graphics.Bitmap;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.BitmapImageViewTarget;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.bumptech.glide.request.RequestOptions;
 import com.zeronight.templet.common.application.BaseApplication;
 import com.zeronight.templet.common.data.CommonUrl;
 
@@ -35,15 +33,6 @@ public class ImageLoad {
         }
     }
 
-    /**
-     * glide加载图片 传入默认图片
-     */
-    public static void loadImageWithErrorDrawable(String imagePath, ImageView imageView, int errorDrawable) {
-        Glide.with(BaseApplication.getInstance().getApplicationContext())
-                .load(imageUrl + handleImagePath(imagePath))
-                .placeholder(errorDrawable)
-                .into(imageView);
-    }
 
     /**
      * gradle加载圆形图片
@@ -53,83 +42,30 @@ public class ImageLoad {
         if(!XStringUtils.isEmpty(url)){
             if (url.startsWith("http")) {
                 if (BaseApplication.getInstance().getApplicationContext() != null) {
+                    RequestOptions requestOptions = new RequestOptions()
+                            .centerCrop()
+                            .transforms(new CircleCrop());
+                    //加载圆角图片
                     Glide.with(BaseApplication.getInstance().getApplicationContext())
                             .load(url)
-                            .asBitmap()
-                            .centerCrop()
-                            .into(new BitmapImageViewTarget(iv_show) {
-                                @Override
-                                protected void setResource(Bitmap resource) {
-                                    RoundedBitmapDrawable circularBitmapDrawable =
-                                            RoundedBitmapDrawableFactory.create(BaseApplication.getInstance().getApplicationContext().getResources(), resource);
-                                    circularBitmapDrawable.setCircular(true);
-                                    iv_show.setImageDrawable(circularBitmapDrawable);
-                                }
-                            });
+                            .apply(requestOptions)
+                            .into(iv_show);
                 }
             }else{
                 if (BaseApplication.getInstance().getApplicationContext() != null) {
+                    RequestOptions requestOptions = new RequestOptions()
+                            .centerCrop()
+                            .transforms(new CircleCrop());
+                    //加载圆角图片
                     Glide.with(BaseApplication.getInstance().getApplicationContext())
                             .load(imageUrl + handleImagePath(url))
-                            .asBitmap()
-                            .centerCrop()
-                            .into(new BitmapImageViewTarget(iv_show) {
-                                @Override
-                                protected void setResource(Bitmap resource) {
-                                    RoundedBitmapDrawable circularBitmapDrawable =
-                                            RoundedBitmapDrawableFactory.create(BaseApplication.getInstance().getApplicationContext().getResources(), resource);
-                                    circularBitmapDrawable.setCircular(true);
-                                    iv_show.setImageDrawable(circularBitmapDrawable);
-                                }
-                            });
+                            .apply(requestOptions)
+                            .into(iv_show);
                 }
             }
         }
     }
 
-    /**
-     * gradle加载圆形图片
-     */
-    public static void loadCircleImage(String url, final ImageView iv_show , int errorDrawable) {
-        //加载圆角图片
-        if (BaseApplication.getInstance().getApplicationContext() != null) {
-            Glide.with(BaseApplication.getInstance().getApplicationContext())
-                    .load(imageUrl + handleImagePath(url))
-                    .asBitmap()
-                    .centerCrop()
-                    .error(errorDrawable)
-                    .placeholder(errorDrawable)
-                    .into(new BitmapImageViewTarget(iv_show) {
-                        @Override
-                        protected void setResource(Bitmap resource) {
-                            RoundedBitmapDrawable circularBitmapDrawable =
-                                    RoundedBitmapDrawableFactory.create(BaseApplication.getInstance().getApplicationContext().getResources(), resource);
-                            circularBitmapDrawable.setCircular(true);
-                            iv_show.setImageDrawable(circularBitmapDrawable);
-                        }
-                    });
-        }
-    }
-
-    /**
-     * gradle加载圆角矩形
-     */
-    public static void loadRoundedRectangleIamge(String url, final ImageView iv_show , final int radius) {
-        //加载圆角图片
-        Glide.with(BaseApplication.getInstance().getApplicationContext())
-                .load(url)
-                .asBitmap()
-                .centerCrop()
-                .into(new BitmapImageViewTarget(iv_show) {
-                    @Override
-                    protected void setResource(Bitmap resource) {
-                        RoundedBitmapDrawable roundedBitmapDrawable =
-                                RoundedBitmapDrawableFactory.create(BaseApplication.getInstance().getApplicationContext().getResources() , resource);
-                        roundedBitmapDrawable.setCornerRadius(radius);
-                        iv_show.setImageDrawable(roundedBitmapDrawable);
-                    }
-                });
-    }
 
     private static String handleImagePath(String imagePath){
         if (imagePath == null) {
@@ -143,6 +79,7 @@ public class ImageLoad {
         }
         return imagePathF;
     }
+
 
 
 

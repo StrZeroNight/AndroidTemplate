@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.zeronight.templet.R;
 import com.zeronight.templet.common.base.BaseActivity;
-import com.zeronight.templet.common.widget.DelEditText;
 import com.zeronight.templet.common.widget.TitleBar;
 
 /**
@@ -21,7 +20,7 @@ public class ChangeInfoActivity extends BaseActivity {
     private final static String INFO = "INFO";
     private final static String TITLE = "TITLE";
     private TitleBar titlebar;
-    private DelEditText det_change;
+//    private DelEditText det_change;
 
     public static void start(Context context, String info , String title) {
         Intent it = new Intent(context, ChangeInfoActivity.class);
@@ -48,8 +47,8 @@ public class ChangeInfoActivity extends BaseActivity {
             String info = intent.getStringExtra(INFO);
             String title = intent.getStringExtra(TITLE);
             titlebar.setTitle(title);
-            det_change.setEdittext(info);
-            det_change.moveCursorToEnd(info);
+//            det_change.setEdittext(info);
+//            det_change.moveCursorToEnd(info);
         }
     }
 
@@ -63,7 +62,7 @@ public class ChangeInfoActivity extends BaseActivity {
 
     private void initView() {
         titlebar = (TitleBar) findViewById(R.id.titlebar);
-        det_change = (DelEditText) findViewById(R.id.det_change);
+//        det_change = (DelEditText) findViewById(R.id.det_change);
     }
 
 

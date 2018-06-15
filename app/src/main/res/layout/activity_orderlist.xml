@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/main_background"
+    android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:orientation="vertical">
+    >
 
     <com.zeronight.templet.common.widget.TitleBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:btitle="我的订单" />
+        app:btitle="商品订单"
+        />
 
     <android.support.design.widget.TabLayout
-        android:id="@+id/tl"
+        android:id="@+id/tablayout_orderx"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_white"
-        app:tabGravity="center"
-        app:tabIndicatorColor="@color/colorPrimary"
-        app:tabMode="scrollable"
         app:tabSelectedTextColor="@color/colorPrimary"
-        app:tabTextColor="@color/color_22" />
+        />
 
-
-    <com.jcodecraeer.xrecyclerview.XRecyclerView
-        android:id="@+id/xrv"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_orderx"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
